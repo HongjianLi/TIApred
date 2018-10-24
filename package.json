@@ -1,0 +1,26 @@
+{
+  "name": "tiapred",
+  "version": "1.0.0",
+  "description": "Study of Circulating miRNAs in Prediction of Stroke Risk after Transient Ischemic Attack",
+  "main": "web.js",
+  "scripts": {
+    "test": "node web.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HongjianLi/TIApred.git"
+  },
+  "keywords": [
+    "miRNA",
+    "stroke",
+    "transient",
+    "ischemic",
+    "attack"
+  ],
+  "author": "Hongjian Li",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HongjianLi/TIApred/issues"
+  },
+  "homepage": "https://github.com/HongjianLi/TIApred#readme"
+}

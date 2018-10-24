@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Electronic medical record system developed by Dr Gang Lu's lab of CUHK">
+    <meta name="description" content="Study of Circulating miRNAs in Prediction of Stroke Risk after Transient Ischemic Attack">
     <meta name="author" content="Jacky Lee">
     <title>外周血循环微RNA标记物在短暂性脑缺血发作后的卒中风险预测研究 GHX-010-18SZ</title>
     <link rel="icon" href="favicon.ico">
@@ -13,7 +13,7 @@
   <body>
     <div class="jumbotron text-center">
       <h1 class="display-4">深港创新圈联合研发项目</h1>
-      <p>外周血循环微RNA标记物在短暂性脑缺血发作后的卒中风险预测研究 GHX-010-18SZ</p>
+      <h4>外周血循环微RNA标记物在短暂性脑缺血发作后的卒中风险预测研究 GHX-010-18SZ</h4>
     </div>
     <div class="container">
       <div class="row">
@@ -21,14 +21,57 @@
           <h2 class="mb-3">入组患者临床信息收集表</h2>
           <p>本表格依据中国心血管病预防指南2017、中国短暂性脑缺血发作早期诊治指导规范以及中国卒中数据中心有关文件制作</p>
           <hr/>
-          <h4 class="mb-3">病人基本资料</h4>
+          <h3>第一部分 基线登记</h3>
+          <br/>
+          <h4 class="mb-3">一、基本信息</h4>
           <form class="needs-validation" novalidate>
             <div class="row">
-              <div class="col-md-12 mb-3">
-                <label for="firstName">姓名</label>
-                <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+              <div class="col-md-3 mb-3">
+                <label for="prcid">身份证号</label>
+                <input type="text" class="form-control" id="prcid" placeholder="" value="" required>
                 <div class="invalid-feedback">
-                  请填写姓名
+                  请填写
+                </div>
+              </div>
+              <div class="col-md-3 mb-3">
+                <label for="name">姓名</label>
+                <input type="text" class="form-control" id="name" placeholder="" value="" required>
+                <div class="invalid-feedback">
+                  请填写
+                </div>
+              </div>
+              <div class="col-md-3 mb-3">
+                <label for="country">性别</label>
+                <select class="custom-select d-block w-100" id="country" required>
+                  <option value="">请选择</option>
+                  <option>男</option>
+                  <option>女</option>
+                </select>
+                <div class="invalid-feedback">
+                  请选择性别
+                </div>
+              </div>
+              <div class="col-md-3 mb-3">
+                <label for="name">民族</label>
+                <input type="text" class="form-control" id="name" placeholder="" value="" required>
+                <div class="invalid-feedback">
+                  请填写
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4 mb-3">
+                <label for="inpatientNo">住院号</label>
+                <input type="text" class="form-control" id="prcid" placeholder="" value="" required>
+                <div class="invalid-feedback">
+                  请填写
+                </div>
+              </div>
+              <div class="col-md-4 mb-3">
+                <label for="inpatienTtime">住院时间</label>
+                <input type="text" class="form-control" id="name" placeholder="" value="" required>
+                <div class="invalid-feedback">
+                  请填写
                 </div>
               </div>
             </div>
@@ -56,17 +99,6 @@
 
             <div class="row">
               <div class="col-md-4 mb-3">
-                <label for="country">性别</label>
-                <select class="custom-select d-block w-100" id="country" required>
-                  <option value="">请选择</option>
-                  <option>男</option>
-                  <option>女</option>
-                </select>
-                <div class="invalid-feedback">
-                  请选择性别
-                </div>
-              </div>
-              <div class="col-md-4 mb-3">
                 <label for="state">婚姻</label>
                 <select class="custom-select d-block w-100" id="state" required>
                   <option value="">请选择</option>
@@ -81,23 +113,45 @@
               </div>
             </div>
             <hr class="mb-4">
-            <h4 class="mb-3">脑卒中临床数据指标</h4>
+            <h4 class="mb-3">二、发病情况</h4>
             <div class="row">
-              <div class="col-md-4 mb-3">
+              <div class="col-md-2 mb-3">
+                <label for="country">首发卒中</label>
+                <select class="custom-select d-block w-100" id="country" required>
+                  <option value="">请选择</option>
+                  <option>是</option>
+                  <option>否</option>
+                </select>
+                <div class="invalid-feedback">
+                  请选择
+                </div>
+              </div>
+              <div class="col-md-2 mb-3">
+                <label for="country">醒后卒中</label>
+                <select class="custom-select d-block w-100" id="country" required>
+                  <option value="">请选择</option>
+                  <option>是</option>
+                  <option>否</option>
+                </select>
+                <div class="invalid-feedback">
+                  请选择
+                </div>
+              </div>
+              <div class="col-md-2 mb-3">
                 <label for="address">年龄</label>
                 <input type="number" class="form-control" id="age" placeholder="60" required>
                 <div class="invalid-feedback">
                   Please enter your age.
                 </div>
               </div>
-              <div class="col-md-4 mb-3">
+              <div class="col-md-3 mb-3">
                 <label for="country">舒张压(mmHg)</label>
                 <input type="number" class="form-control" id="bloodpressure-exp" placeholder="60" required>
                 <div class="invalid-feedback">
                   请填写
                 </div>
               </div>
-              <div class="col-md-4 mb-3">
+              <div class="col-md-3 mb-3">
                 <label for="state">收缩压(mmHg)</label>
                 <input type="number" class="form-control" id="bloodpressure-col" placeholder="60" required>
                 <div class="invalid-feedback">
@@ -140,6 +194,8 @@
                 </div>
               </div>
             </div>
+            <hr class="mb-4">
+            <h4 class="mb-3">三、既往病史</h4>
 <!--
             <hr class="mb-4">
             <div class="custom-control custom-checkbox">

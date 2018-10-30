@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Study of Circulating miRNAs in Prediction of Stroke Risk after Transient Ischemic Attack">
-    <meta name="author" content="Jacky Lee">
+    <meta name="author" content="Hongjian Li">
     <title>外周血循环微RNA标记物在短暂性脑缺血发作后的卒中风险预测研究 GHX-010-18SZ</title>
     <link rel="icon" href="favicon.ico">
     <link rel="shortcut icon" href="favicon.ico">
@@ -22,172 +22,193 @@
         <h2>入组患者临床信息收集表</h2>
         <p>本表格依据中国心血管病预防指南2017、中国短暂性脑缺血发作早期诊治指导规范以及中国卒中数据中心有关文件制作</p>
         <hr>
-        <form class="needs-validation" novalidate>
-          <h3>第一部分 基线登记</h3>
-          <br>
-          <h4>一、基本信息</h4>
-          <div class="row">
-            <div class="form-group col-3">
-              <label for="prcid">身份证号</label>
-              <input type="text" class="form-control" id="prcid" placeholder="" value="" required>
-              <div class="invalid-tooltip">
-                必填
-              </div>
-            </div>
-            <div class="form-group col-3">
-              <label for="name">姓名</label>
-              <input type="text" class="form-control" id="name" placeholder="" value="">
-            </div>
-            <div class="form-group col-2">
-              <label for="sex">性别</label>
-              <select class="custom-select d-block w-100" id="sex">
-                <option value="">请选择</option>
-                <option>男</option>
-                <option>女</option>
-              </select>
-            </div>
-            <div class="form-group col-2">
-              <label for="ethnicity">民族</label>
-              <input type="text" class="form-control" id="ethnicity" placeholder="" value="">
-            </div>
-            <div class="form-group col-2">
-              <label for="maritalStatus">婚姻</label>
-              <select class="custom-select d-block w-100" id="maritalStatus">
-                <option value="">请选择</option>
-                <option>未婚</option>
-                <option>已婚</option>
-                <option>离偶</option>
-                <option>丧偶</option>
-              </select>
-            </div>
-          </div>
-          <div class="row">
-            <div class="form-group col-3">
-              <label for="inpatientNo">住院号</label>
-              <input type="text" class="form-control" id="prcid" placeholder="" value="">
-            </div>
-            <div class="form-group col-3">
-              <label for="inpatientTime">住院时间</label>
-              <input type="text" class="form-control" id="name" placeholder="____年__月__日__时__分" value="">
-            </div>
-            <div class="form-group col-6">
-              <label for="email">电子邮箱</label>
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" id="emailPrepend">@</span>
+        <form id="mainForm" class="needs-validation" novalidate>
+          <div id="基线登记">
+            <h3>第一部分 基线登记</h3>
+            <br>
+            <div id="基本信息">
+              <h4>一、基本信息</h4>
+              <div class="row">
+                <div class="form-group col-lg-3">
+                  <label for="身份证号">身份证号</label>
+                  <input type="text" class="form-control" id="身份证号" placeholder="" value="" required>
+                  <div class="invalid-tooltip">
+                    必填
+                  </div>
                 </div>
-                <input type="email" class="form-control" id="email" aria-describedby="emailPrepend" placeholder="name@company.com">
+                <div class="form-group col-lg-3">
+                  <label for="姓名">姓名</label>
+                  <input type="text" class="form-control" id="姓名" placeholder="" value="">
+                </div>
+                <div class="form-group col-lg-2">
+                  <label for="性别">性别</label>
+                  <select class="custom-select" id="性别">
+                    <option value="">请选择</option>
+                    <option>男</option>
+                    <option>女</option>
+                  </select>
+                </div>
+                <div class="form-group col-lg-2">
+                  <label for="民族">民族</label>
+                  <input type="text" class="form-control" id="民族" placeholder="" value="">
+                </div>
+                <div class="form-group col-lg-2">
+                  <label for="婚姻">婚姻</label>
+                  <select class="custom-select" id="婚姻">
+                    <option value="">请选择</option>
+                    <option>未婚</option>
+                    <option>已婚</option>
+                    <option>离偶</option>
+                    <option>丧偶</option>
+                  </select>
+                </div>
               </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="form-group col-12">
-              <label for="address">住址</label>
-              <input type="text" class="form-control" id="address" placeholder="广东省深圳市福田区XX街道YY小区">
-              <div class="invalid-feedback">
-                必填
+              <div class="row">
+                <div class="form-group col-lg-3">
+                  <label for="住院号">住院号</label>
+                  <input type="text" class="form-control" id="住院号" placeholder="" value="">
+                </div>
+                <div class="form-group col-lg-3">
+                  <label for="住院时间">住院时间</label>
+                  <input type="text" class="form-control" id="住院时间" placeholder="____年__月__日__时__分" value="">
+                </div>
+                <div class="form-group col-lg-2">
+                  <label for="手机号码">手机号码</label>
+                  <input type="text" class="form-control" id="手机号码" placeholder="" value="">
+                </div>
+                <div class="form-group col-lg-4">
+                  <label for="电子邮箱">电子邮箱</label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="emailPrepend">@</span>
+                    </div>
+                    <input type="email" class="form-control" id="电子邮箱" aria-describedby="emailPrepend" placeholder="name@company.com">
+                  </div>
+                </div>
               </div>
+              <div class="row">
+                <div class="form-group col-lg-12">
+                  <label for="住址">住址</label>
+                  <input type="text" class="form-control" id="住址" placeholder="广东省深圳市福田区XX街道YY小区">
+                  <div class="invalid-feedback">
+                    必填
+                  </div>
+                </div>
+              </div>
+              <br>
+            </div>
+            <div id="发病情况">
+              <h4>二、发病情况</h4>
+              <div class="row">
+                <div class="form-group col-lg-2">
+                  <label for="首发卒中">首发卒中</label>
+                  <select class="custom-select" id="首发卒中">
+                    <option value="">请选择</option>
+                    <option>是</option>
+                    <option>否</option>
+                  </select>
+                </div>
+                <div class="form-group col-lg-2">
+                  <label for="醒后卒中">醒后卒中</label>
+                  <select class="custom-select" id="醒后卒中<">
+                    <option value="">请选择</option>
+                    <option>是</option>
+                    <option>否</option>
+                  </select>
+                </div>
+                <div class="form-group col-lg-2">
+                  <label for="年龄">年龄</label>
+                  <input type="number" class="form-control" id="年龄" placeholder="60">
+                </div>
+                <div class="form-group col-lg-3">
+                  <label for="舒张压">舒张压(mmHg)</label>
+                  <input type="number" class="form-control" id="舒张压" placeholder="60">
+                </div>
+                <div class="form-group col-lg-3">
+                  <label for="收缩压">收缩压(mmHg)</label>
+                  <input type="number" class="form-control" id="收缩压" placeholder="60">
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-group col-lg-4">
+                  <label for="临床症状">临床症状</label>
+                  <select class="custom-select" id="临床症状">
+                    <option value="">请选择</option>
+                    <option>单侧无力</option>
+                    <option>不伴无力的言语障碍</option>
+                  </select>
+                </div>
+                <div class="form-group col-lg-4">
+                  <label for="症状持续时间">症状持续时间</label>
+                  <select class="custom-select" id="症状持续时间">
+                    <option value="">请选择</option>
+                    <option>大于60分钟</option>
+                    <option>10至59分钟</option>
+                  </select>
+                </div>
+                <div class="form-group col-lg-4">
+                  <label for="糖尿病">糖尿病</label>
+                  <select class="custom-select" id="糖尿病">
+                    <option value="">请选择</option>
+                    <option>有</option>
+                    <option>无</option>
+                  </select>
+                </div>
+              </div>
+              <br>
+            </div>
+            <div id="既往病史">
+              <h4>三、既往病史</h4>
+              <br>
+            </div>
+            <h4>四、个人史</h4>
+            <br>
+            <h4>五、家庭史</h4>
+            <br>
+            <h4>六、院前用药史</h4>
+            <br>
+            <h4>七、入院检查</h4>
+            <br>
+            <h4>八、八院评估</h4>
+            <br>
+            <h4>九、主要诊疗操作</h4>
+            <br>
+            <h4>十、住院药物治疗</h4>
+            <br>
+            <h4>十一、院内并发症</h4>
+            <br>
+            <h4>十二、TIA护理</h4>
+            <br>
+            <h4>十三、出院诊断及发病机制</h4>
+            <br>
+            <h4>十四、出院情况</h4>
+            <br>
+            <h4>十五、溶栓及再灌注治疗登记表</h4>
+            <br>
+          </div>
+          <div id="随访调查">
+            <h3>第二部分 随访调查</h3>
+            <br>
+            <div id="3个月随访">
+              <h4>一、3个月随访</h4>
+              <br>
+            </div>
+            <div id="6个月随访">
+              <h4>二、6个月随访</h4>
+              <br>
             </div>
           </div>
-          <br>
-          <h4>二、发病情况</h4>
-          <div class="row">
-            <div class="form-group col-2">
-              <label for="firstStroke">首发卒中</label>
-              <select class="custom-select d-block w-100" id="firstStroke">
-                <option value="">请选择</option>
-                <option>是</option>
-                <option>否</option>
-              </select>
-            </div>
-            <div class="form-group col-2">
-              <label for="awakeStroke">醒后卒中</label>
-              <select class="custom-select d-block w-100" id="awakeStroke">
-                <option value="">请选择</option>
-                <option>是</option>
-                <option>否</option>
-              </select>
-            </div>
-            <div class="form-group col-2">
-              <label for="address">年龄</label>
-              <input type="number" class="form-control" id="age" placeholder="60">
-            </div>
-            <div class="form-group col-3">
-              <label for="bloodPressureExp">舒张压(mmHg)</label>
-              <input type="number" class="form-control" id="bloodPressureExp" placeholder="60">
-            </div>
-            <div class="form-group col-3">
-              <label for="bloodPressureCol">收缩压(mmHg)</label>
-              <input type="number" class="form-control" id="bloodPressureCol" placeholder="60">
-            </div>
-          </div>
-          <div class="row">
-            <div class="form-group col-4">
-              <label for="symptom">临床症状</label>
-              <select class="custom-select d-block w-100" id="symptom">
-                <option value="">请选择</option>
-                <option>单侧无力</option>
-                <option>不伴无力的言语障碍</option>
-              </select>
-            </div>
-            <div class="form-group col-4">
-              <label for="duration">症状持续时间</label>
-              <select class="custom-select d-block w-100" id="duration">
-                <option value="">请选择</option>
-                <option>大于60分钟</option>
-                <option>10至59分钟</option>
-              </select>
-            </div>
-            <div class="form-group col-4">
-              <label for="diabetes">糖尿病</label>
-              <select class="custom-select d-block w-100" id="diabetes">
-                <option value="">请选择</option>
-                <option>有</option>
-                <option>无</option>
-              </select>
-            </div>
-          </div>
-          <br>
-          <h4>三、既往病史</h4>
-          <br>
-          <h4>四、个人史</h4>
-          <br>
-          <h4>五、家庭史</h4>
-          <br>
-          <h4>六、院前用药史</h4>
-          <br>
-          <h4>七、入院检查</h4>
-          <br>
-          <h4>八、八院评估</h4>
-          <br>
-          <h4>九、主要诊疗操作</h4>
-          <br>
-          <h4>十、住院药物治疗</h4>
-          <br>
-          <h4>十一、院内并发症</h4>
-          <br>
-          <h4>十二、TIA护理</h4>
-          <br>
-          <h4>十三、出院诊断及发病机制</h4>
-          <br>
-          <h4>十四、出院情况</h4>
-          <br>
-          <h4>十五、溶栓及再灌注治疗登记表</h4>
-          <br>
-          <h3>第二部分 随访调查</h3>
-          <br>
-          <h4>一、3个月随访</h4>
-          <br>
-          <h4>二、6个月随访</h4>
-          <div class="row">
-            <div class="col-2">
-              <button class="btn btn-primary btn-lg btn-block" type="submit" id="loadButton">加载</button>
-            </div>
-            <div class="col-2">
-              <button class="btn btn-primary btn-lg btn-block" type="submit" id="saveButton">保存</button>
-            </div>
-            <div class="col-2">
-              <button class="btn btn-primary btn-lg btn-block" type="submit" id="predButton">预测</button>
+          <div id="按钮群组">
+            <div class="row">
+              <div class="col-lg-2">
+                <button class="btn btn-primary btn-lg btn-block" type="submit" id="loadButton">加载</button>
+              </div>
+              <div class="col-lg-2">
+                <button class="btn btn-primary btn-lg btn-block" type="submit" id="saveButton">保存</button>
+              </div>
+              <div class="col-lg-2">
+                <button class="btn btn-primary btn-lg btn-block" type="submit" id="predButton">预测</button>
+              </div>
             </div>
           </div>
         </form>
@@ -198,7 +219,6 @@
       <p>ITF HGX-010-18SZ 外周血循环微RNA标记物在短暂性脑缺血发作后的卒中风险预测研究</p>
     </footer>
 <!--
-            <hr class="mb-4">
             <div class="custom-control custom-checkbox">
               <input type="checkbox" class="custom-control-input" id="same-address">
               <label class="custom-control-label" for="same-address">Shipping address is the same as my billing address</label>
@@ -207,7 +227,6 @@
               <input type="checkbox" class="custom-control-input" id="save-info">
               <label class="custom-control-label" for="save-info">Save this information for next time</label>
             </div>
-
             <div class="d-block my-3">
               <div class="custom-control custom-radio">
                 <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked required>
@@ -227,26 +246,6 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    <script>
-      // Example starter JavaScript for disabling form submissions if there are invalid fields
-      (function() {
-        'use strict';
-        window.addEventListener('load', function() {
-          // Fetch all the forms we want to apply custom Bootstrap validation styles to
-          var forms = document.getElementsByClassName('needs-validation');
-
-          // Loop over them and prevent submission
-          var validation = Array.prototype.filter.call(forms, function(form) {
-            form.addEventListener('submit', function(event) {
-              if (form.checkValidity() === false) {
-                event.preventDefault();
-                event.stopPropagation();
-              }
-              form.classList.add('was-validated');
-            }, false);
-          });
-        }, false);
-      })();
-    </script>
+    <script src="index.js"></script>
   </body>
 </html>

@@ -8,9 +8,12 @@
     <title>外周血循环微RNA标记物在短暂性脑缺血发作后的卒中风险预测研究 GHX-010-18SZ</title>
     <link rel="icon" href="favicon.ico">
     <link rel="shortcut icon" href="favicon.ico">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> <!-- https://hash.online-convert.com/sha384-generator -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.2/css/bootstrap-select.min.css" integrity="sha384-ZavCY/mrwfrTwoTzagp0wAGJB2MmGRcgD/hDlx/e56dfZojuydghe0E3/Bk1VKu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/solid.css" integrity="sha384-uKQOWcYZKOuKmpYpvT0xCFAs/wE157X5Ua3H5onoRAOCNkJAMX/6QF0iXGGQV9cP" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/fontawesome.css" integrity="sha384-HU5rcgG/yUrsDGWsVACclYdzdCcn5yU8V/3V84zSrPDHwZEdjykadlgI6RHrxGrJ" crossorigin="anonymous">
   </head>
-  <body class="bg-light">
+  <body> <!-- class="bg-light" -->
     <header>
     </header>
     <main role="main">
@@ -27,62 +30,76 @@
             <h3>第一部分 基线登记</h3>
             <br>
             <div id="基本信息">
-              <h4>一、基本信息</h4>
+              <h4>基本信息</h4>
               <div class="row">
                 <div class="form-group col-lg-3">
                   <label for="身份证号">身份证号</label>
-                  <input type="text" class="form-control" id="身份证号" placeholder="" value="" required>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="身份证号Prepend"><i class="fas fa-id-card"></i></span>
+                    </div>
+                    <input type="text" class="form-control" id="身份证号" aria-describedby="身份证号Prepend" required>
+                  </div>
                   <div class="invalid-tooltip">
                     必填
                   </div>
                 </div>
                 <div class="form-group col-lg-3">
                   <label for="姓名">姓名</label>
-                  <input type="text" class="form-control" id="姓名" placeholder="" value="">
+                  <input type="text" class="form-control" id="姓名">
                 </div>
                 <div class="form-group col-lg-2">
                   <label for="性别">性别</label>
-                  <select class="custom-select" id="性别">
-                    <option value="">请选择</option>
+                  <select class="form-control selectpicker" id="性别" title="单选">
                     <option>男</option>
                     <option>女</option>
                   </select>
                 </div>
                 <div class="form-group col-lg-2">
                   <label for="民族">民族</label>
-                  <input type="text" class="form-control" id="民族" placeholder="" value="">
+                  <input type="text" class="form-control" id="民族">
                 </div>
                 <div class="form-group col-lg-2">
                   <label for="婚姻">婚姻</label>
-                  <select class="custom-select" id="婚姻">
-                    <option value="">请选择</option>
+                  <select class="form-control selectpicker" id="婚姻" title="单选">
                     <option>未婚</option>
                     <option>已婚</option>
                     <option>离偶</option>
                     <option>丧偶</option>
+                    <option>其他</option>
                   </select>
                 </div>
               </div>
               <div class="row">
                 <div class="form-group col-lg-3">
                   <label for="住院号">住院号</label>
-                  <input type="text" class="form-control" id="住院号" placeholder="" value="">
+                  <input type="text" class="form-control" id="住院号">
                 </div>
                 <div class="form-group col-lg-3">
                   <label for="住院时间">住院时间</label>
-                  <input type="text" class="form-control" id="住院时间" placeholder="____年__月__日__时__分" value="">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="住院时间Prepend"><i class="fas fa-calendar-alt"></i></span>
+                    </div>
+                    <input type="text" class="form-control" id="住院时间" placeholder="____年__月__日__时__分" aria-describedby="住院时间Prepend">
+                  </div>
                 </div>
                 <div class="form-group col-lg-2">
                   <label for="手机号码">手机号码</label>
-                  <input type="text" class="form-control" id="手机号码" placeholder="" value="">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="手机号码Prepend"><i class="fas fa-mobile-alt"></i></span>
+                    </div>
+                    <input type="text" class="form-control" id="手机号码" aria-describedby="手机号码Prepend">
+                  </div>
                 </div>
                 <div class="form-group col-lg-4">
                   <label for="电子邮箱">电子邮箱</label>
                   <div class="input-group">
                     <div class="input-group-prepend">
-                      <span class="input-group-text" id="emailPrepend">@</span>
+                      <span class="input-group-text" id="emailPrepend"><i class="fas fa-at"></i></span>
                     </div>
-                    <input type="email" class="form-control" id="电子邮箱" aria-describedby="emailPrepend" placeholder="name@company.com">
+                    <input type="email" class="form-control" id="电子邮箱" aria-describedby="emailPrepend" placeholder="姓名@公司.com">
                   </div>
                 </div>
               </div>
@@ -90,28 +107,44 @@
                 <div class="form-group col-lg-12">
                   <label for="住址">住址</label>
                   <input type="text" class="form-control" id="住址" placeholder="广东省深圳市福田区XX街道YY小区">
-                  <div class="invalid-feedback">
-                    必填
-                  </div>
+                </div>
+              </div>
+              <br>
+            </div>
+            <div id="初步诊断">
+              <h4>初步诊断</h4>
+              <div class="row">
+                <div class="form-group col-lg-12">
+                  <label for="初诊结果">初诊结果</label>
+                  <select class="form-control selectpicker" id="初诊结果" title="多选" multiple>
+                    <option>脑梗死</option>
+                    <option>脑出血</option>
+                    <option>蛛网膜下腔出血</option>
+                    <option>TIA</option>
+                    <option>眼动脉梗塞</option>
+                    <option>硬脑膜动静脉瘘DAVF</option>
+                    <option>脊髓血管疾病</option>
+                    <option>颅内静脉源性脑血管病</option>
+                    <option>未破裂脑动脉瘤</option>
+                    <option>未破裂AVM</option>
+                  </select>
                 </div>
               </div>
               <br>
             </div>
             <div id="发病情况">
-              <h4>二、发病情况</h4>
+              <h4>发病情况</h4>
               <div class="row">
                 <div class="form-group col-lg-2">
                   <label for="首发卒中">首发卒中</label>
-                  <select class="custom-select" id="首发卒中">
-                    <option value="">请选择</option>
+                  <select class="form-control selectpicker" id="首发卒中">
                     <option>是</option>
                     <option>否</option>
                   </select>
                 </div>
                 <div class="form-group col-lg-2">
                   <label for="醒后卒中">醒后卒中</label>
-                  <select class="custom-select" id="醒后卒中<">
-                    <option value="">请选择</option>
+                  <select class="form-control selectpicker" id="醒后卒中<">
                     <option>是</option>
                     <option>否</option>
                   </select>
@@ -132,24 +165,21 @@
               <div class="row">
                 <div class="form-group col-lg-4">
                   <label for="临床症状">临床症状</label>
-                  <select class="custom-select" id="临床症状">
-                    <option value="">请选择</option>
+                  <select class="form-control selectpicker" id="临床症状" title="单选">
                     <option>单侧无力</option>
                     <option>不伴无力的言语障碍</option>
                   </select>
                 </div>
                 <div class="form-group col-lg-4">
                   <label for="症状持续时间">症状持续时间</label>
-                  <select class="custom-select" id="症状持续时间">
-                    <option value="">请选择</option>
+                  <select class="form-control selectpicker" id="症状持续时间" title="单选">
                     <option>大于60分钟</option>
                     <option>10至59分钟</option>
                   </select>
                 </div>
                 <div class="form-group col-lg-4">
                   <label for="糖尿病">糖尿病</label>
-                  <select class="custom-select" id="糖尿病">
-                    <option value="">请选择</option>
+                  <select class="form-control selectpicker" id="糖尿病" title="单选">
                     <option>有</option>
                     <option>无</option>
                   </select>
@@ -158,56 +188,80 @@
               <br>
             </div>
             <div id="既往病史">
-              <h4>三、既往病史</h4>
+              <h4>既往病史</h4>
               <br>
             </div>
-            <h4>四、个人史</h4>
-            <br>
-            <h4>五、家庭史</h4>
-            <br>
-            <h4>六、院前用药史</h4>
-            <br>
-            <h4>七、入院检查</h4>
-            <br>
-            <h4>八、八院评估</h4>
-            <br>
-            <h4>九、主要诊疗操作</h4>
-            <br>
-            <h4>十、住院药物治疗</h4>
-            <br>
-            <h4>十一、院内并发症</h4>
-            <br>
-            <h4>十二、TIA护理</h4>
-            <br>
-            <h4>十三、出院诊断及发病机制</h4>
-            <br>
-            <h4>十四、出院情况</h4>
-            <br>
-            <h4>十五、溶栓及再灌注治疗登记表</h4>
-            <br>
+            <div id="个人史">
+              <h4>个人史</h4>
+              <br>
+            </div>
+            <div id="家庭史">
+              <h4>家庭史</h4>
+              <br>
+            </div>
+            <div id="院前用药史">
+              <h4>院前用药史</h4>
+              <br>
+            </div>
+            <div id="入院检查">
+              <h4>入院检查</h4>
+              <br>
+            </div>
+            <div id="入院评估">
+              <h4>入院评估</h4>
+              <br>
+            </div>
+            <div id="主要诊疗操作">
+              <h4>主要诊疗操作</h4>
+              <br>
+            </div>
+            <div id="住院药物治疗">
+              <h4>住院药物治疗</h4>
+              <br>
+            </div>
+            <div id="院内并发症">
+              <h4>院内并发症</h4>
+              <br>
+            </div>
+            <div id="TIA护理">
+              <h4>TIA护理</h4>
+              <br>
+            </div>
+            <div id="出院诊断及发病机制">
+              <h4>出院诊断及发病机制</h4>
+              <br>
+            </div>
+            <div id="出院情况">
+              <h4>出院情况</h4>
+              <br>
+            </div>
+            <div id="溶栓及再灌注治疗登记表">
+              <h4>溶栓及再灌注治疗登记表</h4>
+              <br>
+            </div>
           </div>
           <div id="随访调查">
             <h3>第二部分 随访调查</h3>
             <br>
             <div id="3个月随访">
-              <h4>一、3个月随访</h4>
+              <h4>3个月随访</h4>
               <br>
             </div>
             <div id="6个月随访">
-              <h4>二、6个月随访</h4>
+              <h4>6个月随访</h4>
               <br>
             </div>
           </div>
           <div id="按钮群组">
             <div class="row">
               <div class="col-lg-2">
-                <button class="btn btn-primary btn-lg btn-block" type="submit" id="loadButton">加载</button>
+                <button class="btn btn-success btn-block" type="submit" id="loadButton">加载</button>
               </div>
               <div class="col-lg-2">
-                <button class="btn btn-primary btn-lg btn-block" type="submit" id="saveButton">保存</button>
+                <button class="btn btn-success btn-block" type="submit" id="saveButton">保存</button>
               </div>
               <div class="col-lg-2">
-                <button class="btn btn-primary btn-lg btn-block" type="submit" id="predButton">预测</button>
+                <button class="btn btn-success btn-block" type="submit" id="predButton">预测</button>
               </div>
             </div>
           </div>
@@ -246,6 +300,9 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.2/js/bootstrap-select.min.js" integrity="sha384-xuUB7RiCht6gdWrTGeTHiVRhtXiryS5fNys9jjr4bhj4S0mmw4jICW287qdx15RV" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.4.2/js/solid.js" integrity="sha384-OQNCj138epg9A13jaL9L/d5vMlK2jyPL4aOgi37KYt07aZARbv/eFGp/wnrCxkW5" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.4.2/js/fontawesome.js" integrity="sha384-n1qPouQQJ9VNZnZeNZWSDiclpIOJwZBS2bkD6rEX+DTmMXTKXBVCZw2cGbU/I17z" crossorigin="anonymous"></script>
     <script src="index.js"></script>
   </body>
 </html>

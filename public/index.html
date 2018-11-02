@@ -106,11 +106,12 @@
               <div class="row">
                 <div class="form-group col-lg-12">
                   <label for="住址">住址</label>
-                  <input type="text" class="form-control" id="住址" placeholder="广东省深圳市福田区XX街道YY小区">
+                  <input type="text" class="form-control" id="住址" placeholder="____省____市____区____街道____路____小区____号">
                 </div>
               </div>
               <br>
             </div>
+<!--
             <div id="初步诊断">
               <h4>初步诊断</h4>
               <div class="row">
@@ -132,6 +133,7 @@
               </div>
               <br>
             </div>
+-->
             <div id="发病情况">
               <h4>发病情况</h4>
               <div class="row">
@@ -165,9 +167,16 @@
               <div class="row">
                 <div class="form-group col-lg-4">
                   <label for="临床症状">临床症状</label>
-                  <select class="form-control selectpicker" id="临床症状" title="单选">
-                    <option>单侧无力</option>
-                    <option>不伴无力的言语障碍</option>
+                  <select class="form-control selectpicker" id="临床症状" title="多选" multiple>
+                    <option>左侧肢体无力、笨拙、沉重或麻木</option>
+                    <option>右侧肢体无力、笨拙、沉重或麻木</option>
+                    <option>左侧面部麻木或口角歪斜</option>
+                    <option>右侧面部麻木或口角歪斜</option>
+                    <option>说话不清或理解语言困难</option>
+                    <option>头痛</option>
+                    <option>呕吐</option>
+                    <option>意识障碍</option>
+                    <option>昏迷</option>
                   </select>
                 </div>
                 <div class="form-group col-lg-4">
@@ -263,6 +272,9 @@
               <div class="col-lg-2">
                 <button class="btn btn-success btn-block" type="submit" id="predButton">预测</button>
               </div>
+              <div class="col-lg-2">
+                <button class="btn btn-success btn-block" type="submit" id="exptButton">导出</button>
+              </div>
             </div>
           </div>
         </form>
@@ -272,31 +284,6 @@
     <footer class="text-muted text-center">
       <p>ITF HGX-010-18SZ 外周血循环微RNA标记物在短暂性脑缺血发作后的卒中风险预测研究</p>
     </footer>
-<!--
-            <div class="custom-control custom-checkbox">
-              <input type="checkbox" class="custom-control-input" id="same-address">
-              <label class="custom-control-label" for="same-address">Shipping address is the same as my billing address</label>
-            </div>
-            <div class="custom-control custom-checkbox">
-              <input type="checkbox" class="custom-control-input" id="save-info">
-              <label class="custom-control-label" for="save-info">Save this information for next time</label>
-            </div>
-            <div class="d-block my-3">
-              <div class="custom-control custom-radio">
-                <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked required>
-                <label class="custom-control-label" for="credit">Credit card</label>
-              </div>
-              <div class="custom-control custom-radio">
-                <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required>
-                <label class="custom-control-label" for="debit">Debit card</label>
-              </div>
-              <div class="custom-control custom-radio">
-                <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required>
-                <label class="custom-control-label" for="paypal">PayPal</label>
-              </div>
-            </div>
--->
-
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>

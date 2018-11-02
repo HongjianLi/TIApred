@@ -11,14 +11,9 @@ $(function() {
 
 // Populate the input controls:
 //  const sex = $("#性别");
-//  sex.val("男");
-//  sex.selectpicker("render");
-const initDiagnose = $("#初诊结果")[0];
-//console.log(initDiagnose);
-//initDiagnose.val("眼动脉梗塞, 脊髓血管疾病");
-//$.each(initDiagnose, (idx, opt) => {
-//  console.log(opt.value, opt.selected);
-//});
+//  sex.selectpicker('val', "女");
+//  const initalDiagnosis = $("#初诊结果");
+//  initalDiagnosis.selectpicker('val', ['TIA', '脑出血']);
 
   // Fetch all the forms we want to apply custom Bootstrap validation styles to
   var forms = document.getElementsByClassName("needs-validation");
@@ -36,15 +31,8 @@ const initDiagnose = $("#初诊结果")[0];
           doc[div1.id][div2.id] = {};
           $(":input", div2).each((idx, input) => {
             if (input.nodeName === "BUTTON") return;
-            if (input.nodeName === "SELECT" && input.multiple) {
-/*              $.each(input, (idx, opt) => {
-                console.log(opt.value, opt.selected);
-              });
-              doc[div1.id][div2.id][input.id] = $(input).filter((idx, opt) => {
-                return opt.selected;
-              }).map((opt) => {
-                return opt.value;
-              });*/
+            if (input.nodeName === "SELECT") {
+              doc[div1.id][div2.id][input.id] = $(input).selectpicker('val'); // .selectpicker('val') returns a singular value for multiple="false" and an array of values for multiple="true"
               return;
             }
             doc[div1.id][div2.id][input.id] = input.value;

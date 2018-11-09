@@ -9,9 +9,11 @@
     <link rel="icon" href="favicon.ico">
     <link rel="shortcut icon" href="favicon.ico">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> <!-- https://hash.online-convert.com/sha384-generator -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.2/css/bootstrap-select.min.css" integrity="sha384-ZavCY/mrwfrTwoTzagp0wAGJB2MmGRcgD/hDlx/e56dfZojuydghe0E3/Bk1VKu9" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/solid.css" integrity="sha384-uKQOWcYZKOuKmpYpvT0xCFAs/wE157X5Ua3H5onoRAOCNkJAMX/6QF0iXGGQV9cP" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/fontawesome.css" integrity="sha384-HU5rcgG/yUrsDGWsVACclYdzdCcn5yU8V/3V84zSrPDHwZEdjykadlgI6RHrxGrJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.2/css/bootstrap-select.min.css" integrity="sha384-ZavCY/mrwfrTwoTzagp0wAGJB2MmGRcgD/hDlx/e56dfZojuydghe0E3/Bk1VKu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker3.css" integrity="sha384-Fkn/Y+u4CrHXCvUSPhV9zyJIS6QjmPGMV+95/X9KTJAr2DQg/SZZZlsrtZsVaWxH" crossorigin="anonymous">
+<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" integrity="sha256-yMjaV542P+q1RnH6XByCPDfUFhmOafWbeLPmqKh11zo=" crossorigin="anonymous"> -->
   </head>
   <body> <!-- class="bg-light" -->
     <header>
@@ -76,12 +78,12 @@
                   <input type="text" class="form-control" id="住院号">
                 </div>
                 <div class="form-group col-lg-3">
-                  <label for="住院时间">住院时间</label>
-                  <div class="input-group">
+                  <label for="住院时间">住院日期</label>
+                  <div class="input-group date">
                     <div class="input-group-prepend">
-                      <span class="input-group-text" id="住院时间Prepend"><i class="fas fa-calendar-alt"></i></span>
+                      <span class="input-group-text" id="住院日期Prepend"><i class="fas fa-calendar-alt"></i></span>
                     </div>
-                    <input type="text" class="form-control" id="住院时间" placeholder="____年__月__日__时__分" aria-describedby="住院时间Prepend">
+                    <input type="text" class="form-control" id="住院日期" placeholder="____年__月__日" aria-describedby="住院日期Prepend">
                   </div>
                 </div>
                 <div class="form-group col-lg-2">
@@ -111,29 +113,6 @@
               </div>
               <br>
             </div>
-<!--
-            <div id="初步诊断">
-              <h4>初步诊断</h4>
-              <div class="row">
-                <div class="form-group col-lg-12">
-                  <label for="初诊结果">初诊结果</label>
-                  <select class="form-control selectpicker" id="初诊结果" title="多选" multiple>
-                    <option>脑梗死</option>
-                    <option>脑出血</option>
-                    <option>蛛网膜下腔出血</option>
-                    <option>TIA</option>
-                    <option>眼动脉梗塞</option>
-                    <option>硬脑膜动静脉瘘DAVF</option>
-                    <option>脊髓血管疾病</option>
-                    <option>颅内静脉源性脑血管病</option>
-                    <option>未破裂脑动脉瘤</option>
-                    <option>未破裂AVM</option>
-                  </select>
-                </div>
-              </div>
-              <br>
-            </div>
--->
             <div id="发病情况">
               <h4>发病情况</h4>
               <div class="row">
@@ -166,6 +145,17 @@
               </div>
               <div class="row">
                 <div class="form-group col-lg-4">
+                  <label for="症状持续时间">卒中发病场所</label>
+                  <select class="form-control selectpicker" id="症状持续时间" title="单选">
+                    <option>非医疗服务场所</option>
+                    <option>本院住院</option>
+                    <option>本院门诊</option>
+                    <option>其他医院</option>
+                    <option>社区乡镇卫生服务中心</option>
+                    <option>其他</option>
+                  </select>
+                </div>
+                <div class="form-group col-lg-4">
                   <label for="临床症状">临床症状</label>
                   <select class="form-control selectpicker" id="临床症状" title="多选" multiple>
                     <option>左侧肢体无力、笨拙、沉重或麻木</option>
@@ -182,15 +172,10 @@
                 <div class="form-group col-lg-4">
                   <label for="症状持续时间">症状持续时间</label>
                   <select class="form-control selectpicker" id="症状持续时间" title="单选">
-                    <option>大于60分钟</option>
+                    <option>小于10分钟</option>
                     <option>10至59分钟</option>
-                  </select>
-                </div>
-                <div class="form-group col-lg-4">
-                  <label for="糖尿病">糖尿病</label>
-                  <select class="form-control selectpicker" id="糖尿病" title="单选">
-                    <option>有</option>
-                    <option>无</option>
+                    <option>大于60分钟</option>
+                    <option>不详</option>
                   </select>
                 </div>
               </div>
@@ -287,9 +272,13 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.2/js/bootstrap-select.min.js" integrity="sha384-xuUB7RiCht6gdWrTGeTHiVRhtXiryS5fNys9jjr4bhj4S0mmw4jICW287qdx15RV" crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.4.2/js/solid.js" integrity="sha384-OQNCj138epg9A13jaL9L/d5vMlK2jyPL4aOgi37KYt07aZARbv/eFGp/wnrCxkW5" crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.4.2/js/fontawesome.js" integrity="sha384-n1qPouQQJ9VNZnZeNZWSDiclpIOJwZBS2bkD6rEX+DTmMXTKXBVCZw2cGbU/I17z" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.2/js/bootstrap-select.min.js" integrity="sha384-xuUB7RiCht6gdWrTGeTHiVRhtXiryS5fNys9jjr4bhj4S0mmw4jICW287qdx15RV" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootstrap-datepicker.min.js" integrity="sha384-vtZXrrXR60MGoprJb7ApH4t3Y59IhePhwtXXmbqg//ha9LHwSo3QCNR6XvF5oXVM" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/locales/bootstrap-datepicker.zh-CN.min.js" integrity="sha384-31ORARq7D0W5SzRFs+sXeiw2jIsvn00MR+tCnhdkQNsIBAHbMK3gCYs6tWQSQVJH" crossorigin="anonymous"></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js" integrity="sha256-CutOzxCRucUsn6C6TcEYsauvvYilEniTXldPa6/wu0k=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js" integrity="sha256-5YmaxAwMjIpMrVlK84Y/+NjCpKnFYa8bWWBbUHSBGfU=" crossorigin="anonymous"></script> -->
     <script src="index.js"></script>
   </body>
 </html>

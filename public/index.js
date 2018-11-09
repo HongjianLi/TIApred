@@ -8,12 +8,23 @@ $(function() {
       $("> h4", div2).addClass("text-info");
     });
   });
+  $('.date input').datepicker({ // https://eternicode.github.io/bootstrap-datepicker/
+    language: "zh-CN",
+    autoclose: true,
+    todayHighlight: true,
+    daysOfWeekHighlighted: "0,6",
+  });
+//  $('#住院时间').datetimepicker({ // https://eonasdan.github.io/bootstrap-datetimepicker/
+//    locale: 'zh-CN',
+//  });
 
 // Populate the input controls:
 //  const sex = $("#性别");
 //  sex.selectpicker('val', "女");
 //  const initalDiagnosis = $("#初诊结果");
 //  initalDiagnosis.selectpicker('val', ['TIA', '脑出血']);
+//  const hospitalizationDate = $("#住院时间");
+//  hospitalizationDate.val("2018年12月06日");
 
   // Fetch all the forms we want to apply custom Bootstrap validation styles to
   var forms = document.getElementsByClassName("needs-validation");

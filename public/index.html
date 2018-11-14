@@ -24,10 +24,24 @@
         <h4>外周血循环微RNA标记物在短暂性脑缺血发作后的卒中风险预测研究 GHX-010-18SZ</h4>
       </section>
       <section class="container">
-        <h2>入组患者临床信息收集表</h2>
-        <p>本表格依据中国心血管病预防指南2017、中国短暂性脑缺血发作早期诊治指导规范以及中国卒中数据中心有关文件制作</p>
+        <h2 class="text-center">入组患者临床信息收集表</h2>
+        <p class="text-center">本表格依据中国心血管病预防指南2017、中国短暂性脑缺血发作早期诊治指导规范以及中国卒中数据中心有关文件制作</p>
         <hr>
-        <form id="mainForm" class="needs-validation" novalidate>
+        <form id="loadForm" novalidate>
+          <div class="row">
+            <div class="form-group col-lg-3">
+              <label for="现有记录">查找加载现有记录</label>
+              <select class="form-control selectpicker" id="现有记录" title="输入住院日期、姓名、住院号" data-live-search="true" data-size="10">
+              </select>
+            </div>
+            <div class="form-group col-lg-2">
+              <label for="exptButton">导出全部现有记录</label>
+              <button class="btn btn-success btn-block" type="submit" id="exptButton">导出</button>
+            </div>
+          </div>
+        </form>
+        <hr>
+        <form id="saveForm" class="needs-validation" novalidate>
           <div id="基线登记">
             <h3>第一部分 基线登记</h3>
             <br>
@@ -145,8 +159,8 @@
               </div>
               <div class="row">
                 <div class="form-group col-lg-4">
-                  <label for="症状持续时间">卒中发病场所</label>
-                  <select class="form-control selectpicker" id="症状持续时间" title="单选">
+                  <label for="卒中发病场所">卒中发病场所</label>
+                  <select class="form-control selectpicker" id="卒中发病场所" title="单选">
                     <option>非医疗服务场所</option>
                     <option>本院住院</option>
                     <option>本院门诊</option>
@@ -249,16 +263,10 @@
           <div id="按钮群组">
             <div class="row">
               <div class="col-lg-2">
-                <button class="btn btn-success btn-block" type="submit" id="loadButton">加载</button>
-              </div>
-              <div class="col-lg-2">
                 <button class="btn btn-success btn-block" type="submit" id="saveButton">保存</button>
               </div>
               <div class="col-lg-2">
                 <button class="btn btn-success btn-block" type="submit" id="predButton">预测</button>
-              </div>
-              <div class="col-lg-2">
-                <button class="btn btn-success btn-block" type="submit" id="exptButton">导出</button>
               </div>
             </div>
           </div>
@@ -275,6 +283,7 @@
     <script defer src="https://use.fontawesome.com/releases/v5.4.2/js/solid.js" integrity="sha384-OQNCj138epg9A13jaL9L/d5vMlK2jyPL4aOgi37KYt07aZARbv/eFGp/wnrCxkW5" crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.4.2/js/fontawesome.js" integrity="sha384-n1qPouQQJ9VNZnZeNZWSDiclpIOJwZBS2bkD6rEX+DTmMXTKXBVCZw2cGbU/I17z" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.2/js/bootstrap-select.min.js" integrity="sha384-xuUB7RiCht6gdWrTGeTHiVRhtXiryS5fNys9jjr4bhj4S0mmw4jICW287qdx15RV" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.3/js/i18n/defaults-zh_CN.min.js" integrity="sha384-anS8src7RVXGtSzbQ+w9rX3WauBuRFC/6v4mrW08lDYlCZsgKpnyBaTxa6ZGUgaI" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootstrap-datepicker.min.js" integrity="sha384-vtZXrrXR60MGoprJb7ApH4t3Y59IhePhwtXXmbqg//ha9LHwSo3QCNR6XvF5oXVM" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/locales/bootstrap-datepicker.zh-CN.min.js" integrity="sha384-31ORARq7D0W5SzRFs+sXeiw2jIsvn00MR+tCnhdkQNsIBAHbMK3gCYs6tWQSQVJH" crossorigin="anonymous"></script>
 <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js" integrity="sha256-CutOzxCRucUsn6C6TcEYsauvvYilEniTXldPa6/wu0k=" crossorigin="anonymous"></script>

@@ -8,10 +8,10 @@ $(function() {
       $("> h4", div2).addClass("text-info");
     });
   });
-  $("form select").each((idx, select) => {
+/*  $("#saveForm select").each((idx, select) => {
     select.title = ["单选", "多选"][~~select.multiple];
   });
-  $("form select").selectpicker('render');
+  $("#saveForm select").selectpicker('refresh'); // Or use 'render'. Don't know the difference between 'render' and 'refresh'. https://developer.snapappointments.com/bootstrap-select/methods */
   $('.date input').datepicker({ // https://eternicode.github.io/bootstrap-datepicker/
     language: "zh-CN",
     autoclose: true,
@@ -21,15 +21,65 @@ $(function() {
 //  $('#住院时间').datetimepicker({ // https://eonasdan.github.io/bootstrap-datetimepicker/
 //    locale: 'zh-CN',
 //  });
+  $.ajax({
+    type: "GET",
+    url: "record",
+//    data: ,
+    dataType: "json",
+    success: (emrArr, textStatus, jqXHR) => {
+      if (!emrArr) {
+        return;
+      }
+      emrArr.forEach((emr) => {
+        $('#现有记录').append($('<option>', {
+            text: `${emr["基线登记"]["基本信息"]["住院日期"]} ${emr["基线登记"]["基本信息"]["姓名"]} ${emr["基线登记"]["基本信息"]["住院号"]}`,
+            value: emr["基线登记"]["基本信息"]["住院号"],
+        }));
+      });
+      $('#现有记录').selectpicker('refresh').on('changed.bs.select', function (event, clickedIndex, isSelected, previousValue) { // Not using lambda here to preserve this binding
+        $.ajax({
+          type: "GET",
+          url: "record",
+          data: { "基线登记.基本信息.住院号": this.value },
+          dataType: "json",
+          success: (emr, textStatus, jqXHR) => {
+            if (!emr) {
+              return;
+            }
+            Object.keys(emr).forEach((div1id) => {
+              if (div1id === "_id") return;
+              const div1 = $(`form > div[id="${div1id}"]`);
+              Object.keys(emr[div1id]).forEach((div2id) => {
+                const div2 = $(`> div[id="${div2id}"]`, div1);
+                Object.keys(emr[div1id][div2id]).forEach((inputid) => {
+                  const input = $(`:input[id="${inputid}"]`, div2);
+                  if (input[0].nodeName === "SELECT") {
+                    input.selectpicker('val', emr[div1id][div2id][inputid]);
+                    return;
+                  }
+                  input.val(emr[div1id][div2id][inputid]);
+                });
+              });
+            });
+          },
+        });
+      });
+    },
+  });
 
-// Populate the input controls:
-//  const sex = $("#性别");
-//  sex.selectpicker('val', "女");
-//  const initalDiagnosis = $("#初诊结果");
-//  initalDiagnosis.selectpicker('val', ['TIA', '脑出血']);
-//  const hospitalizationDate = $("#住院时间");
-//  hospitalizationDate.val("2018年12月06日");
-  var saveButton = $('#saveButton');
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  var forms = document.getElementsByClassName("needs-validation");
+  var validation = Array.prototype.filter.call(forms, (form) => {
+    form.addEventListener("submit", (event) => {
+      if (form.checkValidity() === false) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+      form.classList.add("was-validated");
+    }, false);
+  });
+
+  let saveButton = $('#saveButton');
   saveButton.on('click', (event) => {
     event.preventDefault();
 /*    let v = new validator({
@@ -41,11 +91,11 @@ $(function() {
     // Disable the submit button for a while
     saveButton.prop('disabled', true);
     let emr = {};
-    $("form > div").each((idx, div1) => {
+    $("form > div").each((idx, div1) => { // Selects all direct child elements. https://api.jquery.com/child-selector/
       emr[div1.id] = {};
       $("> div", div1).each((idx, div2) => {
         emr[div1.id][div2.id] = {};
-        $(":input", div2).each((idx, input) => {
+        $(":input", div2).each((idx, input) => { // Selects all input, textarea, select and button elements. https://api.jquery.com/input-selector/
           if (input.nodeName === "BUTTON") return;
           if (input.nodeName === "SELECT") {
             emr[div1.id][div2.id][input.id] = $(input).selectpicker('val'); // .selectpicker('val') returns a singular value for multiple="false" and an array of values for multiple="true"
@@ -55,7 +105,6 @@ $(function() {
         });
       });
     });
-    console.log(emr);
     // Post a new job with server side validation
     $.ajax({
       type: "POST",
@@ -79,15 +128,4 @@ $(function() {
     });
   });
 
-  // Fetch all the forms we want to apply custom Bootstrap validation styles to
-  var forms = document.getElementsByClassName("needs-validation");
-  var validation = Array.prototype.filter.call(forms, (form) => {
-    form.addEventListener("submit", (event) => {
-      if (form.checkValidity() === false) {
-        event.preventDefault();
-        event.stopPropagation();
-      }
-      form.classList.add("was-validated");
-    }, false);
-  });
 });

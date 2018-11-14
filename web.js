@@ -20,7 +20,6 @@ mongodb.MongoClient.connect('mongodb://localhost:27017', { useNewUrlParser: true
     } else {
       emrColl.find({}, {
         projection: {
-          '基线登记.基本信息.姓名': 1,
           '基线登记.基本信息.住院号': 1,
           '基线登记.基本信息.住院日期': 1,
         },
@@ -30,9 +29,18 @@ mongodb.MongoClient.connect('mongodb://localhost:27017', { useNewUrlParser: true
     }
   }).post((req, res) => {
 //  let v = new validator(req.body);
-    emrColl.insertOne(req.body).then((commandResult) => {
+    emrColl.updateOne({ // Use upsert instead of insert
+      '基线登记.基本信息.住院号': req.body['基线登记']['基本信息']['住院号'],
+    }, { $set: req.body }, {
+      upsert: true,
+    }).then((commandResult) => {
       res.json({
-        insertedId: commandResult.insertedId,
+        result: commandResult.result,
+      });
+    }, (error) => {
+      console.error(error);
+      res.json({
+        errmsg: error.errmsg,
       });
     });
   });

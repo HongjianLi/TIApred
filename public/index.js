@@ -21,50 +21,49 @@ $(function() {
 //  $('#住院时间').datetimepicker({ // https://eonasdan.github.io/bootstrap-datetimepicker/
 //    locale: 'zh-CN',
 //  });
-  $.ajax({
-    type: "GET",
-    url: "record",
-//    data: ,
-    dataType: "json",
-    success: (emrArr, textStatus, jqXHR) => {
-      if (!emrArr) {
-        return;
-      }
-      emrArr.forEach((emr) => {
-        $('#现有记录').append($('<option>', {
-            text: `${emr["基线登记"]["基本信息"]["住院日期"]} ${emr["基线登记"]["基本信息"]["姓名"]} ${emr["基线登记"]["基本信息"]["住院号"]}`,
-            value: emr["基线登记"]["基本信息"]["住院号"],
-        }));
-      });
-      $('#现有记录').selectpicker('refresh').on('changed.bs.select', function (event, clickedIndex, isSelected, previousValue) { // Not using lambda here to preserve this binding
-        $.ajax({
-          type: "GET",
-          url: "record",
-          data: { "基线登记.基本信息.住院号": this.value },
-          dataType: "json",
-          success: (emr, textStatus, jqXHR) => {
-            if (!emr) {
-              return;
-            }
-            Object.keys(emr).forEach((div1id) => {
-              if (div1id === "_id") return;
-              const div1 = $(`form > div[id="${div1id}"]`);
-              Object.keys(emr[div1id]).forEach((div2id) => {
-                const div2 = $(`> div[id="${div2id}"]`, div1);
-                Object.keys(emr[div1id][div2id]).forEach((inputid) => {
-                  const input = $(`:input[id="${inputid}"]`, div2);
-                  if (input[0].nodeName === "SELECT") {
-                    input.selectpicker('val', emr[div1id][div2id][inputid]);
-                    return;
-                  }
-                  input.val(emr[div1id][div2id][inputid]);
-                });
-              });
-            });
-          },
+  const refreshRecords = () => {
+    $.ajax({
+      type: "GET",
+      url: "record",
+      dataType: "json",
+      success: (emrArr, textStatus, jqXHR) => {
+        $("#现有记录 option").remove();
+        emrArr.forEach((emr) => {
+          $('#现有记录').append($('<option>', {
+              text: `${emr["基线登记"]["基本信息"]["住院日期"]} ${emr["基线登记"]["基本信息"]["住院号"]}`,
+              value: emr["基线登记"]["基本信息"]["住院号"],
+          }));
         });
-      });
-    },
+        $('#现有记录').selectpicker('refresh');
+      },
+    });
+  };
+  refreshRecords();
+  $('#现有记录').on('changed.bs.select', function (event, clickedIndex, isSelected, previousValue) { // Not using lambda here to preserve this binding
+    $.ajax({
+      type: "GET",
+      url: "record",
+      data: { "基线登记.基本信息.住院号": this.value },
+      dataType: "json",
+      success: (emr, textStatus, jqXHR) => {
+        if (!emr) return; // This should not occur.
+        Object.keys(emr).forEach((div1id) => {
+          if (div1id === "_id") return;
+          const div1 = $(`form > div[id="${div1id}"]`);
+          Object.keys(emr[div1id]).forEach((div2id) => {
+            const div2 = $(`> div[id="${div2id}"]`, div1);
+            Object.keys(emr[div1id][div2id]).forEach((inputid) => {
+              const input = $(`:input[id="${inputid}"]`, div2);
+              if (input[0].nodeName === "SELECT") {
+                input.selectpicker('val', emr[div1id][div2id][inputid]);
+                return;
+              }
+              input.val(emr[div1id][div2id][inputid]);
+            });
+          });
+        });
+      },
+    });
   });
 
   // Fetch all the forms we want to apply custom Bootstrap validation styles to
@@ -112,7 +111,9 @@ $(function() {
       data: emr,
       dataType: "json",
       success: (res, textStatus, jqXHR) => {
-        console.log('success', res);
+        if (res.result) {
+          refreshRecords();
+        }
 /*        var keys = Object.keys(res);
         // If server side validation fails, show the tooltips
         if (keys.length) {

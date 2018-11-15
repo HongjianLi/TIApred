@@ -78,7 +78,9 @@ $(function() {
           flatten.toHeaders(obj[key], headers, br);
         }
       });
-      return headers;
+      return headers.map((branches) => {
+        return branches.join('.');
+      });
     },
     toContents: (obj, contents = []) => {
       Object.keys(obj).forEach((key) => {
@@ -101,19 +103,28 @@ $(function() {
       dataType: "json",
       success: (emrArr, textStatus, jqXHR) => {
         if (!emrArr.length) return;
-        const emr = emrArr[0];
-        const headers = flatten.toHeaders(emr);
-        console.log(headers.map((branches) => {
-          return `"${branches.join('.')}"`;
-        }).join(','));
+        const lines = [ flatten.toHeaders(emrArr[0]) ];
         emrArr.forEach((emr) => {
-          console.log(flatten.toContents(emr).map((val) => {
-            return `"${val}"`;
-          }).join(','));
+          lines.push(flatten.toContents(emr));
         });
+        saveAs(new File(lines.map((line) => {
+          return line.map((val) => {
+            return `"${val}"`;
+          }).join(',') + '\n';
+        }), "现有记录.csv", {
+          type: "text/plain; charset=utf-8",
+        }));
       },
     });
   });
+
+/* Use jsPDF to generate a pdf file. Chinese is supported via .text() but not .fromHTML(), so need to reconstruct the form.
+  var doc = new jsPDF();
+  doc.setFont('TTTGB-Medium');
+  doc.text(15, 30, '脑');
+  doc.fromHTML($('#saveForm').html(), 15, 15, {});
+  doc.save('form.pdf');
+*/
 
   // Fetch all the forms we want to apply custom Bootstrap validation styles to
   var forms = document.getElementsByClassName("needs-validation");

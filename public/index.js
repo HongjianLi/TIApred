@@ -103,11 +103,11 @@ $(function() {
       dataType: "json",
       success: (emrArr, textStatus, jqXHR) => {
         if (!emrArr.length) return;
-        const lines = [ flatten.toHeaders(emrArr[0]) ];
-        emrArr.forEach((emr) => {
-          lines.push(flatten.toContents(emr));
-        });
-        saveAs(new File(lines.map((line) => {
+        saveAs(new File([
+          flatten.toHeaders(emrArr[0]),
+          ...emrArr.map((emr) => {
+            return flatten.toContents(emr);
+          })].map((line) => {
           return line.map((val) => {
             return `"${val}"`;
           }).join(',') + '\n';

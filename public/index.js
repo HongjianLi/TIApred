@@ -66,6 +66,55 @@ $(function() {
     });
   });
 
+  const flatten = {
+    toHeaders: (obj, headers = [], branches = []) => {
+      Object.keys(obj).forEach((key) => {
+        const br = branches.slice();
+        br.push(key);
+        if (typeof obj[key] === "string") {
+          headers.push(br);
+        } else {
+          console.assert(typeof obj[key] === "object");
+          flatten.toHeaders(obj[key], headers, br);
+        }
+      });
+      return headers;
+    },
+    toContents: (obj, contents = []) => {
+      Object.keys(obj).forEach((key) => {
+        if (typeof obj[key] === "string") {
+          contents.push(obj[key]);
+        } else {
+          console.assert(typeof obj[key] === "object");
+          flatten.toContents(obj[key], contents);
+        }
+      });
+      return contents;
+    },
+  };
+  let exptButton = $('#exptButton');
+  exptButton.on('click', (event) => {
+    event.preventDefault();
+    $.ajax({
+      type: "GET",
+      url: "record",
+      dataType: "json",
+      success: (emrArr, textStatus, jqXHR) => {
+        if (!emrArr.length) return;
+        const emr = emrArr[0];
+        const headers = flatten.toHeaders(emr);
+        console.log(headers.map((branches) => {
+          return `"${branches.join('.')}"`;
+        }).join(','));
+        emrArr.forEach((emr) => {
+          console.log(flatten.toContents(emr).map((val) => {
+            return `"${val}"`;
+          }).join(','));
+        });
+      },
+    });
+  });
+
   // Fetch all the forms we want to apply custom Bootstrap validation styles to
   var forms = document.getElementsByClassName("needs-validation");
   var validation = Array.prototype.filter.call(forms, (form) => {

@@ -21,6 +21,7 @@ $(function() {
 //  $('#住院时间').datetimepicker({ // https://eonasdan.github.io/bootstrap-datetimepicker/
 //    locale: 'zh-CN',
 //  });
+
   const refreshRecords = () => {
     $.ajax({
       type: "GET",
@@ -47,7 +48,9 @@ $(function() {
     $.ajax({
       type: "GET",
       url: "record",
-      data: { "基线登记.基本信息.住院号": this.value },
+      data: {
+        "基线登记.基本信息.住院号": this.value,
+      },
       dataType: "json",
       success: (emr, textStatus, jqXHR) => {
         if (!emr) return; // This should not occur.
@@ -104,7 +107,7 @@ $(function() {
     $.ajax({
       type: "GET",
       url: "records",
-//      data: {}, // If 'data' is not specified, default value is {}.
+//      data: {}, // If 'data' is not specified, the default value is {}.
       dataType: "json",
       success: (emrArr, textStatus, jqXHR) => {
         if (!emrArr.length) return;
@@ -154,6 +157,7 @@ $(function() {
     }*/
     // Disable the submit button for a while
     saveButton.prop('disabled', true);
+    // Traverse the form's DOM to generate a document to be inserted.
     let emr = {};
     $("form > div").each((idx, div1) => { // Selects all direct child elements. https://api.jquery.com/child-selector/
       emr[div1.id] = {};
@@ -169,7 +173,8 @@ $(function() {
         });
       });
     });
-    // Post a new job with server side validation
+    // Post a new record with server side validation
+    const saveButtonModal = $('#saveButtonModal');
     $.ajax({
       type: "POST",
       url: "record",
@@ -177,8 +182,14 @@ $(function() {
       dataType: "json",
       success: (res, textStatus, jqXHR) => {
         if (res.result) {
+          saveButtonModal.find('.modal-title').text("保存成功");
+          saveButtonModal.find('.modal-body').text(JSON.stringify(res.result));
           refreshRecords();
+        } else if (res.errmsg) {
+          saveButtonModal.find('.modal-title').text("保存失败");
+          saveButtonModal.find('.modal-body').text(res.errmsg);
         }
+        saveButtonModal.modal('show');
 /*        var keys = Object.keys(res);
         // If server side validation fails, show the tooltips
         if (keys.length) {

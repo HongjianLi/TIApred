@@ -28,7 +28,9 @@ mongodb.MongoClient.connect('mongodb://localhost:27017', { useNewUrlParser: true
 //  let v = new validator(req.body);
     emrColl.updateOne({ // Use upsert instead of insert
       '基线登记.基本信息.住院号': req.body['基线登记']['基本信息']['住院号'],
-    }, { $set: req.body }, {
+    }, {
+      $set: req.body,
+    }, {
       upsert: true,
     }).then((commandResult) => {
       res.json({

@@ -24,7 +24,11 @@ $(function() {
   const refreshRecords = () => {
     $.ajax({
       type: "GET",
-      url: "record",
+      url: "records",
+      data: { // Specify the DB query's projection.
+        '基线登记.基本信息.住院号': 1,
+        '基线登记.基本信息.住院日期': 1,
+      },
       dataType: "json",
       success: (emrArr, textStatus, jqXHR) => {
         $("#现有记录 option").remove();
@@ -71,7 +75,7 @@ $(function() {
       Object.keys(obj).forEach((key) => {
         const br = branches.slice();
         br.push(key);
-        if (typeof obj[key] === "string") {
+        if (typeof obj[key] === "string" || Array.isArray(obj[key])) {
           headers.push(br);
         } else {
           console.assert(typeof obj[key] === "object");
@@ -84,7 +88,7 @@ $(function() {
     },
     toContents: (obj, contents = []) => {
       Object.keys(obj).forEach((key) => {
-        if (typeof obj[key] === "string") {
+        if (typeof obj[key] === "string" || Array.isArray(obj[key])) {
           contents.push(obj[key]);
         } else {
           console.assert(typeof obj[key] === "object");
@@ -99,7 +103,8 @@ $(function() {
     event.preventDefault();
     $.ajax({
       type: "GET",
-      url: "record",
+      url: "records",
+//      data: {}, // If 'data' is not specified, default value is {}.
       dataType: "json",
       success: (emrArr, textStatus, jqXHR) => {
         if (!emrArr.length) return;

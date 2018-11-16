@@ -8,7 +8,10 @@ $(function() {
       $("> h4", div2).addClass("text-info");
     });
   });
-/*  $("#saveForm select").each((idx, select) => {
+/*  $('.selectpicker').selectpicker({
+    iconBase: 'fontawesome',
+  })
+  $("#saveForm select").each((idx, select) => {
     select.title = ["单选", "多选"][~~select.multiple];
   });
   $("#saveForm select").selectpicker('refresh'); // Or use 'render'. Don't know the difference between 'render' and 'refresh'. https://developer.snapappointments.com/bootstrap-select/methods */

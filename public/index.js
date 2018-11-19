@@ -137,27 +137,26 @@ $(function() {
   doc.save('form.pdf');
 */
 
-  // Fetch all the forms we want to apply custom Bootstrap validation styles to
-  var forms = document.getElementsByClassName("needs-validation");
-  var validation = Array.prototype.filter.call(forms, (form) => {
-    form.addEventListener("submit", (event) => {
-      if (form.checkValidity() === false) {
-        event.preventDefault();
-        event.stopPropagation();
-      }
-      form.classList.add("was-validated");
-    }, false);
-  });
-
   let saveButton = $('#saveButton');
   saveButton.on('click', (event) => {
     event.preventDefault();
+    event.stopPropagation();
+    console.log();
 /*    let v = new validator({
     });
     if (false
     )
       return;
     }*/
+    if (!$("#saveForm.needs-validation")[0].checkValidity()) {
+        $('html, body').animate({
+          scrollTop: $('#saveForm.needs-validation :input[required]').filter((idx, input) => { // Find required inputs that have no value inputted
+            return !input.value.length;
+          }).first().parent().offset().top,
+        });
+        $('#saveForm').addClass("was-validated");
+        return;
+    }
     // Disable the submit button for a while
     saveButton.prop('disabled', true);
     // Traverse the form's DOM to generate a document to be inserted.

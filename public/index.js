@@ -141,7 +141,6 @@ $(function() {
   saveButton.on('click', (event) => {
     event.preventDefault();
     event.stopPropagation();
-    console.log();
 /*    let v = new validator({
     });
     if (false
@@ -149,13 +148,13 @@ $(function() {
       return;
     }*/
     if (!$("#saveForm.needs-validation")[0].checkValidity()) {
-        $('html, body').animate({
-          scrollTop: $('#saveForm.needs-validation :input[required]').filter((idx, input) => { // Find required inputs that have no value inputted
-            return !input.value.length;
-          }).first().parent().offset().top,
-        });
-        $('#saveForm').addClass("was-validated");
-        return;
+      $('html, body').animate({
+        scrollTop: $('#saveForm.needs-validation :input[required]').filter((idx, input) => { // Find required inputs that have no value inputted
+          return !input.checkValidity();
+        }).first().parent().offset().top,
+      });
+      $('#saveForm').addClass("was-validated");
+      return;
     }
     // Disable the submit button for a while
     saveButton.prop('disabled', true);

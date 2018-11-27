@@ -206,14 +206,139 @@
             </div>
             <div id="个人史">
               <h4>个人史</h4>
+              <div class="row">
+                <div class="form-group col-lg-2">
+                  <label for="吸烟">吸烟</label>
+                  <select class="form-control selectpicker" id="吸烟" title="单选">
+                    <option>从不吸烟</option>
+                    <option>有吸烟</option>
+                    <option>已戒烟</option>
+                  </select>
+                </div>
+                <div class="form-group col-lg-3">
+                  <label for="饮酒">饮酒</label>
+                  <select class="form-control selectpicker" id="饮酒" title="单选">
+                    <option>不饮酒</option>
+                    <option>少量饮酒</option>
+                    <option>经常大量饮酒(白酒>= 3次/周，每次>=2两)</option>
+                  </select>
+                </div>
+                <div class="form-group col-lg-3">
+                  <label for="运动习惯">运动习惯</label>
+                  <select class="form-control selectpicker" id="运动习惯" title="单选">
+                    <option>经常运动(相當於快步走的中等強度運動，且每周>=3次，每次>=30分鐘，包含中度、重度體力勞動者)</option>
+                    <option>缺乏运动(不符合上述经常运动标准者)</option>
+                  </select>
+                </div>
+                <div class="form-group col-lg-2">
+                  <label for="荤素">荤素</label>
+                  <select class="form-control selectpicker" id="荤素" title="单选">
+                    <option>偏荤</option>
+                    <option>偏素</option>
+                    <option>均衡</option>
+                  </select>
+                </div>
+                <div class="form-group col-lg-2">
+                  <label for="口味">口味</label>
+                  <select class="form-control selectpicker" id="口味" title="单选">
+                    <option>偏咸</option>
+                    <option>偏淡</option>
+                    <option>适中</option>
+                  </select>
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-group col-lg-3">
+                  <label for="吃蔬菜">吃蔬菜（每日食用 6 两蔬菜）</label>
+                  <select class="form-control selectpicker" id="吃蔬菜" title="单选">
+                    <option>经常吃蔬菜（≥5 天/周）</option>
+                    <option>一般吃蔬菜（3-4 天/周）</option>
+                    <option>很少吃蔬菜（≤2 天/周）</option>
+                  </select>
+                </div>
+                <div class="form-group col-lg-3">
+                  <label for="吃水果">吃水果（每日食用 4 两水果）</label>
+                  <select class="form-control selectpicker" id="吃水果" title="单选">
+                    <option>经常吃水果（≥5 天/周）</option>
+                    <option>一般吃水果（3-4 天/周）</option>
+                    <option>很少吃水果（≤2 天/周）</option>
+                  </select>
+                </div>
+              </div>
               <br>
             </div>
             <div id="家庭史">
               <h4>家庭史</h4>
+              <div class="row">
+                <div class="form-group col-lg-2">
+                  <label for="卒中家族史">卒中家族史</label>
+                  <select class="form-control selectpicker" id="卒中家族史" title="单选">
+                    <option>有</option>
+                    <option>无</option>
+                    <option>不详</option>
+                  </select>
+                </div>
+                <div class="form-group col-lg-2">
+                  <label for="冠心病家族史">冠心病家族史</label>
+                  <select class="form-control selectpicker" id="冠心病家族史" title="单选">
+                    <option>有</option>
+                    <option>无</option>
+                    <option>不详</option>
+                  </select>
+                </div>
+                <div class="form-group col-lg-2">
+                  <label for="高血压家族史">高血压家族史</label>
+                  <select class="form-control selectpicker" id="高血压家族史" title="单选">
+                    <option>有</option>
+                    <option>无</option>
+                    <option>不详</option>
+                  </select>
+                </div>
+                <div class="form-group col-lg-2">
+                  <label for="糖尿病家族史">糖尿病家族史</label>
+                  <select class="form-control selectpicker" id="糖尿病家族史" title="单选">
+                    <option>有</option>
+                    <option>无</option>
+                    <option>不详</option>
+                  </select>
+                </div>
+                <div class="form-group col-lg-2">
+                  <label for="血脂异常家族史">血脂异常家族史</label>
+                  <select class="form-control selectpicker" id="血脂异常家族史" title="单选">
+                    <option>有</option>
+                    <option>无</option>
+                    <option>不详</option>
+                  </select>
+                </div>
+                <div class="form-group col-lg-2">
+                  <label for="其他疾病家族史">其他疾病家族史</label>
+                  <select class="form-control selectpicker" id="其他疾病家族史" title="单选">
+                    <option>有</option>
+                    <option>无</option>
+                    <option>不详</option>
+                  </select>
+                </div>
+              </div>
               <br>
             </div>
             <div id="院前用药史">
               <h4>院前用药史</h4>
+              <div class="row">
+                <div class="form-group col-lg-5">
+                  <label for="院前用药史">院前用药史（发病前 6 个月，持续超过 2 周以上）</label>
+                  <select class="form-control selectpicker" id="院前用药史" title="多选" multiple>
+                    <option>服用抗血小板药</option>
+                    <option>服用抗凝药</option>
+                    <option>服用降压药</option>
+                    <option>服用降糖药</option>
+                    <option>服用调脂药</option>
+                    <option>药物滥用(可卡因)</option>
+                    <option>药物滥用(苯丙胺)</option>
+                    <option>药物滥用(海洛因)</option>
+                    <option>无</option>
+                  </select>
+                </div>
+              </div>
               <br>
             </div>
             <div id="入院检查">

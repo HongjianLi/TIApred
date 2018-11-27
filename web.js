@@ -2,8 +2,8 @@
 'use strict';
 const mongodb = require('mongodb');
 mongodb.MongoClient.connect('mongodb://localhost:27017', { useNewUrlParser: true }).then((mongoClient) => { // poolSize is 5 by default
-  const tiaPred = mongoClient.db('TIApred');
-  const emrColl = tiaPred.collection('EMRcoll');
+  const predTIA = mongoClient.db('predTIA');
+  const records = predTIA.collection('records');
   // Initialize the web server.
   const express = require('express');
   const bodyParser = require('body-parser');
@@ -13,25 +13,25 @@ mongodb.MongoClient.connect('mongodb://localhost:27017', { useNewUrlParser: true
   app.use(express.static(__dirname + '/public'));
   app.route('/records').get((req, res) => {
 //  let v = new validator(req.query);
-    emrColl.find({}, {
+    records.find({}, {
       projection: req.query,
-    }).toArray((err, emrArr) => {
-      res.json(emrArr);
+    }).toArray((err, recordArr) => {
+      res.json(recordArr);
     });
   });
   app.route('/record').get((req, res) => {
 //  let v = new validator(req.query);
-    emrColl.findOne(req.query).then((emr) => { // http://mongodb.github.io/node-mongodb-native/3.1/api/Collection.html#findOne
-      res.json(emr);
+    records.findOne(req.query).then((record) => { // http://mongodb.github.io/node-mongodb-native/3.1/api/Collection.html#findOne
+      res.json(record);
     });
   }).post((req, res) => {
 //  let v = new validator(req.body);
-    emrColl.updateOne({ // Use upsert instead of insert
+    records.updateOne({ // findOneAndUpdate(filter, update, options, callback). http://mongodb.github.io/node-mongodb-native/3.1/api/Collection.html#findOneAndUpdate
       '基线登记.基本信息.住院号': req.body['基线登记']['基本信息']['住院号'],
     }, {
       $set: req.body,
     }, {
-      upsert: true,
+      upsert: true, // Use upsert instead of insert
     }).then((commandResult) => {
       res.json({
         result: commandResult.result,

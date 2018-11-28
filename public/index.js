@@ -34,12 +34,12 @@ $(function() {
         '基线登记.基本信息.住院日期': 1,
       },
       dataType: "json",
-      success: (emrArr, textStatus, jqXHR) => {
+      success: (recordArr, textStatus, jqXHR) => {
         $("#现有记录 option").remove();
-        emrArr.forEach((emr) => {
+        recordArr.forEach((record) => {
           $('#现有记录').append($('<option>', {
-              text: `${emr["基线登记"]["基本信息"]["住院日期"]} ${emr["基线登记"]["基本信息"]["住院号"]}`,
-              value: emr["基线登记"]["基本信息"]["住院号"],
+              text: `${record["基线登记"]["基本信息"]["住院日期"]} ${record["基线登记"]["基本信息"]["住院号"]}`,
+              value: record["基线登记"]["基本信息"]["住院号"],
           }));
         });
         $('#现有记录').selectpicker('refresh');
@@ -55,20 +55,39 @@ $(function() {
         "基线登记.基本信息.住院号": this.value,
       },
       dataType: "json",
-      success: (emr, textStatus, jqXHR) => {
-        if (!emr) return; // This should not occur.
-        Object.keys(emr).forEach((div1id) => {
+      success: (record, textStatus, jqXHR) => {
+        if (!record) return; // This should not occur.
+/*      // Traverse the record to populate the form's DOM. This approach has a problem that when the DOM has been added more fields which are not present in the record, those fields will not be resetted to empty but keep their existing values.
+        Object.keys(record).forEach((div1id) => {
           if (div1id === "_id") return;
           const div1 = $(`form > div[id="${div1id}"]`);
-          Object.keys(emr[div1id]).forEach((div2id) => {
+          Object.keys(record[div1id]).forEach((div2id) => {
             const div2 = $(`> div[id="${div2id}"]`, div1);
-            Object.keys(emr[div1id][div2id]).forEach((inputid) => {
+            Object.keys(record[div1id][div2id]).forEach((inputid) => {
               const input = $(`:input[id="${inputid}"]`, div2);
               if (input[0].nodeName === "SELECT") {
-                input.selectpicker('val', emr[div1id][div2id][inputid]);
+                input.selectpicker('val', record[div1id][div2id][inputid]);
                 return;
               }
-              input.val(emr[div1id][div2id][inputid]);
+              input.val(record[div1id][div2id][inputid]);
+            });
+          });
+        });*/
+        // Traverse the form's DOM to refresh its input values to the record.
+        $("#saveForm > div").each((idx, div1) => { // Selects all direct child elements. https://api.jquery.com/child-selector/
+          if (record[div1.id] === undefined) record[div1.id] = {};
+          $("> div", div1).each((idx, div2) => {
+            if (record[div1.id][div2.id] === undefined) record[div1.id][div2.id] = {};
+            $(":input", div2).each((idx, input) => { // Selects all input, textarea, select and button elements. https://api.jquery.com/input-selector/
+              if (record[div1.id][div2.id][input.id] === undefined) {
+                record[div1.id][div2.id][input.id] = "";
+              }
+              if (input.nodeName === "BUTTON") return;
+              if (input.nodeName === "SELECT") {
+                $(input).selectpicker('val', record[div1.id][div2.id][input.id]);
+                return;
+              }
+              $(input).val(record[div1.id][div2.id][input.id]);
             });
           });
         });
@@ -112,12 +131,12 @@ $(function() {
       url: "records",
 //      data: {}, // If 'data' is not specified, the default value is {}.
       dataType: "json",
-      success: (emrArr, textStatus, jqXHR) => {
-        if (!emrArr.length) return;
+      success: (recordArr, textStatus, jqXHR) => {
+        if (!recordArr.length) return;
         saveAs(new File([
-          flatten.toHeaders(emrArr[0]),
-          ...emrArr.map((emr) => {
-            return flatten.toContents(emr);
+          flatten.toHeaders(recordArr[0]),
+          ...recordArr.map((record) => {
+            return flatten.toContents(record);
           })].map((line) => {
           return line.map((val) => {
             return `"${val}"`;
@@ -159,18 +178,18 @@ $(function() {
     // Disable the submit button for a while
     saveButton.prop('disabled', true);
     // Traverse the form's DOM to generate a document to be inserted.
-    let emr = {};
-    $("form > div").each((idx, div1) => { // Selects all direct child elements. https://api.jquery.com/child-selector/
-      emr[div1.id] = {};
+    let record = {};
+    $("#saveForm > div").each((idx, div1) => { // Selects all direct child elements. https://api.jquery.com/child-selector/
+      record[div1.id] = {};
       $("> div", div1).each((idx, div2) => {
-        emr[div1.id][div2.id] = {};
+        record[div1.id][div2.id] = {};
         $(":input", div2).each((idx, input) => { // Selects all input, textarea, select and button elements. https://api.jquery.com/input-selector/
           if (input.nodeName === "BUTTON") return;
           if (input.nodeName === "SELECT") {
-            emr[div1.id][div2.id][input.id] = $(input).selectpicker('val'); // .selectpicker('val') returns a singular value for multiple="false" and an array of values for multiple="true"
+            record[div1.id][div2.id][input.id] = $(input).selectpicker('val'); // .selectpicker('val') returns a singular value for multiple="false" and an array of values for multiple="true"
             return;
           }
-          emr[div1.id][div2.id][input.id] = input.value;
+          record[div1.id][div2.id][input.id] = input.value;
         });
       });
     });
@@ -179,7 +198,7 @@ $(function() {
     $.ajax({
       type: "POST",
       url: "record",
-      data: emr,
+      data: record,
       dataType: "json",
       success: (res, textStatus, jqXHR) => {
         if (res.result) {

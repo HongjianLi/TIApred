@@ -31,12 +31,12 @@
           <div class="row">
             <div class="form-group col-lg-3">
               <label for="现有记录">查找加载现有记录</label>
-              <select class="form-control selectpicker" id="现有记录" title="输入住院日期或住院号" data-live-search="true" data-size="10">
+              <select class="form-control selectpicker" id="现有记录" title="输入住院时间或住院号" data-live-search="true" data-size="10">
               </select>
             </div>
             <div class="form-group col-lg-2">
               <label for="exptButton">导出全部现有记录</label>
-              <button class="btn btn-success btn-block" type="submit" id="exptButton">导出</button>
+              <button class="btn btn-success btn-block" type="submit" id="exptButton"><i class="fas fa-cloud-download-alt"></i> 导出</button>
             </div>
           </div>
         </form>
@@ -49,12 +49,10 @@
               <h4>基本信息</h4>
               <div class="row">
                 <div class="form-group col-lg-3">
-                  <label for="身份证号">身份证号</label>
-                  <div class="input-group">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text" id="身份证号Prepend"><i class="fas fa-id-card"></i></span>
-                    </div>
-                    <input type="text" class="form-control" id="身份证号" aria-describedby="身份证号Prepend">
+                  <label for="住院号">住院号(必填)</label>
+                  <input type="text" class="form-control" id="住院号" required>
+                  <div class="invalid-tooltip">
+                    必填
                   </div>
                 </div>
                 <div class="form-group col-lg-3">
@@ -85,19 +83,12 @@
               </div>
               <div class="row">
                 <div class="form-group col-lg-3">
-                  <label for="住院号">住院号(必填)</label>
-                  <input type="text" class="form-control" id="住院号" required>
-                  <div class="invalid-tooltip">
-                    必填
-                  </div>
-                </div>
-                <div class="form-group col-lg-3">
-                  <label for="住院时间">住院日期</label>
-                  <div class="input-group date">
+                  <label for="身份证号">身份证号</label>
+                  <div class="input-group">
                     <div class="input-group-prepend">
-                      <span class="input-group-text" id="住院日期Prepend"><i class="fas fa-calendar-alt"></i></span>
+                      <span class="input-group-text" id="身份证号Prepend"><i class="fas fa-id-card"></i></span>
                     </div>
-                    <input type="text" class="form-control" id="住院日期" placeholder="____年__月__日" aria-describedby="住院日期Prepend">
+                    <input type="text" class="form-control" id="身份证号" aria-describedby="身份证号Prepend">
                   </div>
                 </div>
                 <div class="form-group col-lg-2">
@@ -135,6 +126,71 @@
             <div id="发病情况">
               <h4>发病情况</h4>
               <div class="row">
+                <div class="form-group col-lg-4">
+                  <label for="到院时间">到院时间</label>
+                    <div class="input-group date">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text" id="到院时间Prepend"><i class="fas fa-calendar-alt"></i></span>
+                      </div>
+                      <input type="text" class="form-control" id="到院时间" aria-describedby="到院时间Prepend" placeholder="____年__月__日">
+                    </div>
+                </div>
+                <div class="form-group col-lg-2">
+                  <label for="就诊途径">就诊途径</label>
+                  <select class="form-control selectpicker" id="就诊途径" title="单选">
+                    <option>急诊</option>
+                    <option>门诊</option>
+                    <option>其他医疗机构转入</option>
+                    <option>其他</option>
+                  </select>
+                </div>
+                <div class="form-group col-lg-2">
+                  <label for="来院方式">来院方式</label>
+                  <select class="form-control selectpicker" id="来院方式" title="单选">
+                    <option>本院急救车</option>
+                    <option>当地120</option>
+                    <option>外院转院</option>
+                    <option>网络协作医院</option>
+                    <option>非网络协作医院</option>
+                    <option>自行来院</option>
+                  </select>
+                </div>
+                <div class="form-group col-lg-4">
+                  <label for="患者住院时间">患者住院时间</label>
+                  <div class="input-group date">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="患者住院时间Prepend"><i class="fas fa-calendar-alt"></i></span>
+                    </div>
+                    <input type="text" class="form-control" id="患者住院时间" aria-describedby="患者住院时间Prepend" placeholder="____年__月__日">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-group col-lg-2">
+                  <label for="患者首诊科室">患者首诊科室</label>
+                  <select class="form-control selectpicker" id="患者首诊科室" title="单选">
+                    <option>急诊神经内科</option>
+                    <option>急诊内科</option>
+                    <option>急诊神经外科</option>
+                    <option>门诊</option>
+                    <option>其他</option>
+                  </select>
+                </div>
+                <div class="form-group col-lg-2">
+                  <label for="患者住院科室">患者住院科室</label>
+                  <select class="form-control selectpicker" id="患者住院科室" title="单选">
+                    <option>卒中单元</option>
+                    <option>普通神经科病房</option>
+                    <option>神经外科</option>
+                    <option>神经介入</option>
+                    <option>NICU</option>
+                    <option>ICU</option>
+                    <option>内科</option>
+                    <option>其他</option>
+                  </select>
+                </div>
+              </div>
+              <div class="row">
                 <div class="form-group col-lg-2">
                   <label for="首发卒中">首发卒中</label>
                   <select class="form-control selectpicker" id="首发卒中">
@@ -150,20 +206,24 @@
                   </select>
                 </div>
                 <div class="form-group col-lg-2">
-                  <label for="年龄">年龄</label>
-                  <input type="number" class="form-control" id="年龄" placeholder="60">
+                  <label for="发病时间是否明确">发病时间是否明确</label>
+                  <select class="form-control selectpicker" id="发病时间是否明确">
+                    <option>是</option>
+                    <option>否</option>
+                  </select>
                 </div>
-                <div class="form-group col-lg-3">
-                  <label for="舒张压">舒张压(mmHg)</label>
-                  <input type="number" class="form-control" id="舒张压" placeholder="60">
-                </div>
-                <div class="form-group col-lg-3">
-                  <label for="收缩压">收缩压(mmHg)</label>
-                  <input type="number" class="form-control" id="收缩压" placeholder="60">
+                <div class="form-group col-lg-4">
+                  <label for="发病时间">发病时间（或最后一次看起来正常时间）</label>
+                    <div class="input-group date">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text" id="发病时间Prepend"><i class="fas fa-calendar-alt"></i></span>
+                      </div>
+                      <input type="text" class="form-control" id="发病时间" aria-describedby="发病时间Prepend" placeholder="____年__月__日">
+                    </div>
                 </div>
               </div>
               <div class="row">
-                <div class="form-group col-lg-4">
+                <div class="form-group col-lg-2">
                   <label for="卒中发病场所">卒中发病场所</label>
                   <select class="form-control selectpicker" id="卒中发病场所" title="单选">
                     <option>非医疗服务场所</option>
@@ -188,7 +248,7 @@
                     <option>昏迷</option>
                   </select>
                 </div>
-                <div class="form-group col-lg-4">
+                <div class="form-group col-lg-2">
                   <label for="症状持续时间">症状持续时间</label>
                   <select class="form-control selectpicker" id="症状持续时间" title="单选">
                     <option>小于10分钟</option>
@@ -202,6 +262,46 @@
             </div>
             <div id="既往病史">
               <h4>既往病史</h4>
+              <div class="row">
+                <div class="form-group col-lg-4">
+                  <label for="既往病史">既往病史</label>
+                  <select class="form-control selectpicker" id="既往病史" title="多选" multiple data-size="10">
+                    <option>卒中</option>
+                    <option>房颤</option>
+                    <option>心肌梗死</option>
+                    <option>心绞痛</option>
+                    <option>心力衰竭（CHF）</option>
+                    <option>结构性心脏病</option>
+                    <option>缺血性心脏病</option>
+                    <option>人工瓣膜</option>
+                    <option>其他心脏病</option>
+                    <option>糖尿病</option>
+                    <option>血脂异常</option>
+                    <option>高血压</option>
+                    <option>颈动脉狭窄</option>
+                    <option>周围血管病（PVD）</option>
+                    <option>偏头痛</option>
+                    <option>肥胖</option>
+                    <option>肾功能不全</option>
+                    <option>肝功能不全</option>
+                    <option>睡眠呼吸暂停综合征（SAS）</option>
+                    <option>慢性阻塞性肺疾病</option>
+                    <option>痴呆</option>
+                    <option>精神障碍</option>
+                    <option>r-tPA 静脉溶栓</option>
+                    <option>颈动脉内膜剥脱术（CEA）</option>
+                    <option>颈动脉支架植入术（CAS）</option>
+                    <option>颅内动脉成形术</option>
+                    <option>出血史或者出血倾向</option>
+                    <option>镰状细胞病</option>
+                    <option>妊娠或产后 6 周</option>
+                    <option>肿瘤病史</option>
+                    <option>近期外伤、手术史</option>
+                    <option>其他</option>
+                    <option>无</option>
+                  </select>
+                </div>
+              </div>
               <br>
             </div>
             <div id="个人史">
@@ -215,7 +315,7 @@
                     <option>已戒烟</option>
                   </select>
                 </div>
-                <div class="form-group col-lg-3">
+                <div class="form-group col-lg-2">
                   <label for="饮酒">饮酒</label>
                   <select class="form-control selectpicker" id="饮酒" title="单选">
                     <option>不饮酒</option>
@@ -223,7 +323,7 @@
                     <option>经常大量饮酒(白酒>= 3次/周，每次>=2两)</option>
                   </select>
                 </div>
-                <div class="form-group col-lg-3">
+                <div class="form-group col-lg-2">
                   <label for="运动习惯">运动习惯</label>
                   <select class="form-control selectpicker" id="运动习惯" title="单选">
                     <option>经常运动(相當於快步走的中等強度運動，且每周>=3次，每次>=30分鐘，包含中度、重度體力勞動者)</option>
@@ -248,7 +348,7 @@
                 </div>
               </div>
               <div class="row">
-                <div class="form-group col-lg-3">
+                <div class="form-group col-lg-2">
                   <label for="吃蔬菜">吃蔬菜（每日食用 6 两蔬菜）</label>
                   <select class="form-control selectpicker" id="吃蔬菜" title="单选">
                     <option>经常吃蔬菜（≥5 天/周）</option>
@@ -256,7 +356,7 @@
                     <option>很少吃蔬菜（≤2 天/周）</option>
                   </select>
                 </div>
-                <div class="form-group col-lg-3">
+                <div class="form-group col-lg-2">
                   <label for="吃水果">吃水果（每日食用 4 两水果）</label>
                   <select class="form-control selectpicker" id="吃水果" title="单选">
                     <option>经常吃水果（≥5 天/周）</option>
@@ -342,11 +442,43 @@
               <br>
             </div>
             <div id="入院检查">
-              <h4>入院检查</h4>
+              <h4>入院检查（以下均为首次检查结果）</h4>
               <br>
             </div>
             <div id="入院评估">
               <h4>入院评估</h4>
+              <div class="row">
+                <div class="form-group col-lg-3">
+                  <label for="发病前mRS评分">发病前 mRS 评分（卒中患者应查）</label>
+                  <input type="text" class="form-control" id="发病前mRS评分">
+                </div>
+                <div class="form-group col-lg-3">
+                  <label for="急诊NIHSS评分">急诊 NIHSS 评分（卒中患者应查）</label>
+                  <input type="text" class="form-control" id="急诊NIHSS评分">
+                </div>
+                <div class="form-group col-lg-3">
+                  <label for="住院NIHSS评分">住院 NIHSS 评分（卒中患者应查）</label>
+                  <input type="text" class="form-control" id="住院NIHSS评分">
+                </div>
+                <div class="form-group col-lg-3">
+                  <label for="住院GCS评分">住院 GCS 评分（脑出血患者应查）</label>
+                  <input type="text" class="form-control" id="住院GCS评分">
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-group col-lg-4">
+                  <label for="住院Hunt-Hess评分">住院 Hunt-Hess 评分（蛛网膜下腔出血患者应查）</label>
+                  <input type="text" class="form-control" id="住院Hunt-Hess评分">
+                </div>
+                <div class="form-group col-lg-4">
+                  <label for="住院CHADS2评分">住院 CHADS2 评分（房颤患者应查）</label>
+                  <input type="text" class="form-control" id="住院CHADS2评分">
+                </div>
+                <div class="form-group col-lg-4">
+                  <label for="HAS-BLED评分">HAS-BLED 评分（房颤患者应查）</label>
+                  <input type="text" class="form-control" id="HAS-BLED评分">
+                </div>
+               </div>
               <br>
             </div>
             <div id="主要诊疗操作">
@@ -393,10 +525,10 @@
           <div id="按钮群组">
             <div class="row">
               <div class="col-lg-2">
-                <button class="btn btn-success btn-block" type="submit" id="saveButton">保存</button>
+                <button class="btn btn-success btn-block" type="submit" id="saveButton"><i class="fas fa-cloud-upload-alt"></i> 保存</button>
               </div>
               <div class="col-lg-2">
-                <button class="btn btn-success btn-block" type="submit" id="predButton">预测</button>
+                <button class="btn btn-success btn-block" type="submit" id="predButton"><i class="fas fa-calculator"></i> 预测</button>
               </div>
             </div>
           </div>

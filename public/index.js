@@ -113,8 +113,12 @@ $(function() {
     },
     toContents: (obj, contents = []) => {
       Object.keys(obj).forEach((key) => {
-        if (typeof obj[key] === "string" || Array.isArray(obj[key])) {
+        if (typeof obj[key] === "string") {
           contents.push(obj[key]);
+        } else if (Array.isArray(obj[key])) {
+          contents.push(`[${obj[key].map((val) => {
+            return `""${val}""`;
+          }).join(',')}]`);
         } else {
           console.assert(typeof obj[key] === "object");
           flatten.toContents(obj[key], contents);

@@ -348,7 +348,7 @@
                 </div>
               </div>
               <div class="row">
-                <div class="form-group col-lg-2">
+                <div class="form-group col-lg-3">
                   <label for="吃蔬菜">吃蔬菜（每日食用 6 两蔬菜）</label>
                   <select class="form-control selectpicker" id="吃蔬菜" title="单选">
                     <option>经常吃蔬菜（≥5 天/周）</option>
@@ -356,7 +356,7 @@
                     <option>很少吃蔬菜（≤2 天/周）</option>
                   </select>
                 </div>
-                <div class="form-group col-lg-2">
+                <div class="form-group col-lg-3">
                   <label for="吃水果">吃水果（每日食用 4 两水果）</label>
                   <select class="form-control selectpicker" id="吃水果" title="单选">
                     <option>经常吃水果（≥5 天/周）</option>
@@ -443,6 +443,209 @@
             </div>
             <div id="入院检查">
               <h4>入院检查（以下均为首次检查结果）</h4>
+              <div id="体格检查">
+                <h5>体格检查</h5>
+                <div class="row">
+                  <div class="form-group col-lg-2">
+                    <label for="身高(cm)">身高(cm)</label>
+                    <input type="number" class="form-control" id="身高">
+                  </div>
+                  <div class="form-group col-lg-2">
+                    <label for="体重(kg)">体重(kg)</label>
+                    <input type="number" class="form-control" id="体重">
+                  </div>
+                  <div class="form-group col-lg-2">
+                    <label for="BMI(kg/m^2)">BMI(kg/m^2)</label>
+                    <input type="number" class="form-control" id="BMI">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col-lg-2">
+                    <label for="左侧舒张压(mmHg)">左侧舒张压(mmHg)</label>
+                    <input type="number" class="form-control" id="左侧舒张压">
+                  </div>
+                  <div class="form-group col-lg-2">
+                    <label for="左侧收缩压(mmHg)">左侧收缩压(mmHg)</label>
+                    <input type="number" class="form-control" id="左侧收缩压">
+                  </div>
+                  <div class="form-group col-lg-2">
+                    <label for="右侧舒张压(mmHg)">右侧舒张压(mmHg)</label>
+                    <input type="number" class="form-control" id="右侧舒张压">
+                  </div>
+                  <div class="form-group col-lg-2">
+                    <label for="右侧收缩压(mmHg)">右侧收缩压(mmHg)</label>
+                    <input type="number" class="form-control" id="右侧收缩压">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col-lg-2">
+                    <label for="脉搏(次/分)">脉搏(次/分)</label>
+                    <input type="number" class="form-control" id="脉搏">
+                  </div>
+                  <div class="form-group col-lg-2">
+                    <label for="呼吸(次/分)">呼吸(次/分)</label>
+                    <input type="number" class="form-control" id="呼吸">
+                  </div>
+                  <div class="form-group col-lg-2">
+                    <label for="心脏杂音">心脏杂音</label>
+                    <select class="form-control selectpicker" id="心脏杂音" title="单选">
+                      <option>无</option>
+                      <option>有</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-lg-2">
+                    <label for="心律">心律</label>
+                    <select class="form-control selectpicker" id="心律" title="单选">
+                      <option>整齐</option>
+                      <option>不齐</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <br>
+              <div id="心电图检查">
+                <h5>心电图检查（体格检查中“心律不齐”者必做）</h5>
+                <div class="row">
+                  <div class="form-group col-lg-4">
+                    <label for="心电图">心电图</label>
+                    <select class="form-control selectpicker" id="心电图" title="多选" multiple>
+                      <option>常规心电图</option>
+                      <option>24 小时动态心电图</option>
+                      <option>大于 24 小时心电记录</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-lg-2">
+                    <label for="检查结果">检查结果</label>
+                    <select class="form-control selectpicker" id="检查结果" title="单选">
+                      <option>正常</option>
+                      <option>异常</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-lg-2">
+                    <label for="检查结果">异常类型</label>
+                    <select class="form-control selectpicker" id="异常类型" title="单选">
+                      <option>房颤</option>
+                      <option>房拆</option>
+                      <option>其他</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <br>
+              <div id="实验室检查">
+                <h5>实验室检查</h5>
+                <div class="row">
+                  <div class="form-group col-lg-9">
+                    <label for="检验报告出具时间(分钟)">急诊或绿道内从采血样到血常规、随机血糖检验报告出具时间(分钟；仅发病情况中就诊途径为“急诊”患者填写)</label>
+                    <input type="number" class="form-control" id="检验报告出具时间">
+                  </div>
+                </div>
+                <div id="血糖">
+                  <h6>血糖</h6>
+                  <div class="row">
+                    <div class="form-group col-lg-3">
+                      <label for="空腹血糖(mmol/L)">空腹血糖(mmol/L)</label>
+                      <input type="number" class="form-control" id="空腹血糖(mmol/L)">
+                    </div>
+                    <div class="form-group col-lg-3">
+                      <label for="餐后 2 小时血糖(mmol/L)">餐后 2 小时血糖(mmol/L)</label>
+                      <input type="number" class="form-control" id="餐后 2 小时血糖(mmol/L)">
+                    </div>
+                    <div class="form-group col-lg-3">
+                      <label for="糖化血红蛋白">糖化血红蛋白(糖尿病患者应查)</label>
+                      <select class="form-control selectpicker" id="糖化血红蛋白" title="单选">
+                        <option>已查</option>
+                        <option>未查</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div id="血酯四项">
+                  <h6>血酯四项</h6>
+                  <div class="row">
+                    <div class="form-group col-lg-3">
+                      <label for="甘油三酯(mmol/L)">甘油三酯(mmol/L)</label>
+                      <input type="number" class="form-control" id="甘油三酯(mmol/L)">
+                    </div>
+                    <div class="form-group col-lg-3">
+                      <label for="胆固醇(mmol/L)">胆固醇(mmol/L)</label>
+                      <input type="number" class="form-control" id="胆固醇(mmol/L)">
+                    </div>
+                    <div class="form-group col-lg-3">
+                      <label for="低密度脂蛋白胆固醇(mmol/L)">低密度脂蛋白胆固醇(mmol/L)</label>
+                      <input type="number" class="form-control" id="低密度脂蛋白胆固醇(mmol/L)">
+                    </div>
+                    <div class = "form-group col-lg-3">
+                      <label for = "高密度脂蛋白胆固醇(mmol/L)">高密度脂蛋白胆固醇(mmol/L)</label>
+                      <input type="number" class="form-control" id="高密度脂蛋白胆固醇(mmol/L)">
+                    </div>
+                  </div>
+                </div>
+                <div id="同型半胱氨酸">
+                  <h6>同型半胱氨酸(高血压患者应查)</h6>
+                  <div class="row">
+                    <div class="form-group col-lg-3">
+                      <label for="同型半胱氨酸">同型半胱氨酸</label>
+                      <select class="form-control selectpicker" id="同型半胱氨酸" title="单选">
+                        <option>已查</option>
+                        <option>未查</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div id="凝血">
+                  <h6>凝血</h6>
+                  <div class="row">
+                    <div class="form-group col-lg-3">
+                      <label for="INR">国际标准化比值INR</label>
+                      <input type="number" class="form-control" id="INR">
+                    </div>
+                    <div class="form-group col-lg-3">
+                      <label for="凝血酶原时间(秒)">凝血酶原时间(秒)</label>
+                      <input type="number" class="form-control" id="凝血酶原时间(秒)">
+                    </div>
+                    <div class="form-group col-lg-3">
+                      <label for="活化部分凝血活酶时间(秒)">活化部分凝血活酶时间(秒)</label>
+                      <input type="number" class="form-control" id="活化部分凝血活酶时间(秒)">
+                    </div>
+                    <div class="form-group col-lg-3">
+                      <label for="凝血酶时间(秒)">凝血酶时间(秒)</label>
+                      <input type="number" class="form-control" id="凝血酶时间(秒)">
+                    </div>
+                  </div>
+                </div>
+                <div id="其他检验指标">
+                  <h6>其他检验指标</h6>
+                  <div class="row">
+                    <div class="form-group col-lg-3">
+                      <label for="肌钙蛋白(μg/L)">肌钙蛋白(μg/L)</label>
+                      <input type="number" class="form-control" id="肌钙蛋白(μg/L)">
+                    </div>
+                    <div class = "form-group col-lg-3">
+                      <label for = "血清肌酐(mmol/L)">血清肌酐(mmol/L)</label>
+                      <input type="number" class="form-control" id="血清肌酐(mmol/L)">
+                    </div>
+                    <div class="form-group col-lg-3">
+                      <label for="血清尿素氮(mmol/L)">血清尿素氮(mmol/L)</label>
+                      <input type="number" class="form-control" id="血清尿素氮(mmol/L)">
+                    </div>
+                    <div class="form-group col-lg-3">
+                      <label for="尿酸(mmol/L)">尿酸(mmol/L)</label>
+                      <input type="number" class="form-control" id="尿酸(mmol/L)">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="form-group col-lg-3">
+                      <label for="血小板计数(亿个/L)">血小板计数(10^9/L)</label>
+                      <input type="number" class="form-control" id="血小板计数(10^9/L)">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <br>
+              <div id="影像/超声检查项目">
+                <h5>影像/超声检查项目</h5>
+              </div>
               <br>
             </div>
             <div id="入院评估">

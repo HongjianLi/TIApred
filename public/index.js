@@ -6,6 +6,9 @@ $(function() {
     $("> h3", div1).addClass("text-primary");
     $("> div", div1).each((idx, div2) => {
       $("> h4", div2).addClass("text-info");
+      $("> div", div2).each((idx, div3) => {
+        $("> h5", div3).addClass("text-success");
+      });
     });
   });
 /*  $('.selectpicker').selectpicker({
@@ -24,6 +27,32 @@ $(function() {
 //  $('#住院时间').datetimepicker({ // https://eonasdan.github.io/bootstrap-datetimepicker/
 //    locale: 'zh-CN',
 //  });
+
+  const traverseDOM = (element, doc, funcInput, funcSelect) => {
+    let inner = true;
+    const divs = $(">div", element); // Selects all direct child elements. https://api.jquery.com/child-selector/
+    divs.each((idx, div) => {
+      if (div.id.length) inner = false;
+    });
+    if (inner) {
+      $(":input", element).each((idx, input) => {
+        if (input.nodeName === "BUTTON") return;
+        console.assert(input.nodeName === "INPUT" || input.nodeName === "SELECT");
+        if (input.nodeName === "INPUT") {
+          funcInput(input, doc);
+        } else {
+          funcSelect(input, doc);
+        }
+      });
+      return;
+    }
+    divs.each((idx, div) => { // Selects all direct child elements. https://api.jquery.com/child-selector/
+      if (!div.id.length) return;
+      if (doc[div.id] === undefined) doc[div.id] = {};
+      traverseDOM(div, doc[div.id], funcInput, funcSelect);
+    });
+    return doc;
+  };
 
   const refreshRecords = () => {
     $.ajax({
@@ -57,39 +86,11 @@ $(function() {
       dataType: "json",
       success: (record, textStatus, jqXHR) => {
         if (!record) return; // This should not occur.
-/*      // Traverse the record to populate the form's DOM. This approach has a problem that when the DOM has been added more fields which are not present in the record, those fields will not be resetted to empty but keep their existing values.
-        Object.keys(record).forEach((div1id) => {
-          if (div1id === "_id") return;
-          const div1 = $(`form > div[id="${div1id}"]`);
-          Object.keys(record[div1id]).forEach((div2id) => {
-            const div2 = $(`> div[id="${div2id}"]`, div1);
-            Object.keys(record[div1id][div2id]).forEach((inputid) => {
-              const input = $(`:input[id="${inputid}"]`, div2);
-              if (input[0].nodeName === "SELECT") {
-                input.selectpicker('val', record[div1id][div2id][inputid]);
-                return;
-              }
-              input.val(record[div1id][div2id][inputid]);
-            });
-          });
-        });*/
         // Traverse the form's DOM to refresh its input values to the record.
-        $("#saveForm > div").each((idx, div1) => { // Selects all direct child elements. https://api.jquery.com/child-selector/
-          if (record[div1.id] === undefined) record[div1.id] = {};
-          $("> div", div1).each((idx, div2) => {
-            if (record[div1.id][div2.id] === undefined) record[div1.id][div2.id] = {};
-            $(":input", div2).each((idx, input) => { // Selects all input, textarea, select and button elements. https://api.jquery.com/input-selector/
-              if (record[div1.id][div2.id][input.id] === undefined) {
-                record[div1.id][div2.id][input.id] = "";
-              }
-              if (input.nodeName === "BUTTON") return;
-              if (input.nodeName === "SELECT") {
-                $(input).selectpicker('val', record[div1.id][div2.id][input.id]);
-                return;
-              }
-              $(input).val(record[div1.id][div2.id][input.id]);
-            });
-          });
+        traverseDOM($("#saveForm"), record, (input, doc) => {
+          $(input).val(doc[input.id]);
+        }, (input, doc) => {
+          $(input).selectpicker('val', doc[input.id]);
         });
       },
     });
@@ -182,20 +183,10 @@ $(function() {
     // Disable the submit button for a while
     saveButton.prop('disabled', true);
     // Traverse the form's DOM to generate a document to be inserted.
-    let record = {};
-    $("#saveForm > div").each((idx, div1) => { // Selects all direct child elements. https://api.jquery.com/child-selector/
-      record[div1.id] = {};
-      $("> div", div1).each((idx, div2) => {
-        record[div1.id][div2.id] = {};
-        $(":input", div2).each((idx, input) => { // Selects all input, textarea, select and button elements. https://api.jquery.com/input-selector/
-          if (input.nodeName === "BUTTON") return;
-          if (input.nodeName === "SELECT") {
-            record[div1.id][div2.id][input.id] = $(input).selectpicker('val'); // .selectpicker('val') returns a singular value for multiple="false" and an array of values for multiple="true"
-            return;
-          }
-          record[div1.id][div2.id][input.id] = input.value;
-        });
-      });
+    const record = traverseDOM($("#saveForm"), {}, (input, doc) => {
+      doc[input.id] = input.value;
+    }, (input, doc) => {
+      doc[input.id] = $(input).selectpicker('val'); // .selectpicker('val') returns a singular value for multiple="false" and an array of values for multiple="true"
     });
     // Post a new record with server side validation
     const saveButtonModal = $('#saveButtonModal');

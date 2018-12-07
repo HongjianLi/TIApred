@@ -28,7 +28,8 @@ $(function() {
 //    locale: 'zh-CN',
 //  });
 
-  const traverseDOM = (element, doc, funcInput, funcSelect) => {
+  const saveForm = $('#saveForm');
+  const traverseDOM = (element, doc, cbInput, cbElement, cbDiv) => {
     let inner = true;
     const divs = $(">div", element); // Selects all direct child elements. https://api.jquery.com/child-selector/
     divs.each((idx, div) => {
@@ -38,18 +39,17 @@ $(function() {
       $(":input", element).each((idx, input) => {
         if (input.nodeName === "BUTTON") return;
         console.assert(input.nodeName === "INPUT" || input.nodeName === "SELECT");
-        if (input.nodeName === "INPUT") {
-          funcInput(input, doc);
-        } else {
-          funcSelect(input, doc);
-        }
+        if (doc[input.id] === undefined) doc[input.id] = "";
+        cbInput(input, doc);
       });
+      if (cbElement) cbElement(element, doc);
       return;
     }
-    divs.each((idx, div) => { // Selects all direct child elements. https://api.jquery.com/child-selector/
+    divs.each((idx, div) => {
       if (!div.id.length) return;
       if (doc[div.id] === undefined) doc[div.id] = {};
-      traverseDOM(div, doc[div.id], funcInput, funcSelect);
+      if (cbDiv) cbDiv(div, doc);
+      traverseDOM(div, doc[div.id], cbInput, cbElement, cbDiv);
     });
     return doc;
   };
@@ -87,47 +87,17 @@ $(function() {
       success: (record, textStatus, jqXHR) => {
         if (!record) return; // This should not occur.
         // Traverse the form's DOM to refresh its input values to the record.
-        traverseDOM($("#saveForm"), record, (input, doc) => {
-          $(input).val(doc[input.id]);
-        }, (input, doc) => {
-          $(input).selectpicker('val', doc[input.id]);
+        traverseDOM(saveForm, record, (input, doc) => {
+          if (input.nodeName === "INPUT") {
+            $(input).val(doc[input.id]);
+          } else {
+            $(input).selectpicker('val', doc[input.id]);
+          }
         });
       },
     });
   });
 
-  const flatten = {
-    toHeaders: (obj, headers = [], branches = []) => {
-      Object.keys(obj).forEach((key) => {
-        const br = branches.slice();
-        br.push(key);
-        if (typeof obj[key] === "string" || Array.isArray(obj[key])) {
-          headers.push(br);
-        } else {
-          console.assert(typeof obj[key] === "object");
-          flatten.toHeaders(obj[key], headers, br);
-        }
-      });
-      return headers.map((branches) => {
-        return branches.join('.');
-      });
-    },
-    toContents: (obj, contents = []) => {
-      Object.keys(obj).forEach((key) => {
-        if (typeof obj[key] === "string") {
-          contents.push(obj[key]);
-        } else if (Array.isArray(obj[key])) {
-          contents.push(`[${obj[key].map((val) => {
-            return `""${val}""`;
-          }).join(',')}]`);
-        } else {
-          console.assert(typeof obj[key] === "object");
-          flatten.toContents(obj[key], contents);
-        }
-      });
-      return contents;
-    },
-  };
   let exptButton = $('#exptButton');
   exptButton.on('click', (event) => {
     event.preventDefault();
@@ -139,9 +109,33 @@ $(function() {
       success: (recordArr, textStatus, jqXHR) => {
         if (!recordArr.length) return;
         saveAs(new File([
-          flatten.toHeaders(recordArr[0]),
+          // Traverse the form's DOM to generate a header row
+          (() => {
+            let headers = [], branches = [];
+            traverseDOM(saveForm, {}, (input) => {
+              headers.push(branches.concat(input.id));
+            }, () => {
+              branches.pop();
+            }, (div) => {
+              branches.push(div.id);
+            });
+            return headers.map((branches) => {
+              return branches.join('.');
+            });
+          })(),
+          // Traverse the form's DOM to project fields onto the record to generate content rows
           ...recordArr.map((record) => {
-            return flatten.toContents(record);
+            let contents = [];
+            traverseDOM(saveForm, record, (input, doc) => {
+              if (typeof doc[input.id] === "string") {
+                contents.push(doc[input.id]);
+              } else if (Array.isArray(doc[input.id])) {
+                contents.push(`[${doc[input.id].map((val) => {
+                  return `""${val}""`; // The csv parser accepts that data that complies with RFC RFC 4180. As a result, backslashes are not a valid escape character. If you use double-quotes to enclose fields in the CSV data, you must escape internal double-quote marks by prepending another double-quote. https://docs.mongodb.com/manual/reference/program/mongoimport/
+                }).join(',')}]`);
+              }
+            });
+            return contents;
           })].map((line) => {
           return line.map((val) => {
             return `"${val}"`;
@@ -183,10 +177,12 @@ $(function() {
     // Disable the submit button for a while
     saveButton.prop('disabled', true);
     // Traverse the form's DOM to generate a document to be inserted.
-    const record = traverseDOM($("#saveForm"), {}, (input, doc) => {
-      doc[input.id] = input.value;
-    }, (input, doc) => {
-      doc[input.id] = $(input).selectpicker('val'); // .selectpicker('val') returns a singular value for multiple="false" and an array of values for multiple="true"
+    const record = traverseDOM(saveForm, {}, (input, doc) => {
+      if (input.nodeName === "INPUT") {
+        doc[input.id] = input.value;
+      } else {
+        doc[input.id] = $(input).selectpicker('val'); // .selectpicker('val') returns a singular value for multiple="false" and an array of values for multiple="true"
+      }
     });
     // Post a new record with server side validation
     const saveButtonModal = $('#saveButtonModal');

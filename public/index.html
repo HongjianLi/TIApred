@@ -92,6 +92,61 @@
                   </div>
                 </div>
                 <div class="form-group col-lg-2">
+                  <label for="受教育程度">受教育程度</label>
+                  <select class="form-control selectpicker" id="受教育程度" title="单选">
+                    <option>小学及以下</option>
+                    <option>初中</option>
+                    <option>中专/高中</option>
+                    <option>大专/大本</option>
+                    <option>硕士及以上</option>
+                  </select>
+                </div>
+                <div class="form-group col-lg-2">
+                  <label for="是否已退休">是否已退休</label>
+                  <select class="form-control selectpicker" id="是否已退休" title="单选">
+                    <option>是</option>
+                    <option>否</option>
+                  </select>
+                </div>
+                <div class="form-group col-lg-2">
+                  <label for="职业">职业（退休前职业）</label>
+                  <select class="form-control selectpicker" id="职业" title="单选">
+                    <option>国家机关、党群组织、企业、事业单位负责人</option>
+                    <option>专业技术人员</option>
+                    <option>办事人员和有关人员</option>
+                    <option>商业、服务业人员</option>
+                    <option>农、林、牧、渔、水利业生产人员</option>
+                    <option>生产、运输设备操作人员及有关人员</option>
+                    <option>军人</option>
+                    <option>不便分类的其他从业人员</option>
+                  </select>
+                </div>
+                <div class="form-group col-lg-2">
+                  <label for="主要医疗付费方式">主要医疗付费方式</label>
+                  <select class="form-control selectpicker" id="主要医疗付费方式" title="单选">
+                    <option>城镇职工基本医疗保险</option>
+                    <option>新城镇居民基本医疗保险</option>
+                    <option>新型农村合作医疗</option>
+                    <option>商业医疗保险</option>
+                    <option>全公费</option>
+                    <option>全自费</option>
+                    <option>其他社会保险</option>
+                    <option>贫困救助</option>
+                    <option>其他</option>
+                  </select>
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-group col-lg-6">
+                  <label for="住址">住址</label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="住址Prepend"><i class="fas fa-home"></i></span>
+                    </div>
+                    <input type="text" class="form-control" id="住址" aria-describedby="住址Prepend" placeholder="____省____市____区/县____街道/乡镇____居(村)委会____">
+                  </div>
+                </div>
+                <div class="form-group col-lg-2">
                   <label for="手机号码">手机号码</label>
                   <div class="input-group">
                     <div class="input-group-prepend">
@@ -107,17 +162,6 @@
                       <span class="input-group-text" id="电子邮箱Prepend"><i class="fas fa-at"></i></span>
                     </div>
                     <input type="email" class="form-control" id="电子邮箱" aria-describedby="电子邮箱Prepend" placeholder="姓名@公司.com">
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="form-group col-lg-12">
-                  <label for="住址">住址</label>
-                  <div class="input-group">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text" id="住址Prepend"><i class="fas fa-home"></i></span>
-                    </div>
-                    <input type="text" class="form-control" id="住址" aria-describedby="住址Prepend" placeholder="____省____市____区____街道____路____小区____号">
                   </div>
                 </div>
               </div>
@@ -379,11 +423,29 @@
                   </select>
                 </div>
                 <div class="form-group col-lg-2">
+                  <label for="卒中家族史与本人关系">与本人关系</label>
+                  <select class="form-control selectpicker" id="卒中家族史与本人关系" title="多选" multiple>
+                    <option>父亲</option>
+                    <option>母亲</option>
+                    <option>兄弟姐妹</option>
+                    <option>子女</option>
+                  </select>
+                </div>
+                <div class="form-group col-lg-2">
                   <label for="冠心病家族史">冠心病家族史</label>
                   <select class="form-control selectpicker" id="冠心病家族史" title="单选">
                     <option>有</option>
                     <option>无</option>
                     <option>不详</option>
+                  </select>
+                </div>
+                <div class="form-group col-lg-2">
+                  <label for="冠心病家族史与本人关系">与本人关系</label>
+                  <select class="form-control selectpicker" id="冠心病家族史与本人关系" title="多选" multiple>
+                    <option>父亲</option>
+                    <option>母亲</option>
+                    <option>兄弟姐妹</option>
+                    <option>子女</option>
                   </select>
                 </div>
                 <div class="form-group col-lg-2">
@@ -395,11 +457,31 @@
                   </select>
                 </div>
                 <div class="form-group col-lg-2">
+                  <label for="高血压家族史与本人关系">与本人关系</label>
+                  <select class="form-control selectpicker" id="高血压家族史与本人关系" title="多选" multiple>
+                    <option>父亲</option>
+                    <option>母亲</option>
+                    <option>兄弟姐妹</option>
+                    <option>子女</option>
+                  </select>
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-group col-lg-2">
                   <label for="糖尿病家族史">糖尿病家族史</label>
                   <select class="form-control selectpicker" id="糖尿病家族史" title="单选">
                     <option>有</option>
                     <option>无</option>
                     <option>不详</option>
+                  </select>
+                </div>
+                <div class="form-group col-lg-2">
+                  <label for="糖尿病家族史与本人关系">与本人关系</label>
+                  <select class="form-control selectpicker" id="糖尿病家族史与本人关系" title="多选" multiple>
+                    <option>父亲</option>
+                    <option>母亲</option>
+                    <option>兄弟姐妹</option>
+                    <option>子女</option>
                   </select>
                 </div>
                 <div class="form-group col-lg-2">
@@ -411,11 +493,29 @@
                   </select>
                 </div>
                 <div class="form-group col-lg-2">
+                  <label for="血脂异常家族史与本人关系">与本人关系</label>
+                  <select class="form-control selectpicker" id="血脂异常家族史与本人关系" title="多选" multiple>
+                    <option>父亲</option>
+                    <option>母亲</option>
+                    <option>兄弟姐妹</option>
+                    <option>子女</option>
+                  </select>
+                </div>
+                <div class="form-group col-lg-2">
                   <label for="其他疾病家族史">其他疾病家族史</label>
                   <select class="form-control selectpicker" id="其他疾病家族史" title="单选">
                     <option>有</option>
                     <option>无</option>
                     <option>不详</option>
+                  </select>
+                </div>
+                <div class="form-group col-lg-2">
+                  <label for="其他疾病家族史与本人关系">与本人关系</label>
+                  <select class="form-control selectpicker" id="其他疾病家族史与本人关系" title="多选" multiple>
+                    <option>父亲</option>
+                    <option>母亲</option>
+                    <option>兄弟姐妹</option>
+                    <option>子女</option>
                   </select>
                 </div>
               </div>
@@ -536,7 +636,7 @@
                 <h5>实验室检查</h5>
                 <div class="row">
                   <div class="form-group col-lg-9">
-                    <label for="检验报告出具时间(分钟)">急诊或绿道内从采血样到血常规、随机血糖检验报告出具时间(分钟；仅发病情况中就诊途径为“急诊”患者填写)</label>
+                    <label for="检验报告出具时间(分钟)">急诊或绿道内从采血样到血常规、随机血糖检验报告出具时间(分钟)(仅发病情况中就诊途径为“急诊”患者填写)</label>
                     <input type="number" class="form-control" id="检验报告出具时间(分钟)">
                   </div>
                 </div>
@@ -551,11 +651,8 @@
                     <input type="number" class="form-control" id="餐后 2 小时血糖(mmol/L)">
                   </div>
                   <div class="form-group col-lg-3">
-                    <label for="糖化血红蛋白">糖化血红蛋白(糖尿病患者应查)</label>
-                    <select class="form-control selectpicker" id="糖化血红蛋白" title="单选">
-                      <option>已查</option>
-                      <option>未查</option>
-                    </select>
+                    <label for="糖化血红蛋白(%)">糖化血红蛋白(%)(糖尿病患者应查)</label>
+                    <input type="number" class="form-control" id="糖化血红蛋白(%)">
                   </div>
                 </div>
                 <h6>血酯四项</h6>
@@ -627,7 +724,7 @@
                 </div>
                 <div class="row">
                   <div class="form-group col-lg-3">
-                    <label for="血小板计数(亿个/L)">血小板计数(10^9/L)</label>
+                    <label for="血小板计数(10^9/L)">血小板计数(10^9/L)</label>
                     <input type="number" class="form-control" id="血小板计数(10^9/L)">
                   </div>
                 </div>
@@ -639,21 +736,215 @@
                   <div class="form-group col-lg-4">
                     <label for="急诊检查">急诊检查</label>
                     <select class="form-control selectpicker" id="急诊检查" title="多选" multiple>
-                      <option>CT</option>
-                      <option>MRI</option>
+                      <option>CT, 检查模式：CT 平扫</option>
+                      <option>CT, 检查模式：CTP</option>
+                      <option>CT, 检查模式：CTA</option>
+                      <option>MRI, 检查模式：T1WI</option>
+                      <option>MRI, 检查模式：T2WI</option>
+                      <option>MRI, 检查模式：FLAIR</option>
+                      <option>MRI, 检查模式：SWI（或 T2*）</option>
+                      <option>MRI, 检查模式：MRA</option>
+                      <option>MRI, 检查模式：DWI</option>
+                      <option>MRI, 检查模式：PWI</option>
+                      <option>MRI, 检查模式：DSA</option>
                       <option>DSA</option>
                       <option>未查</option>
                     </select>
                   </div>
-                </div>
-                <div class = "row">
+                  <div class="form-group col-lg-4">
+                    <label for="急诊入院到完成 CT 平扫检查时间(分)">急诊入院到完成 CT 平扫检查时间(分)</label>
+                    <input type="number" class="form-control" id="急诊入院到完成 CT 平扫检查时间(分)">
+                  </div>
                   <div class="form-group col-lg-4">
                     <label for="住院检查">住院检查</label>
                     <select class="form-control selectpicker" id="住院检查" title="多选" multiple>
-                      <option>住院 1 周内完成脑血管检查</option>
-                      <option>住院1周内完成心脏超声检查</option>
+                      <option>住院 1 周内完成脑血管检查, 检查项目：DSA</option>
+                      <option>住院 1 周内完成脑血管检查, 检查项目：CTP</option>
+                      <option>住院 1 周内完成脑血管检查, 检查项目：CTA</option>
+                      <option>住院 1 周内完成脑血管检查, 检查项目：MRA</option>
+                      <option>住院 1 周内完成脑血管检查, 检查项目：PWI</option>
+                      <option>住院 1 周内完成脑血管检查, 检查项目：MRV</option>
+                      <option>住院 1 周内完成脑血管检查, 检查项目：CEMRA</option>
+                      <option>住院 1 周内完成脑血管检查, 检查项目：颈部血管超声</option>
+                      <option>住院 1 周内完成脑血管检查, 检查项目：TCD</option>
+                      <option>住院 1 周内完成脑血管检查, 检查项目：其他</option>
+                      <option>住院 1 周内完成心脏超声检查, 检查项目：经食道超声心动图TEE</option>
+                      <option>住院 1 周内完成心脏超声检查, 检查项目：经胸超声心动图TTE</option>
+                      <option>住院 1 周内完成心脏超声检查, 检查项目：其他</option>
                       <option>下肢静脉超声检查</option>
                       <option>下肢动脉超声检查</option>
+                    </select>
+                  </div>
+                </div>
+                <h6>CT平扫</h6>
+                <div class="row">
+                  <div class="form-group col-lg-2">
+                    <label for="CT平扫">CT平扫</label>
+                    <select class="form-control selectpicker" id="CT平扫" title="单选">
+                      <option>已查</option>
+                      <option>未查</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-lg-2">
+                    <label for="检查结果">检查结果</label>
+                    <select class="form-control selectpicker" id="检查结果" title="单选">
+                      <option>全部正常</option>
+                      <option>任一部位有异常</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-lg-4">
+                    <label for="异常部位">异常部位</label>
+                    <select class="form-control selectpicker" id="异常部位" title="多选" multiple>
+                      <option>左侧额叶</option>
+                      <option>左侧顶叶</option>
+                      <option>左侧枕叶</option>
+                      <option>左侧颞叶</option>
+                      <option>左侧皮层下</option>
+                      <option>左侧内囊</option>
+                      <option>左侧基底节</option>
+                      <option>左侧基底节</option>
+                      <option>左侧丘脑</option>
+                      <option>左侧脑干</option>
+                      <option>左侧小脑</option>
+                      <option>右侧额叶</option>
+                      <option>右侧顶叶</option>
+                      <option>右侧枕叶</option>
+                      <option>右侧颞叶</option>
+                      <option>右侧皮层下</option>
+                      <option>右侧内囊</option>
+                      <option>右侧基底节</option>
+                      <option>右侧基底节</option>
+                      <option>右侧丘脑</option>
+                      <option>右侧脑干</option>
+                      <option>右侧小脑</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-lg-2">
+                    <label for="性质">性质</label>
+                    <select class="form-control selectpicker" id="左侧额叶性质" title="单选">
+                      <option>低密度</option>
+                      <option>高密度</option>
+                      <option>混杂密度</option>
+                    </select>
+                  </div>
+                </div>
+                <h6>MRI</h6>
+                <div class="row">
+                  <div class="form-group col-lg-2">
+                    <label for="MRI">MRI</label>
+                    <select class="form-control selectpicker" id="MRI" title="单选">
+                      <option>已查</option>
+                      <option>未查</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-lg-2">
+                    <label for="检查结果">检查结果</label>
+                    <select class="form-control selectpicker" id="检查结果" title="单选">
+                      <option>全部正常</option>
+                      <option>任一部位有异常</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-lg-4">
+                    <label for="异常部位">异常部位</label>
+                    <select class="form-control selectpicker" id="异常部位" title="多选" multiple>
+                      <option>左侧额叶</option>
+                      <option>左侧顶叶</option>
+                      <option>左侧枕叶</option>
+                      <option>左侧颞叶</option>
+                      <option>左侧皮层下</option>
+                      <option>左侧内囊</option>
+                      <option>左侧基底节</option>
+                      <option>左侧基底节</option>
+                      <option>左侧丘脑</option>
+                      <option>左侧脑干</option>
+                      <option>左侧小脑</option>
+                      <option>右侧额叶</option>
+                      <option>右侧顶叶</option>
+                      <option>右侧枕叶</option>
+                      <option>右侧颞叶</option>
+                      <option>右侧皮层下</option>
+                      <option>右侧内囊</option>
+                      <option>右侧基底节</option>
+                      <option>右侧基底节</option>
+                      <option>右侧丘脑</option>
+                      <option>右侧脑干</option>
+                      <option>右侧小脑</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-lg-2">
+                    <label for="性质">性质</label>
+                    <select class="form-control selectpicker" id="左侧额叶性质" title="单选">
+                      <option>低信号</option>
+                      <option>高信号</option>
+                      <option>混杂信号</option>
+                    </select>
+                  </div>
+                </div>
+                <h6>颈部CTA/DSA</h6>
+                <div class="row">
+                  <div class="form-group col-lg-2">
+                    <label for="颈部CTA/DSA">颈部CTA/DSA</label>
+                    <select class="form-control selectpicker" id="颈部CTA/DSA" title="单选">
+                      <option>已查</option>
+                      <option>未查</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-lg-2">
+                    <label for="检查结果">检查结果</label>
+                    <select class="form-control selectpicker" id="检查结果" title="单选">
+                      <option>全部正常</option>
+                      <option>任一部位有异常</option>
+                    </select>
+                  </div>
+                </div>
+                <h6>头部CTA/MRA/DSA</h6>
+                <div class="row">
+                  <div class="form-group col-lg-2">
+                    <label for="头部CTA/MRA/DSA">头部CTA/MRA/DSA</label>
+                    <select class="form-control selectpicker" id="头部CTA/MRA/DSA" title="单选">
+                      <option>已查</option>
+                      <option>未查</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-lg-2">
+                    <label for="检查结果">检查结果</label>
+                    <select class="form-control selectpicker" id="检查结果" title="单选">
+                      <option>全部正常</option>
+                      <option>任一部位有异常</option>
+                    </select>
+                  </div>
+                </div>
+                <h6>颈部血管超声</h6>
+                <div class="row">
+                  <div class="form-group col-lg-2">
+                    <label for="颈部血管超声">颈部血管超声</label>
+                    <select class="form-control selectpicker" id="颈部血管超声" title="单选">
+                      <option>已查</option>
+                      <option>未查</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-lg-2">
+                    <label for="检查结果">检查结果</label>
+                    <select class="form-control selectpicker" id="检查结果" title="单选">
+                      <option>全部正常</option>
+                      <option>任一部位有异常</option>
+                    </select>
+                  </div>
+                </div>
+                <h6>TCD</h6>
+                <div class="row">
+                  <div class="form-group col-lg-2">
+                    <label for="TCD">TCD</label>
+                    <select class="form-control selectpicker" id="TCD" title="单选">
+                      <option>已查</option>
+                      <option>未查</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-lg-2">
+                    <label for="检查结果">检查结果</label>
+                    <select class="form-control selectpicker" id="检查结果" title="单选">
+                      <option>全部正常</option>
+                      <option>任一部位有异常</option>
                     </select>
                   </div>
                 </div>
@@ -664,40 +955,128 @@
               <h4>入院评估</h4>
               <div class="row">
                 <div class="form-group col-lg-3">
-                  <label for="发病前mRS评分">发病前 mRS 评分（卒中患者应查）</label>
-                  <input type="text" class="form-control" id="发病前mRS评分">
+                  <label for="发病前 mRS 评分">发病前 mRS 评分（卒中患者应查）</label>
+                  <input type="text" class="form-control" id="发病前 mRS 评分">
                 </div>
                 <div class="form-group col-lg-3">
-                  <label for="急诊NIHSS评分">急诊 NIHSS 评分（卒中患者应查）</label>
-                  <input type="text" class="form-control" id="急诊NIHSS评分">
+                  <label for="急诊 NIHSS 评分">急诊 NIHSS 评分（卒中患者应查）</label>
+                  <input type="text" class="form-control" id="急诊 NIHSS 评分">
                 </div>
                 <div class="form-group col-lg-3">
-                  <label for="住院NIHSS评分">住院 NIHSS 评分（卒中患者应查）</label>
-                  <input type="text" class="form-control" id="住院NIHSS评分">
+                  <label for="住院 NIHSS 评分">住院 NIHSS 评分（卒中患者应查）</label>
+                  <input type="text" class="form-control" id="住院 NIHSS 评分">
                 </div>
                 <div class="form-group col-lg-3">
-                  <label for="住院GCS评分">住院 GCS 评分（脑出血患者应查）</label>
-                  <input type="text" class="form-control" id="住院GCS评分">
+                  <label for="住院 GCS 评分">住院 GCS 评分（脑出血患者应查）</label>
+                  <input type="text" class="form-control" id="住院 GCS 评分">
                 </div>
               </div>
               <div class="row">
                 <div class="form-group col-lg-4">
-                  <label for="住院Hunt-Hess评分">住院 Hunt-Hess 评分（蛛网膜下腔出血患者应查）</label>
-                  <input type="text" class="form-control" id="住院Hunt-Hess评分">
+                  <label for="住院 Hunt-Hess 评分">住院 Hunt-Hess 评分（蛛网膜下腔出血患者应查）</label>
+                  <input type="text" class="form-control" id="住院 Hunt-Hess 评分">
                 </div>
                 <div class="form-group col-lg-4">
-                  <label for="住院CHADS2评分">住院 CHADS2 评分（房颤患者应查）</label>
-                  <input type="text" class="form-control" id="住院CHADS2评分">
+                  <label for="住院 CHADS2 评分">住院 CHADS2 评分（房颤患者应查）</label>
+                  <input type="text" class="form-control" id="住院 CHADS2 评分">
                 </div>
                 <div class="form-group col-lg-4">
-                  <label for="HAS-BLED评分">HAS-BLED 评分（房颤患者应查）</label>
-                  <input type="text" class="form-control" id="HAS-BLED评分">
+                  <label for="HAS-BLED 评分">HAS-BLED 评分（房颤患者应查）</label>
+                  <input type="text" class="form-control" id="HAS-BLED 评分">
                 </div>
                </div>
               <br>
             </div>
             <div id="主要诊疗操作">
               <h4>主要诊疗操作</h4>
+              <div class="row">
+                <div class="form-group col-lg-3">
+                  <label for="缺血性卒中/TIA 相关诊疗操作">缺血性卒中/TIA 相关诊疗操作</label>
+                  <select class="form-control selectpicker" id="缺血性卒中/TIA 相关诊疗操作" title="多选" multiple data-size="10">
+                    <option>DSA(急诊介入)</option>
+                    <option>DSA(择期介入)</option>
+                    <option>DSA(诊断性)</option>
+                    <option>静脉溶栓</option>
+                    <option>动脉溶栓</option>
+                    <option>桥接治疗（溶栓+取栓）</option>
+                    <option>支架取栓</option>
+                    <option>吸栓</option>
+                    <option>球囊扩张</option>
+                    <option>支架置入，部位：无名动脉</option>
+                    <option>支架置入，部位：颈总动脉</option>
+                    <option>支架置入，部位：颈内动脉颅外段</option>
+                    <option>支架置入，部位：锁骨下动脉</option>
+                    <option>支架置入，部位：椎动脉颅外段</option>
+                    <option>支架置入，部位：颈内动脉颅内段</option>
+                    <option>支架置入，部位：大脑中动脉</option>
+                    <option>支架置入，部位：椎动脉颅内段</option>
+                    <option>支架置入，部位：基底动脉</option>
+                  </select>
+                </div>
+                <div class="form-group col-lg-3">
+                  <label for="实施的监测手段">实施的监测手段</label>
+                  <select class="form-control selectpicker" id="实施的监测手段" title="多选" multiple>
+                    <option>TCD</option>
+                    <option>脑电图</option>
+                    <option>残端压</option>
+                    <option>诱发电位口颅内外血管搭桥术</option>
+                    <option>大面积脑梗塞去骨瓣减压术</option>
+                    <option>其他</option>
+                    <option>无</option>
+                  </select>
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-group col-lg-4">
+                  <label for="脑出血相关诊疗操作">脑出血相关诊疗操作</label>
+                  <select class="form-control selectpicker" id="脑出血相关诊疗操作" title="多选" multiple>
+                    <option>大骨瓣开颅血肿清除术</option>
+                    <option>小骨窗开颅血肿清除术</option>
+                    <option>立体定向锥颅血肿抽吸术</option>
+                    <option>其他</option>
+                    <option>无</option>
+                  </select>
+                </div>
+                <div class="form-group col-lg-4">
+                  <label for="蛛网膜下腔出血、动脉瘤及 AVM 相关诊疗操作">蛛网膜下腔出血、动脉瘤及 AVM 相关诊疗操作</label>
+                  <select class="form-control selectpicker" id="蛛网膜下腔出血、动脉瘤及 AVM 相关诊疗操作" title="多选" multiple>
+                    <option>动脉瘤介入栓塞术</option>
+                    <option>动脉瘤夹闭术</option>
+                    <option>AVM 栓塞术</option>
+                    <option>AVM 切除</option>
+                    <option>PFO 卵圆孔未闭封堵术</option>
+                    <option>脑静脉窦支架术</option>
+                    <option>颅内压监测</option>
+                    <option>其他</option>
+                    <option>无</option>
+                  </select>
+                </div>
+                <div class="form-group col-lg-4">
+                  <label for="其他诊疗操作">其他诊疗操作</label>
+                  <select class="form-control selectpicker" id="其他诊疗操作" title="多选" multiple>
+                    <option>行复合手术</option>
+                    <option>其他</option>
+                    <option>无</option>
+                  </select>
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-group col-lg-6">
+                  <label for="未溶栓原因">未溶栓原因（该部分内容仅初步诊断为脑梗死且未行静脉溶栓患者填写）</label>
+                  <select class="form-control selectpicker" id="未溶栓原因" title="多选" multiple>
+                    <option>超过 r-tPA 静脉溶栓时间窗（>4.5h）</option>
+                    <option>超出尿激酶溶栓时间窗（>6h）</option>
+                    <option>静脉溶栓时间窗内，但存在禁忌症</option>
+                    <option>医院相关(院前转运时间过长)</option>
+                    <option>医院相关(卒中诊断延迟)</option>
+                    <option>医院相关(在院检查时间延迟)</option>
+                    <option>医院相关(无法建立静脉通路)</option>
+                    <option>其他</option>
+                    <option>经济原因</option>
+                    <option>患者/家属拒绝</option>
+                  </select>
+                </div>
+              </div>
               <br>
             </div>
             <div id="住院药物治疗">

@@ -345,6 +345,22 @@
                     <option>无</option>
                   </select>
                 </div>
+                <div class="form-group col-lg-4">
+                  <label for="卒中类型">卒中类型</label>
+                  <select class="form-control selectpicker" id="卒中类型" title="多选" multiple>
+                    <option>脑梗死</option>
+                    <option>脑出血</option>
+                    <option>蛛网膜下腔出血</option>
+                    <option>TIA</option>
+                  </select>
+                </div>
+                <div class="form-group col-lg-2">
+                  <label for="房颤发现">房颤发现</label>
+                  <select class="form-control selectpicker" id="房颤发现" title="单选">
+                    <option>既往发现</option>
+                    <option>本次发现</option>
+                  </select>
+                </div>
               </div>
               <br>
             </div>
@@ -669,19 +685,16 @@
                     <label for="低密度脂蛋白胆固醇(mmol/L)">低密度脂蛋白胆固醇(mmol/L)</label>
                     <input type="number" class="form-control" id="低密度脂蛋白胆固醇(mmol/L)">
                   </div>
-                  <div class = "form-group col-lg-3">
-                    <label for = "高密度脂蛋白胆固醇(mmol/L)">高密度脂蛋白胆固醇(mmol/L)</label>
+                  <div class="form-group col-lg-3">
+                    <label for="高密度脂蛋白胆固醇(mmol/L)">高密度脂蛋白胆固醇(mmol/L)</label>
                     <input type="number" class="form-control" id="高密度脂蛋白胆固醇(mmol/L)">
                   </div>
                 </div>
                 <h6>同型半胱氨酸(高血压患者应查)</h6>
                 <div class="row">
                   <div class="form-group col-lg-3">
-                    <label for="同型半胱氨酸">同型半胱氨酸</label>
-                    <select class="form-control selectpicker" id="同型半胱氨酸" title="单选">
-                      <option>已查</option>
-                      <option>未查</option>
-                    </select>
+                    <label for="同型半胱氨酸(μmol/L)">同型半胱氨酸(μmol/L)</label>
+                    <input type="number" class="form-control" id="同型半胱氨酸(μmol/L)">
                   </div>
                 </div>
                 <h6>凝血</h6>
@@ -709,8 +722,8 @@
                     <label for="肌钙蛋白(μg/L)">肌钙蛋白(μg/L)</label>
                     <input type="number" class="form-control" id="肌钙蛋白(μg/L)">
                   </div>
-                  <div class = "form-group col-lg-3">
-                    <label for = "血清肌酐(mmol/L)">血清肌酐(mmol/L)</label>
+                  <div class="form-group col-lg-3">
+                    <label for="血清肌酐(mmol/L)">血清肌酐(mmol/L)</label>
                     <input type="number" class="form-control" id="血清肌酐(mmol/L)">
                   </div>
                   <div class="form-group col-lg-3">
@@ -897,6 +910,128 @@
                     </select>
                   </div>
                 </div>
+                <div class="row">
+                  <div class="form-group col-lg-3">
+                    <label for="颈部CTA/DSA主动脉弓狭窄程度">主动脉弓狭窄程度</label>
+                    <select class="form-control selectpicker" id="颈部CTA/DSA主动脉弓狭窄程度" title="单选">
+                      <option>无狭窄</option>
+                      <option>1-49％</option>
+                      <option>50-69％</option>
+                      <option>70-99％</option>
+                      <option>闭塞</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-lg-3">
+                    <label for="颈部CTA/DSA左侧锁骨下动脉狭窄程度">左侧锁骨下动脉狭窄程度</label>
+                    <select class="form-control selectpicker" id="颈部CTA/DSA左侧锁骨下动脉狭窄程度" title="单选">
+                      <option>无狭窄</option>
+                      <option>1-49％</option>
+                      <option>50-69％</option>
+                      <option>70-99％</option>
+                      <option>闭塞</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-lg-3">
+                    <label for="颈部CTA/DSA左侧颈总动脉狭窄程度">左侧颈总动脉狭窄程度</label>
+                    <select class="form-control selectpicker" id="颈部CTA/DSA左侧颈总动脉狭窄程度" title="单选">
+                      <option>无狭窄</option>
+                      <option>1-49％</option>
+                      <option>50-69％</option>
+                      <option>70-99％</option>
+                      <option>闭塞</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-lg-3">
+                    <label for="颈部CTA/DSA左侧颈内动脉狭窄程度">左侧颈内动脉狭窄程度</label>
+                    <select class="form-control selectpicker" id="颈部CTA/DSA左侧颈内动脉狭窄程度" title="单选">
+                      <option>无狭窄</option>
+                      <option>1-49％</option>
+                      <option>50-69％</option>
+                      <option>70-99％</option>
+                      <option>闭塞</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-lg-3">
+                    <label for="颈部CTA/DSA左侧颈外动脉狭窄程度">左侧颈外动脉狭窄程度</label>
+                    <select class="form-control selectpicker" id="颈部CTA/DSA左侧颈外动脉狭窄程度" title="单选">
+                      <option>无狭窄</option>
+                      <option>1-49％</option>
+                      <option>50-69％</option>
+                      <option>70-99％</option>
+                      <option>闭塞</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-lg-3">
+                    <label for="颈部CTA/DSA左侧椎动脉狭窄程度">左侧椎动脉狭窄程度</label>
+                    <select class="form-control selectpicker" id="颈部CTA/DSA左侧椎动脉狭窄程度" title="单选">
+                      <option>无狭窄</option>
+                      <option>1-49％</option>
+                      <option>50-69％</option>
+                      <option>70-99％</option>
+                      <option>闭塞</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-lg-3">
+                    <label for="颈部CTA/DSA右侧锁骨下动脉狭窄程度">右侧锁骨下动脉狭窄程度</label>
+                    <select class="form-control selectpicker" id="颈部CTA/DSA右侧锁骨下动脉狭窄程度" title="单选">
+                      <option>无狭窄</option>
+                      <option>1-49％</option>
+                      <option>50-69％</option>
+                      <option>70-99％</option>
+                      <option>闭塞</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-lg-3">
+                    <label for="颈部CTA/DSA右侧颈总动脉狭窄程度">右侧颈总动脉狭窄程度</label>
+                    <select class="form-control selectpicker" id="颈部CTA/DSA右侧颈总动脉狭窄程度" title="单选">
+                      <option>无狭窄</option>
+                      <option>1-49％</option>
+                      <option>50-69％</option>
+                      <option>70-99％</option>
+                      <option>闭塞</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-lg-3">
+                    <label for="颈部CTA/DSA右侧颈内动脉狭窄程度">右侧颈内动脉狭窄程度</label>
+                    <select class="form-control selectpicker" id="颈部CTA/DSA右侧颈内动脉狭窄程度" title="单选">
+                      <option>无狭窄</option>
+                      <option>1-49％</option>
+                      <option>50-69％</option>
+                      <option>70-99％</option>
+                      <option>闭塞</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-lg-3">
+                    <label for="颈部CTA/DSA右侧颈外动脉狭窄程度">右侧颈外动脉狭窄程度</label>
+                    <select class="form-control selectpicker" id="颈部CTA/DSA右侧颈外动脉狭窄程度" title="单选">
+                      <option>无狭窄</option>
+                      <option>1-49％</option>
+                      <option>50-69％</option>
+                      <option>70-99％</option>
+                      <option>闭塞</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-lg-3">
+                    <label for="颈部CTA/DSA右侧椎动脉狭窄程度">右侧椎动脉狭窄程度</label>
+                    <select class="form-control selectpicker" id="颈部CTA/DSA右侧椎动脉狭窄程度" title="单选">
+                      <option>无狭窄</option>
+                      <option>1-49％</option>
+                      <option>50-69％</option>
+                      <option>70-99％</option>
+                      <option>闭塞</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-lg-3">
+                    <label for="颈部CTA/DSA无名动脉狭窄程度">无名动脉狭窄程度</label>
+                    <select class="form-control selectpicker" id="颈部CTA/DSA无名动脉狭窄程度" title="单选">
+                      <option>无狭窄</option>
+                      <option>1-49％</option>
+                      <option>50-69％</option>
+                      <option>70-99％</option>
+                      <option>闭塞</option>
+                    </select>
+                  </div>
+                </div>
                 <h6>头部CTA/MRA/DSA</h6>
                 <div class="row">
                   <div class="form-group col-lg-2">
@@ -911,6 +1046,118 @@
                     <select class="form-control selectpicker" id="头部CTA/MRA/DSA检查结果" title="单选">
                       <option>全部正常</option>
                       <option>任一部位有异常</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col-lg-3">
+                    <label for="头部CTA/MRA/DSA左侧颈内动脉狭窄程度">左侧颈内动脉狭窄程度</label>
+                    <select class="form-control selectpicker" id="头部CTA/MRA/DSA左侧颈内动脉狭窄程度" title="单选">
+                      <option>无狭窄</option>
+                      <option>1-49％</option>
+                      <option>50-69％</option>
+                      <option>70-99％</option>
+                      <option>闭塞</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-lg-3">
+                    <label for="头部CTA/MRA/DSA左侧大脑中动脉狭窄程度">左侧大脑中动脉狭窄程度</label>
+                    <select class="form-control selectpicker" id="头部CTA/MRA/DSA左侧大脑中动脉狭窄程度" title="单选">
+                      <option>无狭窄</option>
+                      <option>1-49％</option>
+                      <option>50-69％</option>
+                      <option>70-99％</option>
+                      <option>闭塞</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-lg-3">
+                    <label for="头部CTA/MRA/DSA左侧大脑前动脉狭窄程度">左侧大脑前动脉狭窄程度</label>
+                    <select class="form-control selectpicker" id="头部CTA/MRA/DSA左侧大脑前动脉狭窄程度" title="单选">
+                      <option>无狭窄</option>
+                      <option>1-49％</option>
+                      <option>50-69％</option>
+                      <option>70-99％</option>
+                      <option>闭塞</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-lg-3">
+                    <label for="头部CTA/MRA/DSA左侧大脑后动脉狭窄程度">左侧大脑后动脉狭窄程度</label>
+                    <select class="form-control selectpicker" id="头部CTA/MRA/DSA左侧大脑后动脉狭窄程度" title="单选">
+                      <option>无狭窄</option>
+                      <option>1-49％</option>
+                      <option>50-69％</option>
+                      <option>70-99％</option>
+                      <option>闭塞</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-lg-3">
+                    <label for="头部CTA/MRA/DSA左侧椎动脉狭窄程度">左侧椎动脉狭窄程度</label>
+                    <select class="form-control selectpicker" id="头部CTA/MRA/DSA左侧椎动脉狭窄程度" title="单选">
+                      <option>无狭窄</option>
+                      <option>1-49％</option>
+                      <option>50-69％</option>
+                      <option>70-99％</option>
+                      <option>闭塞</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-lg-3">
+                    <label for="头部CTA/MRA/DSA右侧颈内动脉狭窄程度">右侧颈内动脉狭窄程度</label>
+                    <select class="form-control selectpicker" id="头部CTA/MRA/DSA右侧颈内动脉狭窄程度" title="单选">
+                      <option>无狭窄</option>
+                      <option>1-49％</option>
+                      <option>50-69％</option>
+                      <option>70-99％</option>
+                      <option>闭塞</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-lg-3">
+                    <label for="头部CTA/MRA/DSA右侧大脑中动脉狭窄程度">右侧大脑中动脉狭窄程度</label>
+                    <select class="form-control selectpicker" id="头部CTA/MRA/DSA右侧大脑中动脉狭窄程度" title="单选">
+                      <option>无狭窄</option>
+                      <option>1-49％</option>
+                      <option>50-69％</option>
+                      <option>70-99％</option>
+                      <option>闭塞</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-lg-3">
+                    <label for="头部CTA/MRA/DSA右侧大脑前动脉狭窄程度">右侧大脑前动脉狭窄程度</label>
+                    <select class="form-control selectpicker" id="头部CTA/MRA/DSA右侧大脑前动脉狭窄程度" title="单选">
+                      <option>无狭窄</option>
+                      <option>1-49％</option>
+                      <option>50-69％</option>
+                      <option>70-99％</option>
+                      <option>闭塞</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-lg-3">
+                    <label for="头部CTA/MRA/DSA右侧大脑后动脉狭窄程度">右侧大脑后动脉狭窄程度</label>
+                    <select class="form-control selectpicker" id="头部CTA/MRA/DSA右侧大脑后动脉狭窄程度" title="单选">
+                      <option>无狭窄</option>
+                      <option>1-49％</option>
+                      <option>50-69％</option>
+                      <option>70-99％</option>
+                      <option>闭塞</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-lg-3">
+                    <label for="头部CTA/MRA/DSA右侧椎动脉狭窄程度">右侧椎动脉狭窄程度</label>
+                    <select class="form-control selectpicker" id="头部CTA/MRA/DSA右侧椎动脉狭窄程度" title="单选">
+                      <option>无狭窄</option>
+                      <option>1-49％</option>
+                      <option>50-69％</option>
+                      <option>70-99％</option>
+                      <option>闭塞</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-lg-3">
+                    <label for="头部CTA/MRA/DSA基底动脉狭窄程度">基底动脉狭窄程度</label>
+                    <select class="form-control selectpicker" id="头部CTA/MRA/DSA基底动脉狭窄程度" title="单选">
+                      <option>无狭窄</option>
+                      <option>1-49％</option>
+                      <option>50-69％</option>
+                      <option>70-99％</option>
+                      <option>闭塞</option>
                     </select>
                   </div>
                 </div>
@@ -945,6 +1192,118 @@
                     <select class="form-control selectpicker" id="TCD检查结果" title="单选">
                       <option>全部正常</option>
                       <option>任一部位有异常</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col-lg-3">
+                    <label for="TCD左侧颈内动脉狭窄程度">左侧颈内动脉狭窄程度</label>
+                    <select class="form-control selectpicker" id="TCD左侧颈内动脉狭窄程度" title="单选">
+                      <option>无狭窄</option>
+                      <option>1-49％</option>
+                      <option>50-69％</option>
+                      <option>70-99％</option>
+                      <option>闭塞</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-lg-3">
+                    <label for="TCD左侧大脑中动脉狭窄程度">左侧大脑中动脉狭窄程度</label>
+                    <select class="form-control selectpicker" id="TCD左侧大脑中动脉狭窄程度" title="单选">
+                      <option>无狭窄</option>
+                      <option>1-49％</option>
+                      <option>50-69％</option>
+                      <option>70-99％</option>
+                      <option>闭塞</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-lg-3">
+                    <label for="TCD左侧大脑前动脉狭窄程度">左侧大脑前动脉狭窄程度</label>
+                    <select class="form-control selectpicker" id="TCD左侧大脑前动脉狭窄程度" title="单选">
+                      <option>无狭窄</option>
+                      <option>1-49％</option>
+                      <option>50-69％</option>
+                      <option>70-99％</option>
+                      <option>闭塞</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-lg-3">
+                    <label for="TCD左侧大脑后动脉狭窄程度">左侧大脑后动脉狭窄程度</label>
+                    <select class="form-control selectpicker" id="TCD左侧大脑后动脉狭窄程度" title="单选">
+                      <option>无狭窄</option>
+                      <option>1-49％</option>
+                      <option>50-69％</option>
+                      <option>70-99％</option>
+                      <option>闭塞</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-lg-3">
+                    <label for="TCD左侧椎动脉狭窄程度">左侧椎动脉狭窄程度</label>
+                    <select class="form-control selectpicker" id="TCD左侧椎动脉狭窄程度" title="单选">
+                      <option>无狭窄</option>
+                      <option>1-49％</option>
+                      <option>50-69％</option>
+                      <option>70-99％</option>
+                      <option>闭塞</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-lg-3">
+                    <label for="TCD右侧颈内动脉狭窄程度">右侧颈内动脉狭窄程度</label>
+                    <select class="form-control selectpicker" id="TCD右侧颈内动脉狭窄程度" title="单选">
+                      <option>无狭窄</option>
+                      <option>1-49％</option>
+                      <option>50-69％</option>
+                      <option>70-99％</option>
+                      <option>闭塞</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-lg-3">
+                    <label for="TCD右侧大脑中动脉狭窄程度">右侧大脑中动脉狭窄程度</label>
+                    <select class="form-control selectpicker" id="TCD右侧大脑中动脉狭窄程度" title="单选">
+                      <option>无狭窄</option>
+                      <option>1-49％</option>
+                      <option>50-69％</option>
+                      <option>70-99％</option>
+                      <option>闭塞</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-lg-3">
+                    <label for="TCD右侧大脑前动脉狭窄程度">右侧大脑前动脉狭窄程度</label>
+                    <select class="form-control selectpicker" id="TCD右侧大脑前动脉狭窄程度" title="单选">
+                      <option>无狭窄</option>
+                      <option>1-49％</option>
+                      <option>50-69％</option>
+                      <option>70-99％</option>
+                      <option>闭塞</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-lg-3">
+                    <label for="TCD右侧大脑后动脉狭窄程度">右侧大脑后动脉狭窄程度</label>
+                    <select class="form-control selectpicker" id="TCD右侧大脑后动脉狭窄程度" title="单选">
+                      <option>无狭窄</option>
+                      <option>1-49％</option>
+                      <option>50-69％</option>
+                      <option>70-99％</option>
+                      <option>闭塞</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-lg-3">
+                    <label for="TCD右侧椎动脉狭窄程度">右侧椎动脉狭窄程度</label>
+                    <select class="form-control selectpicker" id="TCD右侧椎动脉狭窄程度" title="单选">
+                      <option>无狭窄</option>
+                      <option>1-49％</option>
+                      <option>50-69％</option>
+                      <option>70-99％</option>
+                      <option>闭塞</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-lg-3">
+                    <label for="TCD基底动脉狭窄程度">基底动脉狭窄程度</label>
+                    <select class="form-control selectpicker" id="TCD基底动脉狭窄程度" title="单选">
+                      <option>无狭窄</option>
+                      <option>1-49％</option>
+                      <option>50-69％</option>
+                      <option>70-99％</option>
+                      <option>闭塞</option>
                     </select>
                   </div>
                 </div>
@@ -993,9 +1352,9 @@
                 <div class="form-group col-lg-3">
                   <label for="缺血性卒中/TIA相关诊疗操作">缺血性卒中/TIA相关诊疗操作</label>
                   <select class="form-control selectpicker" id="缺血性卒中/TIA相关诊疗操作" title="多选" multiple data-size="10">
-                    <option>DSA(急诊介入)</option>
-                    <option>DSA(择期介入)</option>
-                    <option>DSA(诊断性)</option>
+                    <option>DSA，急诊介入</option>
+                    <option>DSA，择期介入</option>
+                    <option>DSA，诊断性</option>
                     <option>静脉溶栓</option>
                     <option>动脉溶栓</option>
                     <option>桥接治疗（溶栓+取栓）</option>
@@ -1071,9 +1430,9 @@
                     <option>医院相关(卒中诊断延迟)</option>
                     <option>医院相关(在院检查时间延迟)</option>
                     <option>医院相关(无法建立静脉通路)</option>
-                    <option>其他</option>
                     <option>经济原因</option>
                     <option>患者/家属拒绝</option>
+                    <option>其他</option>
                   </select>
                 </div>
               </div>

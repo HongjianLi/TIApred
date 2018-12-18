@@ -26,10 +26,11 @@ mongodb.MongoClient.connect('mongodb://localhost:27017', { useNewUrlParser: true
     });
   }).post((req, res) => {
 //  let v = new validator(req.body);
+    const record = JSON.parse(req.body.record)
     records.updateOne({ // findOneAndUpdate(filter, update, options, callback). http://mongodb.github.io/node-mongodb-native/3.1/api/Collection.html#findOneAndUpdate
-      '基线登记.基本信息.住院号': req.body['基线登记']['基本信息']['住院号'],
+      '基线登记.基本信息.住院号': record['基线登记']['基本信息']['住院号'],
     }, {
-      $set: req.body,
+      $set: record,
     }, {
       upsert: true, // Use upsert instead of insert
     }).then((commandResult) => {

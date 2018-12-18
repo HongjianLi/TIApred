@@ -1,4 +1,4 @@
-$(function() {
+$(() => {
   "use strict";
 
   // Apply colors to form headers.
@@ -29,29 +29,19 @@ $(function() {
 //  });
 
   const saveForm = $('#saveForm');
-  const traverseDOM = (element, doc, cbInput, cbElement, cbDiv) => {
-    let inner = true;
-    const divs = $(">div", element); // Selects all direct child elements. https://api.jquery.com/child-selector/
-    divs.each((idx, div) => {
-      if (div.id.length) inner = false;
+  const traverseForm = (form, cb) => {
+    $(":input", form).each((idx, input) => {
+      if (input.nodeName === "BUTTON") return;
+      console.assert(input.nodeName === "INPUT" || input.nodeName === "SELECT");
+      const parents = [ input.id ];
+      for (let element = input.parentElement; !(element.nodeName === "FORM" && element.id === form[0].id); element = element.parentElement) {
+        if (element.id !== "") {
+          console.assert(element.nodeName === "DIV");
+          parents.push(element.id);
+        }
+      }
+      cb(input, parents.reverse());
     });
-    if (inner) {
-      $(":input", element).each((idx, input) => {
-        if (input.nodeName === "BUTTON") return;
-        console.assert(input.nodeName === "INPUT" || input.nodeName === "SELECT");
-        if (doc[input.id] === undefined) doc[input.id] = "";
-        cbInput(input, doc);
-      });
-      if (cbElement) cbElement(element, doc);
-      return;
-    }
-    divs.each((idx, div) => {
-      if (!div.id.length) return;
-      if (doc[div.id] === undefined) doc[div.id] = {};
-      if (cbDiv) cbDiv(div, doc);
-      traverseDOM(div, doc[div.id], cbInput, cbElement, cbDiv);
-    });
-    return doc;
   };
 
   const refreshRecords = () => {
@@ -87,11 +77,18 @@ $(function() {
       success: (record, textStatus, jqXHR) => {
         if (!record) return; // This should not occur.
         // Traverse the form's DOM to refresh its input values to the record.
-        traverseDOM(saveForm, record, (input, doc) => {
+        traverseForm(saveForm, (input, branches) => {
+          let obj = record;
+          branches.forEach((branch) => {
+            if (obj === undefined) return; // The condition is possible when the form's DOM is updated and the database records still conform to the old form.
+            obj = obj[branch];
+          });
           if (input.nodeName === "INPUT") {
-            $(input).val(doc[input.id]);
+            if (obj === undefined) obj = "";
+            $(input).val(obj);
           } else {
-            $(input).selectpicker('val', doc[input.id]);
+            if (obj === undefined) obj = [];
+            $(input).selectpicker('val', obj);
           }
         });
       },
@@ -111,26 +108,31 @@ $(function() {
         saveAs(new File([
           // Traverse the form's DOM to generate a header row
           (() => {
-            let headers = [], branches = [];
-            traverseDOM(saveForm, {}, (input) => {
-              headers.push(branches.concat(input.id));
-            }, () => {
-              branches.pop();
-            }, (div) => {
-              branches.push(div.id);
-            });
+            const headers = [];
+            traverseForm(saveForm, (input, branches) => {
+              headers.push(branches);
+            })
             return headers.map((branches) => {
               return branches.join('.');
             });
           })(),
           // Traverse the form's DOM to project fields onto the record to generate content rows
           ...recordArr.map((record) => {
-            let contents = [];
-            traverseDOM(saveForm, record, (input, doc) => {
-              if (typeof doc[input.id] === "string") {
-                contents.push(doc[input.id]);
-              } else if (Array.isArray(doc[input.id])) {
-                contents.push(`[${doc[input.id].map((val) => {
+            const contents = [];
+            traverseForm(saveForm, (input, branches) => {
+              let obj = record;
+              branches.forEach((branch) => {
+                if (obj === undefined) return; // The condition is possible when the form's DOM is updated and the database records still conform to the old form.
+                obj = obj[branch];
+              });
+              if (input.nodeName === "INPUT" || !input.multiple) {
+                if (obj === undefined) obj = "";
+                console.assert(typeof obj === "string");
+                contents.push(obj);
+              } else {
+                if (obj === undefined) obj = [];
+                console.assert(Array.isArray(obj));
+                contents.push(`[${obj.map((val) => {
                   return `""${val}""`; // The csv parser accepts that data that complies with RFC RFC 4180. As a result, backslashes are not a valid escape character. If you use double-quotes to enclose fields in the CSV data, you must escape internal double-quote marks by prepending another double-quote. https://docs.mongodb.com/manual/reference/program/mongoimport/
                 }).join(',')}]`);
               }
@@ -177,11 +179,18 @@ $(function() {
     // Disable the submit button for a while
     saveButton.prop('disabled', true);
     // Traverse the form's DOM to generate a document to be inserted.
-    const record = traverseDOM(saveForm, {}, (input, doc) => {
+    const record = {};
+    traverseForm(saveForm, (input, branches) => {
+      let obj = record;
+      const key = branches.pop();
+      branches.forEach((branch) => {
+        if (obj[branch] === undefined) obj[branch] = {};
+        obj = obj[branch];
+      });
       if (input.nodeName === "INPUT") {
-        doc[input.id] = input.value;
+        obj[key] = input.value;
       } else {
-        doc[input.id] = $(input).selectpicker('val'); // .selectpicker('val') returns a singular value for multiple="false" and an array of values for multiple="true"
+        obj[key] = $(input).selectpicker('val'); // .selectpicker('val') returns a singular value for multiple="false" and an array of values for multiple="true"
       }
     });
     // Post a new record with server side validation
@@ -189,7 +198,9 @@ $(function() {
     $.ajax({
       type: "POST",
       url: "record",
-      data: record,
+      data: {
+        record: JSON.stringify(record), // JSON.stringify() is better, though not necessary, because jquery.ajax() omits object properties of empty array value when the content type is the default application/x-www-form-urlencoded. Using stringify() will preserve all fields. https://bugs.jquery.com/ticket/6481
+      },
       dataType: "json",
       success: (res, textStatus, jqXHR) => {
         if (res.result) {

@@ -172,13 +172,22 @@
               <h4>发病情况</h4>
               <div class="row">
                 <div class="form-group col-lg-4">
-                  <label for="到院时间">到院时间</label>
-                    <div class="input-group date">
-                      <div class="input-group-prepend">
-                        <span class="input-group-text" id="到院时间Prepend"><i class="fas fa-calendar-alt"></i></span>
-                      </div>
-                      <input type="text" class="form-control" id="到院时间" aria-describedby="到院时间Prepend" placeholder="____年__月__日">
+                  <label for="到院日期">到院日期</label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="到院日期Prepend"><i class="fas fa-calendar-alt"></i></span>
                     </div>
+                    <input type="date" class="form-control" id="到院日期" aria-describedby="到院日期Prepend">
+                  </div>
+                </div>
+                <div class="form-group col-lg-2">
+                  <label for="到院时间">到院时间</label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="到院时间Prepend"><i class="fas fa-clock"></i></span>
+                    </div>
+                    <input type="time" class="form-control" id="到院时间" aria-describedby="到院时间Prepend">
+                  </div>
                 </div>
                 <div class="form-group col-lg-2">
                   <label for="就诊途径">就诊途径</label>
@@ -200,20 +209,29 @@
                     <option>自行来院</option>
                   </select>
                 </div>
-                <div class="form-group col-lg-4">
-                  <label for="患者住院时间">患者住院时间</label>
-                  <div class="input-group date">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text" id="患者住院时间Prepend"><i class="fas fa-calendar-alt"></i></span>
-                    </div>
-                    <input type="text" class="form-control" id="患者住院时间" aria-describedby="患者住院时间Prepend" placeholder="____年__月__日">
-                  </div>
-                </div>
               </div>
               <div class="row">
+                <div class="form-group col-lg-4">
+                  <label for="住院日期">住院日期</label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="住院日期Prepend"><i class="fas fa-calendar-alt"></i></span>
+                    </div>
+                    <input type="date" class="form-control" id="住院日期" aria-describedby="住院日期Prepend">
+                  </div>
+                </div>
                 <div class="form-group col-lg-2">
-                  <label for="患者首诊科室">患者首诊科室</label>
-                  <select class="form-control selectpicker" id="患者首诊科室" title="单选">
+                  <label for="住院时间">住院时间</label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="住院时间Prepend"><i class="fas fa-clock"></i></span>
+                    </div>
+                    <input type="time" class="form-control" id="住院时间" aria-describedby="住院时间Prepend">
+                  </div>
+                </div>
+                <div class="form-group col-lg-2">
+                  <label for="首诊科室">首诊科室</label>
+                  <select class="form-control selectpicker" id="首诊科室" title="单选">
                     <option>急诊神经内科</option>
                     <option>急诊内科</option>
                     <option>急诊神经外科</option>
@@ -222,8 +240,8 @@
                   </select>
                 </div>
                 <div class="form-group col-lg-2">
-                  <label for="患者住院科室">患者住院科室</label>
-                  <select class="form-control selectpicker" id="患者住院科室" title="单选">
+                  <label for="住院科室">住院科室</label>
+                  <select class="form-control selectpicker" id="住院科室" title="单选">
                     <option>卒中单元</option>
                     <option>普通神经科病房</option>
                     <option>神经外科</option>
@@ -258,13 +276,22 @@
                   </select>
                 </div>
                 <div class="form-group col-lg-4">
-                  <label for="发病时间">发病时间（或最后一次看起来正常时间）</label>
-                    <div class="input-group date">
-                      <div class="input-group-prepend">
-                        <span class="input-group-text" id="发病时间Prepend"><i class="fas fa-calendar-alt"></i></span>
-                      </div>
-                      <input type="text" class="form-control" id="发病时间" aria-describedby="发病时间Prepend" placeholder="____年__月__日">
+                  <label for="发病日期">发病日期（或最后一次看起来正常时间）</label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="发病日期Prepend"><i class="fas fa-calendar-alt"></i></span>
                     </div>
+                    <input type="date" class="form-control" id="发病日期" aria-describedby="发病日期Prepend">
+                  </div>
+                </div>
+                <div class="form-group col-lg-2">
+                  <label for="发病时间">发病时间</label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="发病时间Prepend"><i class="fas fa-clock"></i></span>
+                    </div>
+                    <input type="time" class="form-control" id="发病时间" aria-describedby="发病时间Prepend">
+                  </div>
                 </div>
               </div>
               <div class="row">
@@ -655,6 +682,31 @@
                   <div class="form-group col-lg-9">
                     <label for="检验报告出具时间(分钟)">急诊或绿道内从采血样到血常规、随机血糖检验报告出具时间(分钟)(仅发病情况中就诊途径为“急诊”患者填写)</label>
                     <input type="number" class="form-control" id="检验报告出具时间(分钟)">
+                  </div>
+                </div>
+                <h6>血常规</h6>
+                <div class="row">
+                  <div class="form-group col-lg-4">
+                    <label for="白细胞计数(WBC)(10^9/L)">白细胞计数(WBC)(10^9/L)</label>
+                    <input type="number" class="form-control" id="白细胞计数(WBC)(10^9/L)">
+                  </div>
+                  <div class="form-group col-lg-4">
+                    <label for="中性粒细胞(NEU)(%)">中性粒细胞(NEU)(%)</label>
+                    <input type="number" class="form-control" id="中性粒细胞(NEU)(%)">
+                  </div>
+                  <div class="form-group col-lg-4">
+                    <label for="淋巴细胞(LYM)(%)">淋巴细胞(LYM)(%)</label>
+                    <input type="number" class="form-control" id="淋巴细胞(LYM)(%)">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col-lg-4">
+                    <label for="血红蛋白(HGB)(g/L)">血红蛋白(HGB)(g/L)</label>
+                    <input type="number" class="form-control" id="血红蛋白(HGB)(g/L)">
+                  </div>
+                  <div class="form-group col-lg-4">
+                    <label for="血小板计数(PLT)(10^9/L)">血小板计数(PLT)(10^9/L)</label>
+                    <input type="number" class="form-control" id="血小板计数(PLT)(10^9/L)">
                   </div>
                 </div>
                 <h6>血糖</h6>
@@ -1314,24 +1366,24 @@
             <div id="入院评估">
               <h4>入院评估</h4>
               <div class="row">
-                <div class="form-group col-lg-3">
+                <div class="form-group col-lg-4">
                   <label for="发病前mRS评分">发病前mRS评分（卒中患者应查）</label>
                   <input type="number" class="form-control" id="发病前mRS评分">
                 </div>
-                <div class="form-group col-lg-3">
+                <div class="form-group col-lg-4">
                   <label for="急诊NIHSS评分">急诊NIHSS评分（卒中患者应查）</label>
                   <input type="number" class="form-control" id="急诊NIHSS评分">
                 </div>
-                <div class="form-group col-lg-3">
-                  <label for="住院NIHSS评分">住院NIHSS评分（卒中患者应查）</label>
+                <div class="form-group col-lg-4">
+                  <label for="住院NIHSS评分">住院7±2天NIHSS评分（卒中患者应查）</label>
                   <input type="number" class="form-control" id="住院NIHSS评分">
-                </div>
-                <div class="form-group col-lg-3">
-                  <label for="住院GCS评分">住院GCS评分（脑出血患者应查）</label>
-                  <input type="number" class="form-control" id="住院GCS评分">
                 </div>
               </div>
               <div class="row">
+                <div class="form-group col-lg-4">
+                  <label for="住院GCS评分">住院GCS评分（脑出血患者应查）</label>
+                  <input type="number" class="form-control" id="住院GCS评分">
+                </div>
                 <div class="form-group col-lg-4">
                   <label for="住院Hunt-Hess评分">住院Hunt-Hess评分（蛛网膜下腔出血患者应查）</label>
                   <input type="number" class="form-control" id="住院Hunt-Hess评分">
@@ -1340,10 +1392,22 @@
                   <label for="住院CHADS2评分">住院CHADS2评分（房颤患者应查）</label>
                   <input type="number" class="form-control" id="住院CHADS2评分">
                 </div>
-                <div class="form-group col-lg-4">
-                  <label for="HAS-BLED评分">HAS-BLED评分（房颤患者应查）</label>
-                  <input type="number" class="form-control" id="HAS-BLED评分">
-                </div>
+               </div>
+               <div class="row">
+                 <div class="form-group col-lg-4">
+                   <label for="HAS-BLED评分">HAS-BLED评分（房颤患者应查）</label>
+                   <input type="number" class="form-control" id="HAS-BLED评分">
+                 </div>
+                 <div class="form-group col-lg-4">
+                   <label for="吞咽功能评估（洼田饮水实验）">吞咽功能评估（洼田饮水实验）</label>
+                   <select class="form-control selectpicker" id="吞咽功能评估（洼田饮水实验）" title="单选">
+                     <option>1级（优）能顺利地1次将水咽下</option>
+                     <option>2级（良）分2次以上，能不呛咳地咽下</option>
+                     <option>3级（中）能1次咽下，但有呛咳</option>
+                     <option>4级（可）分2次以上咽下，但有呛咳</option>
+                     <option>5级（差）频繁呛咳，不能全部咽下</option>
+                   </select>
+                 </div>
                </div>
               <br>
             </div>
@@ -1755,11 +1819,11 @@
                 <div class="row">
                   <div class="form-group col-lg-4">
                     <label for="出院时间">出院时间</label>
-                    <div class="input-group date">
+                    <div class="input-group">
                       <div class="input-group-prepend">
                         <span class="input-group-text" id="出院时间Prepend"><i class="fas fa-calendar-alt"></i></span>
                       </div>
-                      <input type="text" class="form-control" id="出院时间" aria-describedby="出院时间Prepend">
+                      <input type="date" class="form-control" id="出院时间" aria-describedby="出院时间Prepend">
                     </div>
                   </div>
                   <div class="form-group col-lg-2">
@@ -1847,9 +1911,139 @@
               <h4>溶栓及再灌注治疗登记表</h4>
               <div id="静脉溶栓治疗">
                 <h5>静脉溶栓治疗（仅主要诊疗操作中选择“静脉溶栓”患者填写）</h5>
+                <div class="row">
+                  <div class="form-group col-lg-2">
+                    <label for="开始静脉溶栓的场所">开始静脉溶栓的场所</label>
+                    <select class="form-control selectpicker" id="开始静脉溶栓的场所" title="单选">
+                      <option>本院</option>
+                      <option>急救中心（急救车）</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-lg-2">
+                    <label for="开始静脉溶栓时间">开始静脉溶栓时间</label>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text" id="开始静脉溶栓时间Prepend"><i class="fas fa-clock"></i></span>
+                      </div>
+                      <input type="time" class="form-control" id="开始静脉溶栓时间" aria-describedby="开始静脉溶栓时间Prepend">
+                    </div>
+                  </div>
+                  <div class="form-group col-lg-2">
+                    <label for="结束静脉溶栓时间">结束静脉溶栓时间</label>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text" id="结束静脉溶栓时间Prepend"><i class="fas fa-clock"></i></span>
+                      </div>
+                      <input type="time" class="form-control" id="结束静脉溶栓时间" aria-describedby="结束静脉溶栓时间Prepend">
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                 <div class="form-group col-lg-4">
+                   <label for="发病到开始溶栓治疗（ONT）时间（分）">发病到开始溶栓治疗（ONT）时间（分）</label>
+                   <input type="number" class="form-control" id="发病到开始溶栓治疗（ONT）时间（分）">
+                 </div>
+                 <div class="form-group col-lg-4">
+                   <label for="入院到开始溶栓治疗（DNT）时间（分）">入院到开始溶栓治疗（DNT）时间（分）</label>
+                   <input type="number" class="form-control" id="入院到开始溶栓治疗（DNT）时间（分）">
+                 </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col-lg-3">
+                    <label for="静脉溶栓药物">静脉溶栓药物</label>
+                    <select class="form-control selectpicker" id="静脉溶栓药物" title="多选" multiple>
+                      <option>rt-PA</option>
+                      <option>尿激酶</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-lg-3">
+                    <label for="r-tPA给药剂量标准（mg/kg）">r-tPA给药剂量标准（mg/kg）</label>
+                    <select class="form-control selectpicker" id="r-tPA给药剂量标准（mg/kg）" title="单选">
+                      <option>0.9</option>
+                      <option>0.6</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-lg-3">
+                    <label for="实际r-tPA给药总量（mg）">实际r-tPA给药总量（mg）</label>
+                    <input type="number" class="form-control" id="实际r-tPA给药总量（mg）">
+                  </div>
+                  <div class="form-group col-lg-3">
+                    <label for="实际尿激酶给药剂量（万IU）">实际尿激酶给药剂量（万IU）</label>
+                    <input type="number" class="form-control" id="实际尿激酶给药剂量（万IU）" min="20" max="300">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col-lg-3">
+                    <label for="溶栓并发症">溶栓并发症</label>
+                    <select class="form-control selectpicker" id="溶栓并发症" title="多选" multiple>
+                      <option>颅内出血</option>
+                      <option>消化道出血</option>
+                      <option>牙龈出血</option>
+                      <option>其他部位出血</option>
+                      <option>再灌注损伤</option>
+                      <option>血管源性唇舌水肿</option>
+                      <option>其他</option>
+                      <option>无</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-lg-2">
+                    <label for="溶栓后是否出现栓塞">溶栓后是否出现栓塞</label>
+                    <select class="form-control selectpicker" id="溶栓后是否出现栓塞" title="单选">
+                      <option>是</option>
+                      <option>否</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-lg-2">
+                    <label for="溶栓后监测">溶栓后监测</label>
+                    <select class="form-control selectpicker" id="溶栓后监测" title="单选">
+                      <option>24h</option>
+                      <option>48h</option>
+                      <option>72h</option>
+                      <option>未监测</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-lg-3">
+                    <label for="溶栓结束后NIHSS评分">溶栓结束后NIHSS评分</label>
+                    <input type="number" class="form-control" id="溶栓结束后NIHSS评分">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col-lg-3">
+                    <label for="溶栓后24hmRS评分">溶栓后 24h mRS 评分</label>
+                    <input type="number" class="form-control" id="溶栓后24hmRS评分">
+                  </div>
+                  <div class="form-group col-lg-3">
+                    <label for="溶栓后24hNIHSS评分">溶栓后 24h NIHSS 评分</label>
+                    <input type="number" class="form-control" id="溶栓后24hNIHSS评分">
+                  </div>
+                  <div class="form-group col-lg-3">
+                    <label for="7±2天NIHSS评分">7±2天NIHSS评分</label>
+                    <input type="number" class="form-control" id="7±2天NIHSS评分">
+                  </div>
+                </div>
               </div>
               <div id="血管内治疗">
                 <h5>血管内治疗（仅主要诊疗操作中选择“动脉溶栓”、“桥接治疗”、“吸栓”、“支架置入”、“球囊扩张”患者填写）</h5>
+                <div class="row">
+                  <div class="form-group col-lg-2">
+                    <label for="股动脉穿刺开始时间">股动脉穿刺开始时间</label>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text" id="股动脉穿刺开始时间Prepend"><i class="fas fa-clock"></i></span>
+                      </div>
+                      <input type="time" class="form-control" id="股动脉穿刺开始时间" aria-describedby="股动脉穿刺开始时间Prepend">
+                    </div>
+                  </div>
+                  <div class="form-group col-lg-2">
+                    <label for="再通时间">再通时间</label>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text" id="再通时间Prepend"><i class="fas fa-clock"></i></span>
+                      </div>
+                      <input type="time" class="form-control" id="再通时间" aria-describedby="再通时间Prepend">
+                    </div>
+                  </div>
+                </div>
               </div>
               <br>
             </div>
@@ -1871,11 +2065,11 @@
                   </div>
                   <div class="form-group col-lg-3">
                     <label for="随访时间">随访时间</label>
-                    <div class="input-group date">
+                    <div class="input-group">
                       <div class="input-group-prepend">
                         <span class="input-group-text" id="随访时间Prepend"><i class="fas fa-calendar-alt"></i></span>
                       </div>
-                      <input type="text" class="form-control" id="随访时间" aria-describedby="随访时间Prepend">
+                      <input type="date" class="form-control" id="随访时间" aria-describedby="随访时间Prepend">
                     </div>
                   </div>
                   <div class="form-group col-lg-3">

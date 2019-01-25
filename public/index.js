@@ -24,7 +24,7 @@ $(() => {
     todayHighlight: true,
     daysOfWeekHighlighted: "0,6",
   });
-//  $('#到院时间').datetimepicker({ // https://eonasdan.github.io/bootstrap-datetimepicker/
+//  $('#到院日期').datetimepicker({ // https://eonasdan.github.io/bootstrap-datetimepicker/
 //    locale: 'zh-CN',
 //  });
 
@@ -50,14 +50,14 @@ $(() => {
       url: "records",
       data: { // Specify the DB query's projection.
         '基线登记.基本信息.住院号': 1,
-        '基线登记.发病情况.到院时间': 1,
+        '基线登记.发病情况.到院日期': 1,
       },
       dataType: "json",
       success: (recordArr, textStatus, jqXHR) => {
         $("#现有记录 option").remove();
         recordArr.forEach((record) => {
           $('#现有记录').append($('<option>', {
-              text: `${record["基线登记"]["发病情况"]["到院时间"]} ${record["基线登记"]["基本信息"]["住院号"]}`,
+              text: `${record["基线登记"]["发病情况"]["到院日期"]} ${record["基线登记"]["基本信息"]["住院号"]}`,
               value: record["基线登记"]["基本信息"]["住院号"],
           }));
         });

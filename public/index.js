@@ -9,7 +9,7 @@ $(() => {
       $("> div", div2).each((idx, div3) => {
         $("> h5", div3).addClass("text-success");
         $("> div", div3).each((idx, div4) => {
-          $("> h6", div4).addClass("text-primary");
+          $("> h6", div4).addClass("text-danger");
         });
       });
     });

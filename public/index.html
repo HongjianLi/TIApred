@@ -2379,16 +2379,61 @@
                       <option>是</option>
                     </select>
                   </div>
+                  <div class="form-group col-lg-3">
+                    <label for="死亡时间">死亡时间</label>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text" id="死亡时间Prepend"><i class="fas fa-calendar-alt"></i></span>
+                      </div>
+                      <input type="date" class="form-control" id="死亡时间" aria-describedby="死亡时间Prepend">
+                    </div>
+                  </div>
+                  <div class="form-group col-lg-2">
+                    <label for="死亡原因">死亡原因</label>
+                    <select class="form-control selectpicker" id="死亡原因" title="单选">
+                      <option>出血性脑卒中</option>
+                      <option>缺血性脑卒中</option>
+                      <option>冠心病</option>
+                      <option>恶性肿瘤</option>
+                      <option>呼吸系统疾病</option>
+                      <option>损伤和中毒</option>
+                      <option>其他</option>
+                      <option>不详</option>
+                    </select>
+                  </div>
                 </div>
               </div>
               <div id="事件登记">
                 <h5>事件登记</h5>
                 <div class="row">
-                  <div class="form-group col-lg-3">
+                  <div class="form-group col-lg-2">
                     <label for="有无新发事件">有无新发事件</label>
                     <select class="form-control selectpicker" id="有无新发事件" title="单选">
                       <option>有</option>
                       <option>无</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-lg-4">
+                    <label for="事件类型">事件类型</label>
+                    <select class="form-control selectpicker" id="事件类型" title="多选" multiple>
+                      <option>卒中新发，卒中类型：脑梗死</option>
+                      <option>卒中新发，卒中类型：脑出血</option>
+                      <option>卒中新发，卒中类型：蛛网膜下腔出血</option>
+                      <option>卒中新发，卒中类型：TIA</option>
+                      <option>卒中复发，卒中类型：脑梗死</option>
+                      <option>卒中复发，卒中类型：脑出血</option>
+                      <option>卒中复发，卒中类型：蛛网膜下腔出血</option>
+                      <option>卒中复发，卒中类型：TIA</option>
+                      <option>心肌梗死</option>
+                      <option>心力衰竭</option>
+                      <option>脑血管相关手术，手术名称：颈动脉支架置入术（CAS）</option>
+                      <option>脑血管相关手术，手术名称：颈动脉内膜剥脱术（CEA）</option>
+                      <option>脑血管相关手术，手术名称：颅内动脉支架置入术</option>
+                      <option>脑血管相关手术，手术名称：冠状动脉支架置入术</option>
+                      <option>脑血管相关手术，手术名称：球囊扩张术</option>
+                      <option>脑血管相关手术，手术名称：其他</option>
+                      <option>系统性栓塞事件</option>
+                      <option>其他</option>
                     </select>
                   </div>
                 </div>
@@ -2412,12 +2457,48 @@
                   <div class="form-group col-lg-4">
                     <label for="药物种类">药物种类</label>
                     <select class="form-control selectpicker" id="药物种类" title="多选" multiple>
-                      <option>降压药物</option>
+                      <option>降压药</option>
                       <option>降糖药</option>
                       <option>抗血小板药</option>
                       <option>抗凝药</option>
                       <option>调脂药</option>
                     </select>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col-lg-4">
+                    <label for="药品名称">药品名称</label>
+                    <input type="text" class="form-control" id="药品名称">
+                  </div>
+                  <div class="form-group col-lg-2">
+                    <label for="目前是否服药">目前是否服药</label>
+                    <select class="form-control selectpicker" id="目前是否服药" title="单选">
+                      <option>否</option>
+                      <option>是</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-lg-2">
+                    <label for="如果是，用药情况">如果是，用药情况</label>
+                    <select class="form-control selectpicker" id="如果是，用药情况" title="单选">
+                      <option>从不遗忘</option>
+                      <option>偶尔遗忘</option>
+                      <option>有时遗忘</option>
+                      <option>经常遗忘</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-lg-2">
+                    <label for="如果否，停药原因">如果否，停药原因</label>
+                    <select class="form-control selectpicker" id="如果否，停药原因" title="单选">
+                      <option>医生停用</option>
+                      <option>副作用大</option>
+                      <option>花费大</option>
+                      <option>感觉没效果</option>
+                      <option>其他</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-lg-2">
+                    <label for="剂量/次（mg/ml/片）">剂量/次（mg/ml/片）</label>
+                    <input type="text" class="form-control" id="剂量/次（mg/ml/片）">
                   </div>
                 </div>
               </div>
@@ -2427,12 +2508,159 @@
               <h4>6个月随访（面访）</h4>
               <div id="随访信息">
                 <h5>随访信息</h5>
+                <div class="row">
+                  <div class="form-group col-lg-2">
+                    <label for="随访方式">随访方式</label>
+                    <select class="form-control selectpicker" id="随访方式" title="单选">
+                      <option>面对面</option>
+                      <option>电话</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-lg-3">
+                    <label for="随访时间">随访时间</label>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text" id="随访时间Prepend"><i class="fas fa-calendar-alt"></i></span>
+                      </div>
+                      <input type="date" class="form-control" id="随访时间" aria-describedby="随访时间Prepend">
+                    </div>
+                  </div>
+                  <div class="form-group col-lg-3">
+                    <label for="本次随访是否为被随访者本人">本次随访是否为被随访者本人</label>
+                    <select class="form-control selectpicker" id="本次随访是否为被随访者本人" title="单选">
+                      <option>是</option>
+                      <option>否，提供信息者与被随访者之间关系：父母</option>
+                      <option>否，提供信息者与被随访者之间关系：配偶</option>
+                      <option>否，提供信息者与被随访者之间关系：子女</option>
+                      <option>否，提供信息者与被随访者之间关系：兄弟姐妹</option>
+                      <option>否，提供信息者与被随访者之间关系：其他</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-lg-2">
+                    <label for="是否失访">是否失访</label>
+                    <select class="form-control selectpicker" id="是否失访" title="单选">
+                      <option>否</option>
+                      <option>是，失访原因：失去联系</option>
+                      <option>是，失访原因：拒绝参加随访</option>
+                      <option>是，失访原因：其他</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-lg-2">
+                    <label for="是否死亡">是否死亡</label>
+                    <select class="form-control selectpicker" id="是否死亡" title="单选">
+                      <option>否</option>
+                      <option>是</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-lg-3">
+                    <label for="死亡时间">死亡时间</label>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text" id="死亡时间Prepend"><i class="fas fa-calendar-alt"></i></span>
+                      </div>
+                      <input type="date" class="form-control" id="死亡时间" aria-describedby="死亡时间Prepend">
+                    </div>
+                  </div>
+                  <div class="form-group col-lg-2">
+                    <label for="死亡原因">死亡原因</label>
+                    <select class="form-control selectpicker" id="死亡原因" title="单选">
+                      <option>出血性脑卒中</option>
+                      <option>缺血性脑卒中</option>
+                      <option>冠心病</option>
+                      <option>恶性肿瘤</option>
+                      <option>呼吸系统疾病</option>
+                      <option>损伤和中毒</option>
+                      <option>其他</option>
+                      <option>不详</option>
+                    </select>
+                  </div>
+                </div>
               </div>
               <div id="事件登记">
                 <h5>事件登记</h5>
+                <div class="row">
+                  <div class="form-group col-lg-2">
+                    <label for="有无新发事件">有无新发事件</label>
+                    <select class="form-control selectpicker" id="有无新发事件" title="单选">
+                      <option>有</option>
+                      <option>无</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-lg-4">
+                    <label for="事件类型">事件类型</label>
+                    <select class="form-control selectpicker" id="事件类型" title="多选" multiple>
+                      <option>卒中新发，卒中类型：脑梗死</option>
+                      <option>卒中新发，卒中类型：脑出血</option>
+                      <option>卒中新发，卒中类型：蛛网膜下腔出血</option>
+                      <option>卒中新发，卒中类型：TIA</option>
+                      <option>卒中复发，卒中类型：脑梗死</option>
+                      <option>卒中复发，卒中类型：脑出血</option>
+                      <option>卒中复发，卒中类型：蛛网膜下腔出血</option>
+                      <option>卒中复发，卒中类型：TIA</option>
+                      <option>心肌梗死</option>
+                      <option>心力衰竭</option>
+                      <option>脑血管相关手术，手术名称：颈动脉支架置入术（CAS）</option>
+                      <option>脑血管相关手术，手术名称：颈动脉内膜剥脱术（CEA）</option>
+                      <option>脑血管相关手术，手术名称：颅内动脉支架置入术</option>
+                      <option>脑血管相关手术，手术名称：冠状动脉支架置入术</option>
+                      <option>脑血管相关手术，手术名称：球囊扩张术</option>
+                      <option>脑血管相关手术，手术名称：其他</option>
+                      <option>系统性栓塞事件</option>
+                      <option>其他</option>
+                    </select>
+                  </div>
+                </div>
               </div>
               <div id="药物依从性">
                 <h5>药物依从性</h5>
+                <div class="row">
+                  <div class="form-group col-lg-4">
+                    <label for="药物种类">药物种类</label>
+                    <select class="form-control selectpicker" id="药物种类" title="多选" multiple>
+                      <option>降压药</option>
+                      <option>降糖药</option>
+                      <option>抗血小板药</option>
+                      <option>抗凝药</option>
+                      <option>调脂药</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col-lg-4">
+                    <label for="药品名称">药品名称</label>
+                    <input type="text" class="form-control" id="药品名称">
+                  </div>
+                  <div class="form-group col-lg-2">
+                    <label for="目前是否服药">目前是否服药</label>
+                    <select class="form-control selectpicker" id="目前是否服药" title="单选">
+                      <option>否</option>
+                      <option>是</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-lg-2">
+                    <label for="如果是，用药情况">如果是，用药情况</label>
+                    <select class="form-control selectpicker" id="如果是，用药情况" title="单选">
+                      <option>从不遗忘</option>
+                      <option>偶尔遗忘</option>
+                      <option>有时遗忘</option>
+                      <option>经常遗忘</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-lg-2">
+                    <label for="如果否，停药原因">如果否，停药原因</label>
+                    <select class="form-control selectpicker" id="如果否，停药原因" title="单选">
+                      <option>医生停用</option>
+                      <option>副作用大</option>
+                      <option>花费大</option>
+                      <option>感觉没效果</option>
+                      <option>其他</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-lg-2">
+                    <label for="剂量/次（mg/ml/片）">剂量/次（mg/ml/片）</label>
+                    <input type="text" class="form-control" id="剂量/次（mg/ml/片）">
+                  </div>
+                </div>
               </div>
               <div id="随访期间生活方式">
                 <h5>随访期间生活方式</h5>
@@ -2497,12 +2725,231 @@
               </div>
               <div id="随访期间检查信息">
                 <h5>随访期间检查信息</h5>
+                <div id="体格检查">
+                  <h6>体格检查</h6>
+                  <div class="row">
+                    <div class="form-group col-lg-2">
+                      <label for="身高(cm)">身高(cm)</label>
+                      <input type="number" class="form-control" id="身高(cm)">
+                    </div>
+                    <div class="form-group col-lg-2">
+                      <label for="体重(kg)">体重(kg)</label>
+                      <input type="number" class="form-control" id="体重(kg)">
+                    </div>
+                    <div class="form-group col-lg-2">
+                      <label for="BMI(kg/m^2)">BMI(kg/m^2)</label>
+                      <input type="number" class="form-control" id="BMI(kg/m^2)">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="form-group col-lg-2">
+                      <label for="左侧舒张压(mmHg)">左侧舒张压(mmHg)</label>
+                      <input type="number" class="form-control" id="左侧舒张压(mmHg)">
+                    </div>
+                    <div class="form-group col-lg-2">
+                      <label for="左侧收缩压(mmHg)">左侧收缩压(mmHg)</label>
+                      <input type="number" class="form-control" id="左侧收缩压(mmHg)">
+                    </div>
+                    <div class="form-group col-lg-2">
+                      <label for="右侧舒张压(mmHg)">右侧舒张压(mmHg)</label>
+                      <input type="number" class="form-control" id="右侧舒张压(mmHg)">
+                    </div>
+                    <div class="form-group col-lg-2">
+                      <label for="右侧收缩压(mmHg)">右侧收缩压(mmHg)</label>
+                      <input type="number" class="form-control" id="右侧收缩压(mmHg)">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="form-group col-lg-2">
+                      <label for="脉搏(次/分)">脉搏(次/分)</label>
+                      <input type="number" class="form-control" id="脉搏(次/分)">
+                    </div>
+                    <div class="form-group col-lg-2">
+                      <label for="呼吸(次/分)">呼吸(次/分)</label>
+                      <input type="number" class="form-control" id="呼吸(次/分)">
+                    </div>
+                    <div class="form-group col-lg-2">
+                      <label for="心脏杂音">心脏杂音</label>
+                      <select class="form-control selectpicker" id="心脏杂音" title="单选">
+                        <option>无</option>
+                        <option>有</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-lg-2">
+                      <label for="心律">心律</label>
+                      <select class="form-control selectpicker" id="心律" title="单选">
+                        <option>整齐</option>
+                        <option>不齐</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <br>
+                <div id="心电图检查">
+                  <h6>心电图检查（体格检查中“心律不齐”者必做）</h6>
+                  <div class="row">
+                    <div class="form-group col-lg-4">
+                      <label for="心电图">心电图</label>
+                      <select class="form-control selectpicker" id="心电图" title="多选" multiple>
+                        <option>常规心电图</option>
+                        <option>24 小时动态心电图</option>
+                        <option>大于 24 小时心电记录</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-lg-2">
+                      <label for="检查结果">检查结果</label>
+                      <select class="form-control selectpicker" id="检查结果" title="单选">
+                        <option>正常</option>
+                        <option>异常</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-lg-2">
+                      <label for="检查结果">异常类型</label>
+                      <select class="form-control selectpicker" id="异常类型" title="单选">
+                        <option>房颤</option>
+                        <option>房拆</option>
+                        <option>其他</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <br>
+                <div id="实验室检查">
+                  <h6>实验室检查</h6>
+                  <h6>血常规</h6>
+                  <div class="row">
+                    <div class="form-group col-lg-4">
+                      <label for="白细胞计数(WBC)(10^9/L)">白细胞计数(WBC)(10^9/L)</label>
+                      <input type="number" class="form-control" id="白细胞计数(WBC)(10^9/L)">
+                    </div>
+                    <div class="form-group col-lg-4">
+                      <label for="中性粒细胞(NEU)(%)">中性粒细胞(NEU)(%)</label>
+                      <input type="number" class="form-control" id="中性粒细胞(NEU)(%)">
+                    </div>
+                    <div class="form-group col-lg-4">
+                      <label for="淋巴细胞(LYM)(%)">淋巴细胞(LYM)(%)</label>
+                      <input type="number" class="form-control" id="淋巴细胞(LYM)(%)">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="form-group col-lg-4">
+                      <label for="血红蛋白(HGB)(g/L)">血红蛋白(HGB)(g/L)</label>
+                      <input type="number" class="form-control" id="血红蛋白(HGB)(g/L)">
+                    </div>
+                    <div class="form-group col-lg-4">
+                      <label for="血小板计数(PLT)(10^9/L)">血小板计数(PLT)(10^9/L)</label>
+                      <input type="number" class="form-control" id="血小板计数(PLT)(10^9/L)">
+                    </div>
+                  </div>
+                  <h6>血糖</h6>
+                  <div class="row">
+                    <div class="form-group col-lg-3">
+                      <label for="空腹血糖(mmol/L)">空腹血糖(mmol/L)</label>
+                      <input type="number" class="form-control" id="空腹血糖(mmol/L)">
+                    </div>
+                    <div class="form-group col-lg-3">
+                      <label for="餐后2小时血糖(mmol/L)">餐后2小时血糖(mmol/L)</label>
+                      <input type="number" class="form-control" id="餐后2小时血糖(mmol/L)">
+                    </div>
+                    <div class="form-group col-lg-3">
+                      <label for="糖化血红蛋白(%)">糖化血红蛋白(%)(糖尿病患者应查)</label>
+                      <input type="number" class="form-control" id="糖化血红蛋白(%)">
+                    </div>
+                  </div>
+                  <h6>血脂四项</h6>
+                  <div class="row">
+                    <div class="form-group col-lg-3">
+                      <label for="甘油三酯(mmol/L)">甘油三酯(mmol/L)</label>
+                      <input type="number" class="form-control" id="甘油三酯(mmol/L)">
+                    </div>
+                    <div class="form-group col-lg-3">
+                      <label for="胆固醇(mmol/L)">胆固醇(mmol/L)</label>
+                      <input type="number" class="form-control" id="胆固醇(mmol/L)">
+                    </div>
+                    <div class="form-group col-lg-3">
+                      <label for="低密度脂蛋白胆固醇(mmol/L)">低密度脂蛋白胆固醇(mmol/L)</label>
+                      <input type="number" class="form-control" id="低密度脂蛋白胆固醇(mmol/L)">
+                    </div>
+                    <div class="form-group col-lg-3">
+                      <label for="高密度脂蛋白胆固醇(mmol/L)">高密度脂蛋白胆固醇(mmol/L)</label>
+                      <input type="number" class="form-control" id="高密度脂蛋白胆固醇(mmol/L)">
+                    </div>
+                  </div>
+                  <h6>同型半胱氨酸(高血压患者应查)</h6>
+                  <div class="row">
+                    <div class="form-group col-lg-3">
+                      <label for="同型半胱氨酸(μmol/L)">同型半胱氨酸(μmol/L)</label>
+                      <input type="number" class="form-control" id="同型半胱氨酸(μmol/L)">
+                    </div>
+                  </div>
+                  <h6>凝血</h6>
+                  <div class="row">
+                    <div class="form-group col-lg-3">
+                      <label for="INR">INR</label>
+                      <input type="number" class="form-control" id="INR">
+                    </div>
+                    <div class="form-group col-lg-3">
+                      <label for="凝血酶原时间(秒)">凝血酶原时间(秒)</label>
+                      <input type="number" class="form-control" id="凝血酶原时间(秒)">
+                    </div>
+                    <div class="form-group col-lg-3">
+                      <label for="活化部分凝血活酶时间(秒)">活化部分凝血活酶时间(秒)</label>
+                      <input type="number" class="form-control" id="活化部分凝血活酶时间(秒)">
+                    </div>
+                    <div class="form-group col-lg-3">
+                      <label for="凝血酶时间(秒)">凝血酶时间(秒)</label>
+                      <input type="number" class="form-control" id="凝血酶时间(秒)">
+                    </div>
+                  </div>
+                </div>
               </div>
               <div id="专科评分">
                 <h5>专科评分</h5>
+                <div class="row">
+                  <div class="form-group col-lg-4">
+                    <label for="mRS评分">mRS 评分（卒中患者应查）</label>
+                    <input type="number" class="form-control" id="mRS评分">
+                  </div>
+                  <div class="form-group col-lg-4">
+                    <label for="NIHSS评分">NIHSS 评分（卒中患者应查）</label>
+                    <input type="number" class="form-control" id="NIHSS评分">
+                  </div>
+                  <div class="form-group col-lg-4">
+                    <label for="ESSEN评分">ESSEN 评分（脑梗死、TIA 患者应查）</label>
+                    <input type="number" class="form-control" id="ESSEN评分">
+                  </div>
+                </div>
               </div>
               <div id="随访期间康复治疗">
                 <h5>随访期间康复治疗</h5>
+                <div class="row">
+                  <div class="form-group col-lg-4">
+                    <label for="本次随访期间是否接受康复治疗">本次随访期间是否接受康复治疗</label>
+                    <select class="form-control selectpicker" id="本次随访期间是否接受康复治疗" title="单选">
+                      <option>否</option>
+                      <option>是</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-lg-4">
+                    <label for="康复治疗方式">康复治疗方式</label>
+                    <select class="form-control selectpicker" id="康复治疗方式" title="多选" multiple>
+                      <option>针灸</option>
+                      <option>按摩</option>
+                      <option>运动训练</option>
+                      <option>其他方式</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-lg-4">
+                    <label for="康复治疗场所">康复治疗场所</label>
+                    <select class="form-control selectpicker" id="康复治疗场所" title="多选" multiple>
+                      <option>家中</option>
+                      <option>本院</option>
+                      <option>社区</option>
+                      <option>其他二级或三级医疗机构</option>
+                      <option>专门康复机构</option>
+                    </select>
+                  </div>
+                </div>
               </div>
               <br>
             </div>

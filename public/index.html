@@ -2026,6 +2026,42 @@
                 <h5>血管内治疗（仅主要诊疗操作中选择“动脉溶栓”、“桥接治疗”、“吸栓”、“支架置入”、“球囊扩张”患者填写）</h5>
                 <div class="row">
                   <div class="form-group col-lg-2">
+                    <label for="血管内介入治疗策略">血管内介入治疗策略</label>
+                    <select class="form-control selectpicker" id="血管内介入治疗策略" title="多选" multiple>
+                      <option>动脉溶栓</option>
+                      <option>桥接治疗</option>
+                      <option>支架取栓</option>
+                      <option>吸栓</option>
+                      <option>支架置入</option>
+                      <option>球囊扩张</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-lg-2">
+                    <label for="治疗时间">治疗时间</label>
+                    <select class="form-control selectpicker" id="治疗时间" title="单选">
+                      <option>急诊</option>
+                      <option>择期</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-lg-2">
+                    <label for="麻醉方式">麻醉方式</label>
+                    <select class="form-control selectpicker" id="麻醉方式" title="单选">
+                      <option>局麻</option>
+                      <option>全麻</option>
+                      <option>局麻+镇静</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-lg-2">
+                    <label for="发病到穿刺时间（分）">发病到穿刺时间（分）</label>
+                    <input type="number" class="form-control" id="发病到穿刺时间（分）">
+                  </div>
+                  <div class="form-group col-lg-2">
+                    <label for="入院到穿刺时间（分）">入院到穿刺时间（分）</label>
+                    <input type="number" class="form-control" id="入院到穿刺时间（分）">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col-lg-2">
                     <label for="股动脉穿刺开始时间">股动脉穿刺开始时间</label>
                     <div class="input-group">
                       <div class="input-group-prepend">
@@ -2042,6 +2078,250 @@
                       </div>
                       <input type="time" class="form-control" id="再通时间" aria-describedby="再通时间Prepend">
                     </div>
+                  </div>
+                  <div class="form-group col-lg-4">
+                    <label for="股动脉穿刺开始时间至到院时间（DPT）（分）">股动脉穿刺开始时间至到院时间（DPT）（分）</label>
+                    <input type="number" class="form-control" id="股动脉穿刺开始时间至到院时间（DPT）（分）">
+                  </div>
+                  <div class="form-group col-lg-4">
+                    <label for="股动脉再通时间至到院时间（DRT）（分）">股动脉再通时间至到院时间（DRT）（分）</label>
+                    <input type="number" class="form-control" id="股动脉再通时间至到院时间（DRT）（分）">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col-lg-3">
+                    <label for="血管内开通方法">血管内开通方法</label>
+                    <select class="form-control selectpicker" id="血管内开通方法" title="多选" multiple>
+                      <option>支架取栓</option>
+                      <option>支架抽栓</option>
+                      <option>球囊成形</option>
+                      <option>支架成形</option>
+                      <option>动脉溶栓</option>
+                      <option>机械碎栓</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-lg-3">
+                    <label for="术后并发症">术后并发症</label>
+                    <select class="form-control selectpicker" id="术后并发症" title="多选" multiple>
+                      <option>颅内出血</option>
+                      <option>动脉夹层</option>
+                      <option>缺血性并发症</option>
+                      <option>其他部位动脉闭塞</option>
+                      <option>支架脱离</option>
+                      <option>再闭塞</option>
+                      <option>消化道出血</option>
+                      <option>颈动脉海绵窦瘘</option>
+                      <option>再灌注损伤</option>
+                      <option>其他</option>
+                      <option>无</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col-lg-4">
+                    <label for="术后NIHSS评分">术后NIHSS评分</label>
+                    <input type="number" class="form-control" id="术后NIHSS评分">
+                  </div>
+                  <div class="form-group col-lg-4">
+                    <label for="术24hNIHSS评分">术24h NIHSS评分</label>
+                    <input type="number" class="form-control" id="术24h NIHSS评分">
+                  </div>
+                  <div class="form-group col-lg-4">
+                    <label for="7±2天NIHSS评分（术24h）">7±2天NIHSS评分</label>
+                    <input type="number" class="form-control" id="7±2天NIHSS评分（术24h）">
+                  </div>
+                </div>
+                <h6>如果选择“动脉溶栓”或动静脉桥接取栓</h6>
+                <div class="row">
+                  <div class="form-group col-lg-4">
+                    <label for="动脉溶栓药物">动脉溶栓药物</label>
+                    <select class="form-control selectpicker" id="动脉溶栓药物" title="多选" multiple>
+                      <option>r-tPA</option>
+                      <option>尿激酶</option>
+                      <option>Pro-UK</option>
+                      <option>替罗非班</option>
+                      <option>其他</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-lg-2">
+                    <label for="r-tPA给药剂量(mg)">r-tPA给药剂量(mg)</label>
+                    <input type="number" class="form-control" id="r-tPA给药剂量(mg)">
+                  </div>
+                  <div class="form-group col-lg-2">
+                    <label for="尿激酶给药剂量(万 IU)">尿激酶给药剂量(万 IU)</label>
+                    <input type="number" class="form-control" id="尿激酶给药剂量(万 IU)">
+                  </div>
+                  <div class="form-group col-lg-2">
+                    <label for="Pro-UK给药剂量(mg)">Pro-UK给药剂量(mg)</label>
+                    <input type="number" class="form-control" id="Pro-UK给药剂量(mg)">
+                  </div>
+                  <div class="form-group col-lg-2">
+                    <label for="替罗非班给药剂量(mg)">替罗非班给药剂量(mg)</label>
+                    <input type="number" class="form-control" id="替罗非班给药剂量(mg)">
+                  </div>
+                </div>
+                <h6>如果选择“支架取栓”</h6>
+                <div class="row">
+                  <div class="form-group col-lg-3">
+                    <label for="主要介入取栓装置">主要介入取栓装置</label>
+                    <select class="form-control selectpicker" id="主要介入取栓装置" title="多选" multiple>
+                      <option>Solitaire</option>
+                      <option>Penumbra</option>
+                      <option>Trevo</option>
+                      <option>其他</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-lg-2">
+                    <label for="取栓次数">取栓次数</label>
+                    <input type="number" class="form-control" id="取栓次数">
+                  </div>
+                  <div class="form-group col-lg-2">
+                    <label for="取栓是否成功">取栓是否成功</label>
+                    <select class="form-control selectpicker" id="取栓是否成功" title="单选">
+                      <option>是</option>
+                      <option>否</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-lg-2">
+                    <label for="机械取栓耗时（分）">机械取栓耗时（分）</label>
+                    <input type="number" class="form-control" id="机械取栓耗时（分）">
+                  </div>
+                </div>
+                <h6>如果选择“吸栓”</h6>
+                <div class="row">
+                  <div class="form-group col-lg-2">
+                    <label for="吸栓次数">吸栓次数</label>
+                    <input type="number" class="form-control" id="吸栓次数">
+                  </div>
+                  <div class="form-group col-lg-2">
+                    <label for="吸栓是否成功">吸栓是否成功</label>
+                    <select class="form-control selectpicker" id="吸栓是否成功" title="单选">
+                      <option>是</option>
+                      <option>否</option>
+                    </select>
+                  </div>
+                </div>
+                <h6>如果选择“支架置入”</h6>
+                <div class="row">
+                  <div class="form-group col-lg-2">
+                    <label for="支架置入数量（支）">支架置入数量（支）</label>
+                    <input type="number" class="form-control" id="支架置入数量（支）">
+                  </div>
+                </div>
+                <h6>如果选择“球囊扩张”</h6>
+                <div class="row">
+                  <div class="form-group col-lg-2">
+                    <label for="球囊扩张数量（支）">球囊扩张数量（支）</label>
+                    <input type="number" class="form-control" id="球囊扩张数量（支）">
+                  </div>
+                </div>
+                <h6>治疗责任血管部位（1=有 2=无）（ICA:颈内动脉	MCA:大脑中动脉	VA:椎动脉	SA:锁骨下动脉 CCA:颈总动脉 BA：基底动脉	IA: 无名动脉）</h5>
+                <h6>术前评估</h6>
+                <div class="row">
+                  <div class="form-group col-lg-2">
+                    <label for="收缩压（mmHg）">收缩压（mmHg）</label>
+                    <input type="number" class="form-control" id="收缩压（mmHg）">
+                  </div>
+                  <div class="form-group col-lg-2">
+                    <label for="舒张压（mmHg）">舒张压（mmHg）</label>
+                    <input type="number" class="form-control" id="舒张压（mmHg）">
+                  </div>
+                  <div class="form-group col-lg-2">
+                    <label for="mRS评分">mRS 评分</label>
+                    <input type="number" class="form-control" id="mRS评分">
+                  </div>
+                  <div class="form-group col-lg-2">
+                    <label for="NIHSS评分">NIHSS 评分</label>
+                    <input type="number" class="form-control" id="NIHSS评分">
+                  </div>
+                  <div class="form-group col-lg-2">
+                    <label for="ASPECT评分">ASPECT 评分</label>
+                    <input type="number" class="form-control" id="ASPECT评分">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col-lg-3">
+                    <label for="Qureshi脑动脉闭塞分级">Qureshi 脑动脉闭塞分级</label>
+                    <select class="form-control selectpicker" id="Qureshi脑动脉闭塞分级" title="单选">
+                      <option>0级</option>
+                      <option>1级</option>
+                      <option>2级</option>
+                      <option>3A级</option>
+                      <option>3B级</option>
+                      <option>4A级</option>
+                      <option>4B级</option>
+                      <option>5级</option>
+                      <option>未评</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-lg-2">
+                    <label for="TICI分级">TICI分级</label>
+                    <select class="form-control selectpicker" id="TICI分级" title="单选">
+                      <option>0级</option>
+                      <option>1级</option>
+                      <option>2a级</option>
+                      <option>2b级</option>
+                      <option>3级</option>
+                      <option>未评</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-lg-2">
+                    <label for="GCS评分">GCS 评分</label>
+                    <input type="number" class="form-control" id="GCS评分">
+                  </div>
+                </div>
+                <h6>术后即刻评估</h6>
+                <div class="row">
+                  <div class="form-group col-lg-2">
+                    <label for="收缩压（mmHg）">收缩压（mmHg）</label>
+                    <input type="number" class="form-control" id="收缩压（mmHg）">
+                  </div>
+                  <div class="form-group col-lg-2">
+                    <label for="舒张压（mmHg）">舒张压（mmHg）</label>
+                    <input type="number" class="form-control" id="舒张压（mmHg）">
+                  </div>
+                  <div class="form-group col-lg-2">
+                    <label for="mRS评分">mRS 评分</label>
+                    <input type="number" class="form-control" id="mRS评分">
+                  </div>
+                  <div class="form-group col-lg-2">
+                    <label for="NIHSS评分">NIHSS 评分</label>
+                    <input type="number" class="form-control" id="NIHSS评分">
+                  </div>
+                  <div class="form-group col-lg-2">
+                    <label for="TICI分级">TICI分级</label>
+                    <select class="form-control selectpicker" id="TICI分级" title="单选">
+                      <option>0级</option>
+                      <option>1级</option>
+                      <option>2a级</option>
+                      <option>2b级</option>
+                      <option>3级</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-lg-2">
+                    <label for="GCS评分">GCS 评分</label>
+                    <input type="number" class="form-control" id="GCS评分">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col-lg-2">
+                    <label for="血管再通">血管再通</label>
+                    <select class="form-control selectpicker" id="血管再通" title="单选">
+                      <option>否</option>
+                      <option>是</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-lg-4">
+                    <label for="血管未通原因">血管未通原因</label>
+                    <input type="text" class="form-control" id="血管未通原因">
+                  </div>
+                  <div class="form-group col-lg-3">
+                    <label for="入院到首次血管再通时间（分）">入院到首次血管再通时间（分）</label>
+                    <input type="number" class="form-control" id="入院到首次血管再通时间（分）">
+                  </div>
+                  <div class="form-group col-lg-3">
+                    <label for="介入手术耗时（分钟）">介入手术耗时（分钟）</label>
+                    <input type="number" class="form-control" id="介入手术耗时（分钟）">
                   </div>
                 </div>
               </div>

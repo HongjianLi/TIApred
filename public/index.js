@@ -8,6 +8,9 @@ $(() => {
       $("> h4", div2).addClass("text-info");
       $("> div", div2).each((idx, div3) => {
         $("> h5", div3).addClass("text-success");
+        $("> div", div3).each((idx, div4) => {
+          $("> h6", div4).addClass("text-primary");
+        });
       });
     });
   });

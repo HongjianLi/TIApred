@@ -50,14 +50,53 @@
               <div class="row">
                 <div class="form-group col-lg-3">
                   <label for="住院号">住院号(必填)</label>
-                  <input type="text" class="form-control" id="住院号" required>
-                  <div class="invalid-tooltip">
-                    必填
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="住院号Prepend"><i class="fas fa-hospital"></i></span>
+                    </div>
+                    <input type="text" class="form-control" id="住院号" aria-describedby="住院号Prepend" required>
+                    <div class="invalid-tooltip">
+                      必填
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group col-lg-4">
+                  <label for="住院日期">住院日期</label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="住院日期Prepend"><i class="fas fa-calendar-alt"></i></span>
+                    </div>
+                    <input type="date" class="form-control" id="住院日期" aria-describedby="住院日期Prepend">
+                  </div>
+                </div>
+                <div class="form-group col-lg-2">
+                  <label for="住院时间">住院时间</label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="住院时间Prepend"><i class="fas fa-clock"></i></span>
+                    </div>
+                    <input type="time" class="form-control" id="住院时间" aria-describedby="住院时间Prepend">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-group col-lg-3">
+                  <label for="姓名">姓名</label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="姓名Prepend"><i class="fas fa-id-card"></i></span>
+                    </div>
+                    <input type="text" class="form-control" id="姓名" aria-describedby="姓名Prepend">
                   </div>
                 </div>
                 <div class="form-group col-lg-3">
-                  <label for="姓名">姓名</label>
-                  <input type="text" class="form-control" id="姓名">
+                  <label for="身份证号">身份证号</label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="身份证号Prepend"><i class="fas fa-id-card"></i></span>
+                    </div>
+                    <input type="text" class="form-control" id="身份证号" aria-describedby="身份证号Prepend">
+                  </div>
                 </div>
                 <div class="form-group col-lg-2">
                   <label for="性别">性别</label>
@@ -70,6 +109,8 @@
                   <label for="民族">民族</label>
                   <input type="text" class="form-control" id="民族">
                 </div>
+              </div>
+              <div class="row">
                 <div class="form-group col-lg-2">
                   <label for="婚姻">婚姻</label>
                   <select class="form-control selectpicker" id="婚姻" title="单选">
@@ -79,17 +120,6 @@
                     <option>丧偶</option>
                     <option>其他</option>
                   </select>
-                </div>
-              </div>
-              <div class="row">
-                <div class="form-group col-lg-3">
-                  <label for="身份证号">身份证号</label>
-                  <div class="input-group">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text" id="身份证号Prepend"><i class="fas fa-id-card"></i></span>
-                    </div>
-                    <input type="text" class="form-control" id="身份证号" aria-describedby="身份证号Prepend">
-                  </div>
                 </div>
                 <div class="form-group col-lg-2">
                   <label for="受教育程度">受教育程度</label>
@@ -138,12 +168,12 @@
               </div>
               <div class="row">
                 <div class="form-group col-lg-6">
-                  <label for="住址">住址</label>
+                  <label for="户籍地址">户籍地址</label>
                   <div class="input-group">
                     <div class="input-group-prepend">
-                      <span class="input-group-text" id="住址Prepend"><i class="fas fa-home"></i></span>
+                      <span class="input-group-text" id="户籍地址Prepend"><i class="fas fa-home"></i></span>
                     </div>
-                    <input type="text" class="form-control" id="住址" aria-describedby="住址Prepend" placeholder="____省____市____区/县____街道/乡镇____居(村)委会____">
+                    <input type="text" class="form-control" id="户籍地址" aria-describedby="户籍地址Prepend" placeholder="____省____市____区/县____街道/乡镇____居(村)委会____">
                   </div>
                 </div>
                 <div class="form-group col-lg-2">
@@ -162,6 +192,26 @@
                       <span class="input-group-text" id="电子邮箱Prepend"><i class="fas fa-at"></i></span>
                     </div>
                     <input type="email" class="form-control" id="电子邮箱" aria-describedby="电子邮箱Prepend" placeholder="姓名@公司.com">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-group col-lg-6">
+                  <label for="现居住地址">现居住地址</label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="现居住地址Prepend"><i class="fas fa-home"></i></span>
+                    </div>
+                    <input type="text" class="form-control" id="现居住地址" aria-describedby="现居住地址Prepend" placeholder="____省____市____区/县____街道/乡镇____居(村)委会____">
+                  </div>
+                </div>
+                <div class="form-group col-lg-2">
+                  <label for="联系人手机号码">联系人手机号码</label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="联系人手机号码Prepend"><i class="fas fa-mobile-alt"></i></span>
+                    </div>
+                    <input type="text" class="form-control" id="联系人手机号码" aria-describedby="联系人手机号码Prepend">
                   </div>
                 </div>
               </div>
@@ -209,24 +259,6 @@
                 </div>
               </div>
               <div class="row">
-                <div class="form-group col-lg-4">
-                  <label for="住院日期">住院日期</label>
-                  <div class="input-group">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text" id="住院日期Prepend"><i class="fas fa-calendar-alt"></i></span>
-                    </div>
-                    <input type="date" class="form-control" id="住院日期" aria-describedby="住院日期Prepend">
-                  </div>
-                </div>
-                <div class="form-group col-lg-2">
-                  <label for="住院时间">住院时间</label>
-                  <div class="input-group">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text" id="住院时间Prepend"><i class="fas fa-clock"></i></span>
-                    </div>
-                    <input type="time" class="form-control" id="住院时间" aria-describedby="住院时间Prepend">
-                  </div>
-                </div>
                 <div class="form-group col-lg-2">
                   <label for="首诊科室">首诊科室</label>
                   <select class="form-control selectpicker" id="首诊科室" title="单选">
@@ -370,6 +402,15 @@
                     <option>无</option>
                   </select>
                 </div>
+                <div class="form-group col-lg-2">
+                  <label for="卒中确诊年份">卒中确诊年份</label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="卒中确诊年份Prepend"><i class="fas fa-calendar-alt"></i></span>
+                    </div>
+                    <input type="text" class="form-control" id="卒中确诊年份" aria-describedby="卒中确诊年份Prepend">
+                  </div>
+                </div>
                 <div class="form-group col-lg-4">
                   <label for="卒中类型">卒中类型</label>
                   <select class="form-control selectpicker" id="卒中类型" title="多选" multiple>
@@ -400,6 +441,24 @@
                   </select>
                 </div>
                 <div class="form-group col-lg-2">
+                  <label for="已吸烟年数">已吸烟年数</label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="已吸烟年数Prepend"><i class="fas fa-calendar-alt"></i></span>
+                    </div>
+                    <input type="number" class="form-control" id="已吸烟年数" aria-describedby="已吸烟年数Prepend">
+                  </div>
+                </div>
+                <div class="form-group col-lg-2">
+                  <label for="已戒烟年数">已戒烟年数</label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="已戒烟年数Prepend"><i class="fas fa-calendar-alt"></i></span>
+                    </div>
+                    <input type="number" class="form-control" id="已戒烟年数" aria-describedby="已戒烟年数Prepend">
+                  </div>
+                </div>
+                <div class="form-group col-lg-2">
                   <label for="饮酒">饮酒</label>
                   <select class="form-control selectpicker" id="饮酒" title="单选">
                     <option>不饮酒</option>
@@ -414,6 +473,8 @@
                     <option>缺乏运动(不符合上述经常运动标准者)</option>
                   </select>
                 </div>
+              </div>
+              <div class="row">
                 <div class="form-group col-lg-2">
                   <label for="荤素">荤素</label>
                   <select class="form-control selectpicker" id="荤素" title="单选">
@@ -430,8 +491,6 @@
                     <option>适中</option>
                   </select>
                 </div>
-              </div>
-              <div class="row">
                 <div class="form-group col-lg-3">
                   <label for="吃蔬菜">吃蔬菜（每日食用 6 两蔬菜）</label>
                   <select class="form-control selectpicker" id="吃蔬菜" title="单选">
@@ -888,6 +947,8 @@
                         <option>右侧小脑</option>
                       </select>
                     </div>
+                  </div>
+                  <div class="row">
                     <div class="form-group col-lg-2">
                       <label for="性质">性质</label>
                       <select class="form-control selectpicker" id="性质" title="单选">
@@ -895,6 +956,14 @@
                         <option>高密度</option>
                         <option>混杂密度</option>
                       </select>
+                    </div>
+                    <div class="form-group col-lg-3">
+                      <label for="大小（mm×mm×mm）">大小（mm × mm × mm）</label>
+                      <input type="text" class="form-control" id="大小（mm×mm×mm）">
+                    </div>
+                    <div class="form-group col-lg-3">
+                      <label for="诊断结论">诊断结论</label>
+                      <input type="text" class="form-control" id="诊断结论">
                     </div>
                   </div>
                 </div>
@@ -942,6 +1011,8 @@
                         <option>右侧小脑</option>
                       </select>
                     </div>
+                  </div>
+                  <div class="row">
                     <div class="form-group col-lg-2">
                       <label for="性质">性质</label>
                       <select class="form-control selectpicker" id="性质" title="单选">
@@ -949,6 +1020,14 @@
                         <option>高信号</option>
                         <option>混杂信号</option>
                       </select>
+                    </div>
+                    <div class="form-group col-lg-3">
+                      <label for="大小（mm×mm×mm）">大小（mm × mm × mm）</label>
+                      <input type="text" class="form-control" id="大小（mm×mm×mm）">
+                    </div>
+                    <div class="form-group col-lg-3">
+                      <label for="诊断结论">诊断结论</label>
+                      <input type="text" class="form-control" id="诊断结论">
                     </div>
                   </div>
                 </div>
@@ -962,6 +1041,13 @@
                         <option>未查</option>
                       </select>
                     </div>
+                    <div class="form-group col-lg-6">
+                      <label for="检查项目">检查项目（如果同时做了 CTA、DSA 检查，填写 DSA 检查结果）</label>
+                      <select class="form-control selectpicker" id="检查项目" title="多选" multiple>
+                        <option>DSA</option>
+                        <option>CTA</option>
+                      </select>
+                    </div>
                     <div class="form-group col-lg-2">
                       <label for="检查结果">检查结果</label>
                       <select class="form-control selectpicker" id="检查结果" title="单选">
@@ -972,8 +1058,8 @@
                   </div>
                   <div class="row">
                     <div class="form-group col-lg-3">
-                      <label for="主动脉弓狭窄程度">主动脉弓狭窄程度</label>
-                      <select class="form-control selectpicker" id="主动脉弓狭窄程度" title="单选">
+                      <label for="主动脉弓(A)狭窄程度">主动脉弓(A)狭窄程度</label>
+                      <select class="form-control selectpicker" id="主动脉弓(A)狭窄程度" title="单选">
                         <option>无狭窄</option>
                         <option>1-49％</option>
                         <option>50-69％</option>
@@ -982,8 +1068,8 @@
                       </select>
                     </div>
                     <div class="form-group col-lg-3">
-                      <label for="左侧锁骨下动脉狭窄程度">左侧锁骨下动脉狭窄程度</label>
-                      <select class="form-control selectpicker" id="左侧锁骨下动脉狭窄程度" title="单选">
+                      <label for="左侧锁骨下动脉(SA)狭窄程度">左侧锁骨下动脉(SA)狭窄程度</label>
+                      <select class="form-control selectpicker" id="左侧锁骨下动脉(SA)狭窄程度" title="单选">
                         <option>无狭窄</option>
                         <option>1-49％</option>
                         <option>50-69％</option>
@@ -992,8 +1078,8 @@
                       </select>
                     </div>
                     <div class="form-group col-lg-3">
-                      <label for="左侧颈总动脉狭窄程度">左侧颈总动脉狭窄程度</label>
-                      <select class="form-control selectpicker" id="左侧颈总动脉狭窄程度" title="单选">
+                      <label for="左侧颈总动脉(CCA)狭窄程度">左侧颈总动脉(CCA)狭窄程度</label>
+                      <select class="form-control selectpicker" id="左侧颈总动脉(CCA)狭窄程度" title="单选">
                         <option>无狭窄</option>
                         <option>1-49％</option>
                         <option>50-69％</option>
@@ -1002,8 +1088,8 @@
                       </select>
                     </div>
                     <div class="form-group col-lg-3">
-                      <label for="左侧颈内动脉狭窄程度">左侧颈内动脉狭窄程度</label>
-                      <select class="form-control selectpicker" id="左侧颈内动脉狭窄程度" title="单选">
+                      <label for="左侧颈内动脉(ICA)狭窄程度">左侧颈内动脉(ICA)狭窄程度</label>
+                      <select class="form-control selectpicker" id="左侧颈内动脉(ICA)狭窄程度" title="单选">
                         <option>无狭窄</option>
                         <option>1-49％</option>
                         <option>50-69％</option>
@@ -1012,8 +1098,8 @@
                       </select>
                     </div>
                     <div class="form-group col-lg-3">
-                      <label for="左侧颈外动脉狭窄程度">左侧颈外动脉狭窄程度</label>
-                      <select class="form-control selectpicker" id="左侧颈外动脉狭窄程度" title="单选">
+                      <label for="左侧颈外动脉(ECA)狭窄程度">左侧颈外动脉(ECA)狭窄程度</label>
+                      <select class="form-control selectpicker" id="左侧颈外动脉(ECA)狭窄程度" title="单选">
                         <option>无狭窄</option>
                         <option>1-49％</option>
                         <option>50-69％</option>
@@ -1022,8 +1108,8 @@
                       </select>
                     </div>
                     <div class="form-group col-lg-3">
-                      <label for="左侧椎动脉狭窄程度">左侧椎动脉狭窄程度</label>
-                      <select class="form-control selectpicker" id="左侧椎动脉狭窄程度" title="单选">
+                      <label for="左侧椎动脉(VA)狭窄程度">左侧椎动脉(VA)狭窄程度</label>
+                      <select class="form-control selectpicker" id="左侧椎动脉(VA)狭窄程度" title="单选">
                         <option>无狭窄</option>
                         <option>1-49％</option>
                         <option>50-69％</option>
@@ -1032,8 +1118,8 @@
                       </select>
                     </div>
                     <div class="form-group col-lg-3">
-                      <label for="右侧锁骨下动脉狭窄程度">右侧锁骨下动脉狭窄程度</label>
-                      <select class="form-control selectpicker" id="右侧锁骨下动脉狭窄程度" title="单选">
+                      <label for="右侧锁骨下动脉(SA)狭窄程度">右侧锁骨下动脉(SA)狭窄程度</label>
+                      <select class="form-control selectpicker" id="右侧锁骨下动脉(SA)狭窄程度" title="单选">
                         <option>无狭窄</option>
                         <option>1-49％</option>
                         <option>50-69％</option>
@@ -1042,8 +1128,8 @@
                       </select>
                     </div>
                     <div class="form-group col-lg-3">
-                      <label for="右侧颈总动脉狭窄程度">右侧颈总动脉狭窄程度</label>
-                      <select class="form-control selectpicker" id="右侧颈总动脉狭窄程度" title="单选">
+                      <label for="右侧颈总动脉(CCA)狭窄程度">右侧颈总动脉(CCA)狭窄程度</label>
+                      <select class="form-control selectpicker" id="右侧颈总动脉(CCA)狭窄程度" title="单选">
                         <option>无狭窄</option>
                         <option>1-49％</option>
                         <option>50-69％</option>
@@ -1052,8 +1138,8 @@
                       </select>
                     </div>
                     <div class="form-group col-lg-3">
-                      <label for="右侧颈内动脉狭窄程度">右侧颈内动脉狭窄程度</label>
-                      <select class="form-control selectpicker" id="右侧颈内动脉狭窄程度" title="单选">
+                      <label for="右侧颈内动脉(ICA)狭窄程度">右侧颈内动脉(ICA)狭窄程度</label>
+                      <select class="form-control selectpicker" id="右侧颈内动脉(ICA)狭窄程度" title="单选">
                         <option>无狭窄</option>
                         <option>1-49％</option>
                         <option>50-69％</option>
@@ -1062,8 +1148,8 @@
                       </select>
                     </div>
                     <div class="form-group col-lg-3">
-                      <label for="右侧颈外动脉狭窄程度">右侧颈外动脉狭窄程度</label>
-                      <select class="form-control selectpicker" id="右侧颈外动脉狭窄程度" title="单选">
+                      <label for="右侧颈外动脉(ECA)狭窄程度">右侧颈外动脉(ECA)狭窄程度</label>
+                      <select class="form-control selectpicker" id="右侧颈外动脉(ECA)狭窄程度" title="单选">
                         <option>无狭窄</option>
                         <option>1-49％</option>
                         <option>50-69％</option>
@@ -1072,8 +1158,8 @@
                       </select>
                     </div>
                     <div class="form-group col-lg-3">
-                      <label for="右侧椎动脉狭窄程度">右侧椎动脉狭窄程度</label>
-                      <select class="form-control selectpicker" id="右侧椎动脉狭窄程度" title="单选">
+                      <label for="右侧椎动脉(VA)狭窄程度">右侧椎动脉(VA)狭窄程度</label>
+                      <select class="form-control selectpicker" id="右侧椎动脉(VA)狭窄程度" title="单选">
                         <option>无狭窄</option>
                         <option>1-49％</option>
                         <option>50-69％</option>
@@ -1082,14 +1168,20 @@
                       </select>
                     </div>
                     <div class="form-group col-lg-3">
-                      <label for="无名动脉狭窄程度">无名动脉狭窄程度</label>
-                      <select class="form-control selectpicker" id="无名动脉狭窄程度" title="单选">
+                      <label for="无名动脉(IA)狭窄程度">无名动脉(IA)狭窄程度</label>
+                      <select class="form-control selectpicker" id="无名动脉(IA)狭窄程度" title="单选">
                         <option>无狭窄</option>
                         <option>1-49％</option>
                         <option>50-69％</option>
                         <option>70-99％</option>
                         <option>闭塞</option>
                       </select>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="form-group col-lg-3">
+                      <label for="诊断结论">诊断结论</label>
+                      <input type="text" class="form-control" id="诊断结论">
                     </div>
                   </div>
                 </div>
@@ -1103,6 +1195,14 @@
                         <option>未查</option>
                       </select>
                     </div>
+                    <div class="form-group col-lg-6">
+                      <label for="检查项目">检查项目（检查结果优先填写顺序依次为 DSA、CTA、MRA）</label>
+                      <select class="form-control selectpicker" id="检查项目" title="多选" multiple>
+                        <option>CTA</option>
+                        <option>MRA</option>
+                        <option>DSA</option>
+                      </select>
+                    </div>
                     <div class="form-group col-lg-2">
                       <label for="检查结果">检查结果</label>
                       <select class="form-control selectpicker" id="检查结果" title="单选">
@@ -1113,8 +1213,8 @@
                   </div>
                   <div class="row">
                     <div class="form-group col-lg-3">
-                      <label for="左侧颈内动脉狭窄程度">左侧颈内动脉狭窄程度</label>
-                      <select class="form-control selectpicker" id="左侧颈内动脉狭窄程度" title="单选">
+                      <label for="左侧颈内动脉(ICA)狭窄程度">左侧颈内动脉(ICA)狭窄程度</label>
+                      <select class="form-control selectpicker" id="左侧颈内动脉(ICA)狭窄程度" title="单选">
                         <option>无狭窄</option>
                         <option>1-49％</option>
                         <option>50-69％</option>
@@ -1123,8 +1223,8 @@
                       </select>
                     </div>
                     <div class="form-group col-lg-3">
-                      <label for="左侧大脑中动脉狭窄程度">左侧大脑中动脉狭窄程度</label>
-                      <select class="form-control selectpicker" id="左侧大脑中动脉狭窄程度" title="单选">
+                      <label for="左侧大脑中动脉(MCA)狭窄程度">左侧大脑中动脉(MCA)狭窄程度</label>
+                      <select class="form-control selectpicker" id="左侧大脑中动脉(MCA)狭窄程度" title="单选">
                         <option>无狭窄</option>
                         <option>1-49％</option>
                         <option>50-69％</option>
@@ -1133,8 +1233,8 @@
                       </select>
                     </div>
                     <div class="form-group col-lg-3">
-                      <label for="左侧大脑前动脉狭窄程度">左侧大脑前动脉狭窄程度</label>
-                      <select class="form-control selectpicker" id="左侧大脑前动脉狭窄程度" title="单选">
+                      <label for="左侧大脑前动脉(ACA)狭窄程度">左侧大脑前动脉(ACA)狭窄程度</label>
+                      <select class="form-control selectpicker" id="左侧大脑前动脉(ACA)狭窄程度" title="单选">
                         <option>无狭窄</option>
                         <option>1-49％</option>
                         <option>50-69％</option>
@@ -1143,8 +1243,8 @@
                       </select>
                     </div>
                     <div class="form-group col-lg-3">
-                      <label for="左侧大脑后动脉狭窄程度">左侧大脑后动脉狭窄程度</label>
-                      <select class="form-control selectpicker" id="左侧大脑后动脉狭窄程度" title="单选">
+                      <label for="左侧大脑后动脉(PCA)狭窄程度">左侧大脑后动脉(PCA)狭窄程度</label>
+                      <select class="form-control selectpicker" id="左侧大脑后动脉(PCA)狭窄程度" title="单选">
                         <option>无狭窄</option>
                         <option>1-49％</option>
                         <option>50-69％</option>
@@ -1153,8 +1253,8 @@
                       </select>
                     </div>
                     <div class="form-group col-lg-3">
-                      <label for="左侧椎动脉狭窄程度">左侧椎动脉狭窄程度</label>
-                      <select class="form-control selectpicker" id="左侧椎动脉狭窄程度" title="单选">
+                      <label for="左侧椎动脉(VA)狭窄程度">左侧椎动脉(VA)狭窄程度</label>
+                      <select class="form-control selectpicker" id="左侧椎动脉(VA)狭窄程度" title="单选">
                         <option>无狭窄</option>
                         <option>1-49％</option>
                         <option>50-69％</option>
@@ -1163,8 +1263,8 @@
                       </select>
                     </div>
                     <div class="form-group col-lg-3">
-                      <label for="右侧颈内动脉狭窄程度">右侧颈内动脉狭窄程度</label>
-                      <select class="form-control selectpicker" id="右侧颈内动脉狭窄程度" title="单选">
+                      <label for="右侧颈内动脉(ICA)狭窄程度">右侧颈内动脉(ICA)狭窄程度</label>
+                      <select class="form-control selectpicker" id="右侧颈内动脉(ICA)狭窄程度" title="单选">
                         <option>无狭窄</option>
                         <option>1-49％</option>
                         <option>50-69％</option>
@@ -1173,8 +1273,8 @@
                       </select>
                     </div>
                     <div class="form-group col-lg-3">
-                      <label for="右侧大脑中动脉狭窄程度">右侧大脑中动脉狭窄程度</label>
-                      <select class="form-control selectpicker" id="右侧大脑中动脉狭窄程度" title="单选">
+                      <label for="右侧大脑中动脉(MCA)狭窄程度">右侧大脑中动脉(MCA)狭窄程度</label>
+                      <select class="form-control selectpicker" id="右侧大脑中动脉(MCA)狭窄程度" title="单选">
                         <option>无狭窄</option>
                         <option>1-49％</option>
                         <option>50-69％</option>
@@ -1183,8 +1283,8 @@
                       </select>
                     </div>
                     <div class="form-group col-lg-3">
-                      <label for="右侧大脑前动脉狭窄程度">右侧大脑前动脉狭窄程度</label>
-                      <select class="form-control selectpicker" id="右侧大脑前动脉狭窄程度" title="单选">
+                      <label for="右侧大脑前动脉(ACA)狭窄程度">右侧大脑前动脉(ACA)狭窄程度</label>
+                      <select class="form-control selectpicker" id="右侧大脑前动脉(ACA)狭窄程度" title="单选">
                         <option>无狭窄</option>
                         <option>1-49％</option>
                         <option>50-69％</option>
@@ -1193,8 +1293,8 @@
                       </select>
                     </div>
                     <div class="form-group col-lg-3">
-                      <label for="右侧大脑后动脉狭窄程度">右侧大脑后动脉狭窄程度</label>
-                      <select class="form-control selectpicker" id="右侧大脑后动脉狭窄程度" title="单选">
+                      <label for="右侧大脑后动脉(PCA)狭窄程度">右侧大脑后动脉(PCA)狭窄程度</label>
+                      <select class="form-control selectpicker" id="右侧大脑后动脉(PCA)狭窄程度" title="单选">
                         <option>无狭窄</option>
                         <option>1-49％</option>
                         <option>50-69％</option>
@@ -1203,8 +1303,8 @@
                       </select>
                     </div>
                     <div class="form-group col-lg-3">
-                      <label for="右侧椎动脉狭窄程度">右侧椎动脉狭窄程度</label>
-                      <select class="form-control selectpicker" id="右侧椎动脉狭窄程度" title="单选">
+                      <label for="右侧椎动脉(VA)狭窄程度">右侧椎动脉(VA)狭窄程度</label>
+                      <select class="form-control selectpicker" id="右侧椎动脉(VA)狭窄程度" title="单选">
                         <option>无狭窄</option>
                         <option>1-49％</option>
                         <option>50-69％</option>
@@ -1213,14 +1313,20 @@
                       </select>
                     </div>
                     <div class="form-group col-lg-3">
-                      <label for="基底动脉狭窄程度">基底动脉狭窄程度</label>
-                      <select class="form-control selectpicker" id="基底动脉狭窄程度" title="单选">
+                      <label for="基底动脉(BA)狭窄程度">基底动脉(BA)狭窄程度</label>
+                      <select class="form-control selectpicker" id="基底动脉(BA)狭窄程度" title="单选">
                         <option>无狭窄</option>
                         <option>1-49％</option>
                         <option>50-69％</option>
                         <option>70-99％</option>
                         <option>闭塞</option>
                       </select>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="form-group col-lg-3">
+                      <label for="诊断结论">诊断结论</label>
+                      <input type="text" class="form-control" id="诊断结论">
                     </div>
                   </div>
                 </div>
@@ -1240,6 +1346,12 @@
                         <option>全部正常</option>
                         <option>任一部位有异常</option>
                       </select>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="form-group col-lg-3">
+                      <label for="诊断结论">诊断结论</label>
+                      <input type="text" class="form-control" id="诊断结论">
                     </div>
                   </div>
                 </div>
@@ -1263,8 +1375,8 @@
                   </div>
                   <div class="row">
                     <div class="form-group col-lg-3">
-                      <label for="左侧颈内动脉狭窄程度">左侧颈内动脉狭窄程度</label>
-                      <select class="form-control selectpicker" id="左侧颈内动脉狭窄程度" title="单选">
+                      <label for="左侧颈内动脉(ICA)狭窄程度">左侧颈内动脉(ICA)狭窄程度</label>
+                      <select class="form-control selectpicker" id="左侧颈内动脉(ICA)狭窄程度" title="单选">
                         <option>无狭窄</option>
                         <option>1-49％</option>
                         <option>50-69％</option>
@@ -1273,8 +1385,8 @@
                       </select>
                     </div>
                     <div class="form-group col-lg-3">
-                      <label for="左侧大脑中动脉狭窄程度">左侧大脑中动脉狭窄程度</label>
-                      <select class="form-control selectpicker" id="左侧大脑中动脉狭窄程度" title="单选">
+                      <label for="左侧大脑中动脉(MCA)狭窄程度">左侧大脑中动脉(MCA)狭窄程度</label>
+                      <select class="form-control selectpicker" id="左侧大脑中动脉(MCA)狭窄程度" title="单选">
                         <option>无狭窄</option>
                         <option>1-49％</option>
                         <option>50-69％</option>
@@ -1283,8 +1395,8 @@
                       </select>
                     </div>
                     <div class="form-group col-lg-3">
-                      <label for="左侧大脑前动脉狭窄程度">左侧大脑前动脉狭窄程度</label>
-                      <select class="form-control selectpicker" id="左侧大脑前动脉狭窄程度" title="单选">
+                      <label for="左侧大脑前动脉(ACA)狭窄程度">左侧大脑前动脉(ACA)狭窄程度</label>
+                      <select class="form-control selectpicker" id="左侧大脑前动脉(ACA)狭窄程度" title="单选">
                         <option>无狭窄</option>
                         <option>1-49％</option>
                         <option>50-69％</option>
@@ -1293,8 +1405,8 @@
                       </select>
                     </div>
                     <div class="form-group col-lg-3">
-                      <label for="左侧大脑后动脉狭窄程度">左侧大脑后动脉狭窄程度</label>
-                      <select class="form-control selectpicker" id="左侧大脑后动脉狭窄程度" title="单选">
+                      <label for="左侧大脑后动脉(PCA)狭窄程度">左侧大脑后动脉(PCA)狭窄程度</label>
+                      <select class="form-control selectpicker" id="左侧大脑后动脉(PCA)狭窄程度" title="单选">
                         <option>无狭窄</option>
                         <option>1-49％</option>
                         <option>50-69％</option>
@@ -1303,8 +1415,8 @@
                       </select>
                     </div>
                     <div class="form-group col-lg-3">
-                      <label for="左侧椎动脉狭窄程度">左侧椎动脉狭窄程度</label>
-                      <select class="form-control selectpicker" id="左侧椎动脉狭窄程度" title="单选">
+                      <label for="左侧椎动脉(VA)狭窄程度">左侧椎动脉(VA)狭窄程度</label>
+                      <select class="form-control selectpicker" id="左侧椎动脉(VA)狭窄程度" title="单选">
                         <option>无狭窄</option>
                         <option>1-49％</option>
                         <option>50-69％</option>
@@ -1313,8 +1425,8 @@
                       </select>
                     </div>
                     <div class="form-group col-lg-3">
-                      <label for="右侧颈内动脉狭窄程度">右侧颈内动脉狭窄程度</label>
-                      <select class="form-control selectpicker" id="右侧颈内动脉狭窄程度" title="单选">
+                      <label for="右侧颈内动脉(ICA)狭窄程度">右侧颈内动脉(ICA)狭窄程度</label>
+                      <select class="form-control selectpicker" id="右侧颈内动脉(ICA)狭窄程度" title="单选">
                         <option>无狭窄</option>
                         <option>1-49％</option>
                         <option>50-69％</option>
@@ -1323,8 +1435,8 @@
                       </select>
                     </div>
                     <div class="form-group col-lg-3">
-                      <label for="右侧大脑中动脉狭窄程度">右侧大脑中动脉狭窄程度</label>
-                      <select class="form-control selectpicker" id="右侧大脑中动脉狭窄程度" title="单选">
+                      <label for="右侧大脑中动脉(MCA)狭窄程度">右侧大脑中动脉(MCA)狭窄程度</label>
+                      <select class="form-control selectpicker" id="右侧大脑中动脉(MCA)狭窄程度" title="单选">
                         <option>无狭窄</option>
                         <option>1-49％</option>
                         <option>50-69％</option>
@@ -1333,8 +1445,8 @@
                       </select>
                     </div>
                     <div class="form-group col-lg-3">
-                      <label for="右侧大脑前动脉狭窄程度">右侧大脑前动脉狭窄程度</label>
-                      <select class="form-control selectpicker" id="右侧大脑前动脉狭窄程度" title="单选">
+                      <label for="右侧大脑前动脉(ACA)狭窄程度">右侧大脑前动脉(ACA)狭窄程度</label>
+                      <select class="form-control selectpicker" id="右侧大脑前动脉(ACA)狭窄程度" title="单选">
                         <option>无狭窄</option>
                         <option>1-49％</option>
                         <option>50-69％</option>
@@ -1343,8 +1455,8 @@
                       </select>
                     </div>
                     <div class="form-group col-lg-3">
-                      <label for="右侧大脑后动脉狭窄程度">右侧大脑后动脉狭窄程度</label>
-                      <select class="form-control selectpicker" id="右侧大脑后动脉狭窄程度" title="单选">
+                      <label for="右侧大脑后动脉(PCA)狭窄程度">右侧大脑后动脉(PCA)狭窄程度</label>
+                      <select class="form-control selectpicker" id="右侧大脑后动脉(PCA)狭窄程度" title="单选">
                         <option>无狭窄</option>
                         <option>1-49％</option>
                         <option>50-69％</option>
@@ -1353,8 +1465,8 @@
                       </select>
                     </div>
                     <div class="form-group col-lg-3">
-                      <label for="右侧椎动脉狭窄程度">右侧椎动脉狭窄程度</label>
-                      <select class="form-control selectpicker" id="右侧椎动脉狭窄程度" title="单选">
+                      <label for="右侧椎动脉(VA)狭窄程度">右侧椎动脉(VA)狭窄程度</label>
+                      <select class="form-control selectpicker" id="右侧椎动脉(VA)狭窄程度" title="单选">
                         <option>无狭窄</option>
                         <option>1-49％</option>
                         <option>50-69％</option>
@@ -1363,14 +1475,20 @@
                       </select>
                     </div>
                     <div class="form-group col-lg-3">
-                      <label for="基底动脉狭窄程度">基底动脉狭窄程度</label>
-                      <select class="form-control selectpicker" id="基底动脉狭窄程度" title="单选">
+                      <label for="基底动脉(BA)狭窄程度">基底动脉(BA)狭窄程度</label>
+                      <select class="form-control selectpicker" id="基底动脉(BA)狭窄程度" title="单选">
                         <option>无狭窄</option>
                         <option>1-49％</option>
                         <option>50-69％</option>
                         <option>70-99％</option>
                         <option>闭塞</option>
                       </select>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="form-group col-lg-3">
+                      <label for="诊断结论">诊断结论</label>
+                      <input type="text" class="form-control" id="诊断结论">
                     </div>
                   </div>
                 </div>
@@ -1503,13 +1621,60 @@
                     <option>超过 r-tPA 静脉溶栓时间窗（>4.5h）</option>
                     <option>超出尿激酶溶栓时间窗（>6h）</option>
                     <option>静脉溶栓时间窗内，但存在禁忌症</option>
-                    <option>医院相关(院前转运时间过长)</option>
-                    <option>医院相关(卒中诊断延迟)</option>
-                    <option>医院相关(在院检查时间延迟)</option>
-                    <option>医院相关(无法建立静脉通路)</option>
+                    <option>医院相关原因(院前转运时间过长)</option>
+                    <option>医院相关原因(卒中诊断延迟)</option>
+                    <option>医院相关原因(在院检查时间延迟)</option>
+                    <option>医院相关原因(无法建立静脉通路)</option>
                     <option>经济原因</option>
                     <option>患者/家属拒绝</option>
                     <option>其他</option>
+                  </select>
+                </div>
+              </div>
+              <p>如果选“静脉溶栓时间窗内，但存在禁忌症”，是否书面记录绝对禁忌症或相对禁忌症：</p>
+              <div class="row">
+                <div class="form-group col-lg-4">
+                  <label for="书面记录绝对禁忌症或相对禁忌症">书面记录绝对禁忌症或相对禁忌症</label>
+                  <select class="form-control selectpicker" id="书面记录绝对禁忌症或相对禁忌症" title="单选">
+                    <option>是</option>
+                    <option>否</option>
+                  </select>
+                </div>
+              </div>
+              <p>如果选“是”，填写相应的绝对禁忌症或相对禁忌症：</p>
+              <div class="row">
+                <div class="form-group col-lg-6">
+                  <label for="绝对禁忌症">绝对禁忌症</label>
+                  <select class="form-control selectpicker" id="绝对禁忌症" title="多选" multiple>
+                    <option>近 3 个月有重大头颅外伤史或卒中史口</option>
+                    <option>可疑蛛网膜下腔出血</option>
+                    <option>近 1 周内有在不易压迫止血部位的动脉穿刺</option>
+                    <option>既往有颅内出血</option>
+                    <option>颅内肿瘤，动静脉畸形，动脉瘤</option>
+                    <option>近期有颅内或椎管内手术</option>
+                    <option>血压升高：收缩压≥180mmHg，或舒张压≥100mmHg</option>
+                    <option>活动性内出血</option>
+                    <option>急性出血倾向，包括血小板计数低于 100×109/L 或其他情况</option>
+                    <option>48h内接受过肝素治疗（APTT 超出正常范围上限）</option>
+                    <option>已口服抗凝剂者 INR>17 或PT>15S</option>
+                    <option>目前正在使用凝血酶抑制剂或 Xa 因子抑制剂，各种敏感的实验室检查异常（如 APTT，INR，血小板计数、ECT；TT 或恰当的 xa 因子活性测定等）</option>
+                    <option>血糖低於2．7 mmol／L</option>
+                    <option>CT 提示多脑叶 梗死（低密度影>1／3 大脑半球）</option>
+                  </select>
+                </div>
+                <div class="form-group col-lg-6">
+                  <label for="相对禁忌症">相对禁忌症</label>
+                  <select class="form-control selectpicker" id="相对禁忌症" title="多选" multiple>
+                    <option>年龄>80岁</option>
+                    <option>严重卒中（NIHSS 评分>25 分）</option>
+                    <option>口服抗凝药（不考虑 INR 水平）</option>
+                    <option>有糖尿病和缺血性卒中病史</option>
+                    <option>轻型卒中或症状快速改善的卒中</option>
+                    <option>妊娠</option>
+                    <option>痫性发作后出现的神经功能损害症状</option>
+                    <option>近 2 周内有大型外科手术或严重外伤</option>
+                    <option>近 3 周内肠胃或泌尿系统出血</option>
+                    <option>近 3 个月内有心肌梗死史</option>
                   </select>
                 </div>
               </div>
@@ -1730,6 +1895,68 @@
                   </select>
                 </div>
               </div>
+              <div id="颅内出血">
+                <h5>如果选择“颅内出血”</h5>
+                <div class="row">
+                  <div class="form-group col-lg-2">
+                    <label for="颅内出血性质">性质</label>
+                    <select class="form-control selectpicker" id="颅内出血性质" title="单选">
+                      <option>无症状</option>
+                      <option>症状性</option>
+                      <option>严重危及生命</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-lg-3">
+                    <label for="是否治疗后36h内出血">是否治疗后 36h 内出血</label>
+                    <select class="form-control selectpicker" id="是否治疗后36h内出血" title="单选">
+                      <option>是</option>
+                      <option>否</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-lg-3">
+                    <label for="是否有远隔部位出血转化">是否有远隔部位出血转化</label>
+                    <select class="form-control selectpicker" id="是否有远隔部位出血转化" title="单选">
+                      <option>是</option>
+                      <option>否</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-lg-3">
+                    <label for="出血与治疗相关">出血与治疗相关</label>
+                    <select class="form-control selectpicker" id="出血与治疗相关" title="单选">
+                      <option>与溶栓或手术治疗无关</option>
+                      <option>与静脉溶栓相关</option>
+                      <option>与介入治疗相关</option>
+                      <option>不确定</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col-lg-4">
+                    <label for="出血类型">出血类型</label>
+                    <select class="form-control selectpicker" id="出血类型" title="单选">
+                      <option>HI-1 型：梗死灶边缘斑片状小出血</option>
+                      <option>HI-2 型：梗死灶内较多融合性斑片状出血，但无占位效应</option>
+                      <option>PH-1 型：梗死灶内血肿，≤30%，梗死区，有轻度占位效应</option>
+                      <option>PH-2 型：致命的血肿，＞30%梗死区，有明显的占位效应</option>
+                      <option>SAH-1 型：局灶性蛛网膜下腔内高密度</option>
+                      <option>SAH-2 型：弥漫性蛛网膜下腔内高密度</option>
+                      <option>PHr-1 型：远离梗死区的小到中等血肿，可有轻度占位效应</option>
+                      <option>PHr-2 型：远离梗死区的大的融合性血肿，有明显占位效应</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-lg-4">
+                    <label for="并发症处置">并发症处置</label>
+                    <select class="form-control selectpicker" id="并发症处置" title="多选" multiple>
+                      <option>药物</option>
+                      <option>介入</option>
+                      <option>复查 CT</option>
+                      <option>转院</option>
+                      <option>其他</option>
+                      <option>无</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
             </div>
             <div id="TIA护理">
               <h4>TIA护理</h4>
@@ -1756,13 +1983,43 @@
                   </select>
                 </div>
               </div>
-              <h6>DVT 预防</h6>
               <div class="row">
                 <div class="form-group col-lg-3">
                   <label for="入院48h内不能行走患者">入院48h内不能行走患者</label>
                   <select class="form-control selectpicker" id="入院48h内不能行走患者" title="单选">
                     <option>是</option>
                     <option>否</option>
+                  </select>
+                </div>
+                <div class="form-group col-lg-2">
+                  <label for="是否开展DVT预防">是否开展 DVT 预防</label>
+                  <select class="form-control selectpicker" id="是否开展DVT预防" title="单选">
+                    <option>是</option>
+                    <option>否</option>
+                  </select>
+                </div>
+                <div class="form-group col-lg-2">
+                  <label for="DVT预防措施种类">DVT 预防措施种类</label>
+                  <select class="form-control selectpicker" id="DVT预防措施种类" title="多选" multiple>
+                    <option>华法林</option>
+                    <option>利伐沙班</option>
+                    <option>达比加群</option>
+                    <option>阿哌沙班</option>
+                    <option>依度沙班</option>
+                    <option>低分子肝素</option>
+                    <option>普通肝素</option>
+                    <option>血栓泵</option>
+                    <option>弹力袜</option>
+                    <option>早期活动</option>
+                  </select>
+                </div>
+                <div class="form-group col-lg-2">
+                  <label for="未DVT预防原因">未 DVT 预防原因</label>
+                  <select class="form-control selectpicker" id="未DVT预防原因" title="单选">
+                    <option>抗凝禁忌症</option>
+                    <option>血栓泵禁忌症</option>
+                    <option>弹力袜禁忌症</option>
+                    <option>患者或家属拒绝</option>
                   </select>
                 </div>
               </div>
@@ -1883,13 +2140,36 @@
                       <option>死亡</option>
                     </select>
                   </div>
+                  <div class="form-group col-lg-4">
+                    <label for="死亡时间">死亡时间</label>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text" id="死亡时间Prepend"><i class="fas fa-calendar-alt"></i></span>
+                      </div>
+                      <input type="date" class="form-control" id="死亡时间" aria-describedby="死亡时间Prepend">
+                    </div>
+                  </div>
+                  <div class="form-group col-lg-2">
+                    <label for="死亡原因">死亡原因</label>
+                    <select class="form-control selectpicker" id="死亡原因" title="单选">
+                      <option>脑卒中（出血性脑卒中）</option>
+                      <option>脑卒中（缺血性脑卒中）</option>
+                      <option>脑卒中（不详）</option>
+                      <option>冠心病</option>
+                      <option>恶性肿瘤</option>
+                      <option>呼吸系统疾病</option>
+                      <option>损伤和中毒</option>
+                      <option>其他</option>
+                      <option>不详</option>
+                    </select>
+                  </div>
                 </div>
                 <div class="row">
-                  <div class="form-group col-lg-4">
+                  <div class="form-group col-lg-3">
                     <label for="住院总费用(元)">住院总费用(元)</label>
                     <input type="number" class="form-control" id="住院总费用(元)">
                   </div>
-                  <div class="form-group col-lg-4">
+                  <div class="form-group col-lg-3">
                     <label for="药物总费用(元)">药物总费用(元)</label>
                     <input type="number" class="form-control" id="药物总费用(元)">
                   </div>
@@ -1921,7 +2201,7 @@
               <div id="出院带药表">
                 <h5>出院带药</h5>
                 <div class="row">
-                  <div class="form-group col-lg-2">
+                  <div class="form-group col-lg-4">
                     <label for="出院带药">出院带药</label>
                     <select class="form-control selectpicker" id="出院带药" title="多选" multiple>
                       <option>抗血小板药</option>
@@ -1929,6 +2209,25 @@
                       <option>降压药物</option>
                       <option>降糖药</option>
                       <option>调脂药</option>
+                      <option>其他</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col-lg-3">
+                    <label for="药品名称">药品名称</label>
+                    <input type="text" class="form-control" id="药品名称">
+                  </div>
+                  <div class="form-group col-lg-3">
+                    <label for="剂量/次">剂量/次（mg/ml/片）</label>
+                    <input type="text" class="form-control" id="剂量/次">
+                  </div>
+                  <div class="form-group col-lg-2">
+                    <label for="频次">频次</label>
+                    <select class="form-control selectpicker" id="频次" title="单选">
+                      <option>每日一次</option>
+                      <option>每日两次</option>
+                      <option>每日三次</option>
                       <option>其他</option>
                     </select>
                   </div>
@@ -1949,6 +2248,7 @@
                     </select>
                   </div>
                 </div>
+                <p>材料包括：（1、告知患者积极控制卒中危险因素；2、告知患者如何识别卒中发作症状；3、告知患者卒中再发后要快速拨打“120”或“999”电话求助；4、告知患者如何服用二级预防用药以及服药原因；5、告知患者应定期复查。）</p>
               </div>
             </div>
             <div id="溶栓及再灌注治疗登记表">
@@ -2260,7 +2560,129 @@
                   </div>
                 </div>
                 <div id="治疗责任血管部位">
-                  <h6>治疗责任血管部位（1=有 2=无）（ICA:颈内动脉	MCA:大脑中动脉	VA:椎动脉	SA:锁骨下动脉 CCA:颈总动脉 BA：基底动脉	IA: 无名动脉）</h6>
+                  <h6>治疗责任血管部位</h6>
+                  <div class="row">
+                    <div class="form-group col-lg-3">
+                      <label for="左侧颈内动脉(ICA)治疗方式">左侧颈内动脉(ICA)治疗方式</label>
+                      <select class="form-control selectpicker" id="左侧颈内动脉(ICA)治疗方式" title="多选" multiple>
+                        <option>动脉溶栓</option>
+                        <option>动脉取栓</option>
+                        <option>动脉吸栓</option>
+                        <option>支架植入</option>
+                        <option>球囊扩张</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-lg-3">
+                      <label for="左侧大脑中动脉(MCA)治疗方式">左侧大脑中动脉(MCA)治疗方式</label>
+                      <select class="form-control selectpicker" id="左侧大脑中动脉(MCA)治疗方式" title="多选" multiple>
+                        <option>动脉溶栓</option>
+                        <option>动脉取栓</option>
+                        <option>动脉吸栓</option>
+                        <option>支架植入</option>
+                        <option>球囊扩张</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-lg-3">
+                      <label for="左侧椎动脉(VA)治疗方式">左侧椎动脉(VA)治疗方式</label>
+                      <select class="form-control selectpicker" id="左侧椎动脉(VA)治疗方式" title="多选" multiple>
+                        <option>动脉溶栓</option>
+                        <option>动脉取栓</option>
+                        <option>动脉吸栓</option>
+                        <option>支架植入</option>
+                        <option>球囊扩张</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-lg-3">
+                      <label for="左侧锁骨下动脉(SA)治疗方式">左侧锁骨下动脉(SA)治疗方式</label>
+                      <select class="form-control selectpicker" id="左侧锁骨下动脉(SA)治疗方式" title="多选" multiple>
+                        <option>动脉溶栓</option>
+                        <option>动脉取栓</option>
+                        <option>动脉吸栓</option>
+                        <option>支架植入</option>
+                        <option>球囊扩张</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-lg-3">
+                      <label for="左侧颈总动脉(CCA)治疗方式">左侧颈总动脉(CCA)治疗方式</label>
+                      <select class="form-control selectpicker" id="左侧颈总动脉(CCA)治疗方式" title="多选" multiple>
+                        <option>动脉溶栓</option>
+                        <option>动脉取栓</option>
+                        <option>动脉吸栓</option>
+                        <option>支架植入</option>
+                        <option>球囊扩张</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-lg-3">
+                      <label for="右侧颈内动脉(ICA)治疗方式">右侧颈内动脉(ICA)治疗方式</label>
+                      <select class="form-control selectpicker" id="右侧颈内动脉(ICA)治疗方式" title="多选" multiple>
+                        <option>动脉溶栓</option>
+                        <option>动脉取栓</option>
+                        <option>动脉吸栓</option>
+                        <option>支架植入</option>
+                        <option>球囊扩张</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-lg-3">
+                      <label for="右侧大脑中动脉(MCA)治疗方式">右侧大脑中动脉(MCA)治疗方式</label>
+                      <select class="form-control selectpicker" id="右侧大脑中动脉(MCA)治疗方式" title="多选" multiple>
+                        <option>动脉溶栓</option>
+                        <option>动脉取栓</option>
+                        <option>动脉吸栓</option>
+                        <option>支架植入</option>
+                        <option>球囊扩张</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-lg-3">
+                      <label for="右侧椎动脉(VA)治疗方式">右侧椎动脉(VA)治疗方式</label>
+                      <select class="form-control selectpicker" id="右侧椎动脉(VA)治疗方式" title="多选" multiple>
+                        <option>动脉溶栓</option>
+                        <option>动脉取栓</option>
+                        <option>动脉吸栓</option>
+                        <option>支架植入</option>
+                        <option>球囊扩张</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-lg-3">
+                      <label for="右侧锁骨下动脉(SA)治疗方式">右侧锁骨下动脉(SA)治疗方式</label>
+                      <select class="form-control selectpicker" id="右侧锁骨下动脉(SA)治疗方式" title="多选" multiple>
+                        <option>动脉溶栓</option>
+                        <option>动脉取栓</option>
+                        <option>动脉吸栓</option>
+                        <option>支架植入</option>
+                        <option>球囊扩张</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-lg-3">
+                      <label for="右侧颈总动脉(CCA)治疗方式">右侧颈总动脉(CCA)治疗方式</label>
+                      <select class="form-control selectpicker" id="右侧颈总动脉(CCA)治疗方式" title="多选" multiple>
+                        <option>动脉溶栓</option>
+                        <option>动脉取栓</option>
+                        <option>动脉吸栓</option>
+                        <option>支架植入</option>
+                        <option>球囊扩张</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-lg-3">
+                      <label for="基底动脉(BA)治疗方式">基底动脉(BA)治疗方式</label>
+                      <select class="form-control selectpicker" id="基底动脉(BA)治疗方式" title="多选" multiple>
+                        <option>动脉溶栓</option>
+                        <option>动脉取栓</option>
+                        <option>动脉吸栓</option>
+                        <option>支架植入</option>
+                        <option>球囊扩张</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-lg-3">
+                      <label for="无名动脉(IA)治疗方式">无名动脉(IA)治疗方式</label>
+                      <select class="form-control selectpicker" id="无名动脉(IA)治疗方式" title="多选" multiple>
+                        <option>动脉溶栓</option>
+                        <option>动脉取栓</option>
+                        <option>动脉吸栓</option>
+                        <option>支架植入</option>
+                        <option>球囊扩张</option>
+                      </select>
+                    </div>
+                  </div>
                 </div>
                 <div id="术前评估">
                   <h6>术前评估</h6>
@@ -2419,6 +2841,8 @@
                     <option>是，失访原因：其他</option>
                   </select>
                 </div>
+              </div>
+              <div class="row">
                 <div class="form-group col-lg-2">
                   <label for="是否死亡">是否死亡</label>
                   <select class="form-control selectpicker" id="是否死亡" title="单选">
@@ -2427,12 +2851,21 @@
                   </select>
                 </div>
                 <div class="form-group col-lg-3">
+                  <label for="死亡日期">死亡日期</label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="死亡日期Prepend"><i class="fas fa-calendar-alt"></i></span>
+                    </div>
+                    <input type="date" class="form-control" id="死亡日期" aria-describedby="死亡日期Prepend">
+                  </div>
+                </div>
+                <div class="form-group col-lg-2">
                   <label for="死亡时间">死亡时间</label>
                   <div class="input-group">
                     <div class="input-group-prepend">
-                      <span class="input-group-text" id="死亡时间Prepend"><i class="fas fa-calendar-alt"></i></span>
+                      <span class="input-group-text" id="死亡时间Prepend"><i class="fas fa-clock"></i></span>
                     </div>
-                    <input type="date" class="form-control" id="死亡时间" aria-describedby="死亡时间Prepend">
+                    <input type="time" class="form-control" id="死亡时间" aria-describedby="死亡时间Prepend">
                   </div>
                 </div>
                 <div class="form-group col-lg-2">
@@ -2592,6 +3025,8 @@
                     <option>是，失访原因：其他</option>
                   </select>
                 </div>
+              </div>
+              <div class="row">
                 <div class="form-group col-lg-2">
                   <label for="是否死亡">是否死亡</label>
                   <select class="form-control selectpicker" id="是否死亡" title="单选">
@@ -2600,12 +3035,21 @@
                   </select>
                 </div>
                 <div class="form-group col-lg-3">
+                  <label for="死亡日期">死亡日期</label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="死亡日期Prepend"><i class="fas fa-calendar-alt"></i></span>
+                    </div>
+                    <input type="date" class="form-control" id="死亡日期" aria-describedby="死亡日期Prepend">
+                  </div>
+                </div>
+                <div class="form-group col-lg-2">
                   <label for="死亡时间">死亡时间</label>
                   <div class="input-group">
                     <div class="input-group-prepend">
-                      <span class="input-group-text" id="死亡时间Prepend"><i class="fas fa-calendar-alt"></i></span>
+                      <span class="input-group-text" id="死亡时间Prepend"><i class="fas fa-clock"></i></span>
                     </div>
-                    <input type="date" class="form-control" id="死亡时间" aria-describedby="死亡时间Prepend">
+                    <input type="time" class="form-control" id="死亡时间" aria-describedby="死亡时间Prepend">
                   </div>
                 </div>
                 <div class="form-group col-lg-2">
@@ -2712,14 +3156,14 @@
             <div id="随访期间生活方式">
               <h4>随访期间生活方式</h4>
               <div class="row">
-                <div class="form-group col-lg-3">
+                <div class="form-group col-lg-2">
                   <label for="吸烟">吸烟</label>
                   <select class="form-control selectpicker" id="吸烟" title="单选">
                     <option>否</option>
                     <option>是</option>
                   </select>
                 </div>
-                <div class="form-group col-lg-3">
+                <div class="form-group col-lg-2">
                   <label for="饮酒">饮酒</label>
                   <select class="form-control selectpicker" id="饮酒" title="单选">
                     <option>不饮酒</option>
@@ -2727,14 +3171,16 @@
                     <option>经常大量饮酒(白酒>= 3次/周，每次>=2两)</option>
                   </select>
                 </div>
-                <div class="form-group col-lg-3">
+                <div class="form-group col-lg-2">
                   <label for="运动">运动</label>
                   <select class="form-control selectpicker" id="运动" title="单选">
                     <option>经常运动(相当于快步走的中等強度运动，且每周>=3次，每次>=30分鐘，包含中度、重度體力勞動者)</option>
                     <option>缺乏运动(不符合上述经常运动标准者)</option>
                   </select>
                 </div>
-                <div class="form-group col-lg-3">
+              </div>
+              <div class="row">
+                <div class="form-group col-lg-2">
                   <label for="荤素">荤素</label>
                   <select class="form-control selectpicker" id="荤素" title="单选">
                     <option>偏荤</option>
@@ -2742,9 +3188,7 @@
                     <option>均衡</option>
                   </select>
                 </div>
-              </div>
-              <div class="row">
-                <div class="form-group col-lg-4">
+                <div class="form-group col-lg-2">
                   <label for="口味">口味</label>
                   <select class="form-control selectpicker" id="口味" title="单选">
                     <option>偏咸</option>
@@ -2752,7 +3196,7 @@
                     <option>适中</option>
                   </select>
                 </div>
-                <div class="form-group col-lg-4">
+                <div class="form-group col-lg-3">
                   <label for="吃蔬菜">吃蔬菜（每日食用 6 两蔬菜）</label>
                   <select class="form-control selectpicker" id="吃蔬菜" title="单选">
                     <option>经常吃蔬菜（≥5 天/周）</option>
@@ -2760,7 +3204,7 @@
                     <option>很少吃蔬菜（≤2 天/周）</option>
                   </select>
                 </div>
-                <div class="form-group col-lg-4">
+                <div class="form-group col-lg-3">
                   <label for="吃水果">吃水果（每日食用 4 两水果）</label>
                   <select class="form-control selectpicker" id="吃水果" title="单选">
                     <option>经常吃水果（≥5 天/周）</option>
@@ -2954,6 +3398,18 @@
                       <label for="凝血酶时间(秒)">凝血酶时间(秒)</label>
                       <input type="number" class="form-control" id="凝血酶时间(秒)">
                     </div>
+                  </div>
+                </div>
+              </div>
+              <div id="颈部血管超声">
+                <h5>颈部血管超声</h5>
+                <div class="row">
+                  <div class="form-group col-lg-2">
+                    <label for="检查结果">检查结果</label>
+                    <select class="form-control selectpicker" id="检查结果" title="单选">
+                      <option>全部正常</option>
+                      <option>任一部位有异常</option>
+                    </select>
                   </div>
                 </div>
               </div>

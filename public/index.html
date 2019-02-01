@@ -731,7 +731,12 @@
                 <div class="row">
                   <div class="form-group col-lg-9">
                     <label for="检验报告出具时间(分钟)">急诊或绿道内从采血样到血常规、随机血糖检验报告出具时间(分钟)(仅发病情况中就诊途径为“急诊”患者填写)</label>
-                    <input type="number" class="form-control" id="检验报告出具时间(分钟)">
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text" id="检验报告出具时间(分钟)Prepend"><i class="fas fa-stopwatch"></i></span>
+                      </div>
+                      <input type="number" class="form-control" id="检验报告出具时间(分钟)" aria-describedby="检验报告出具时间(分钟)Prepend">
+                    </div>
                   </div>
                 </div>
                 <div id="血常规">
@@ -880,7 +885,12 @@
                   </div>
                   <div class="form-group col-lg-4">
                     <label for="急诊入院到完成CT平扫检查时间(分)">急诊入院到完成CT平扫检查时间(分)</label>
-                    <input type="number" class="form-control" id="急诊入院到完成CT平扫检查时间(分)">
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text" id="急诊入院到完成CT平扫检查时间(分)Prepend"><i class="fas fa-stopwatch"></i></span>
+                      </div>
+                      <input type="number" class="form-control" id="急诊入院到完成CT平扫检查时间(分)" aria-describedby="急诊入院到完成CT平扫检查时间(分)Prepend">
+                    </div>
                   </div>
                   <div class="form-group col-lg-4">
                     <label for="住院检查">住院检查</label>
@@ -2201,11 +2211,21 @@
                 <div class="row">
                   <div class="form-group col-lg-3">
                     <label for="住院总费用(元)">住院总费用(元)</label>
-                    <input type="number" class="form-control" id="住院总费用(元)">
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text" id="住院总费用(元)Prepend"><i class="fas fa-yen-sign"></i></span>
+                      </div>
+                      <input type="number" class="form-control" id="住院总费用(元)" aria-describedby="住院总费用(元)Prepend">
+                    </div>
                   </div>
                   <div class="form-group col-lg-3">
                     <label for="药物总费用(元)">药物总费用(元)</label>
-                    <input type="number" class="form-control" id="药物总费用(元)">
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text" id="药物总费用(元)Prepend"><i class="fas fa-yen-sign"></i></span>
+                      </div>
+                      <input type="number" class="form-control" id="药物总费用(元)" aria-describedby="药物总费用(元)Prepend">
+                    </div>
                   </div>
                 </div>
               </div>
@@ -2248,9 +2268,14 @@
                   </div>
                 </div>
                 <div class="row">
-                  <div class="form-group col-lg-3">
+                  <div class="form-group col-lg-4">
                     <label for="药品名称">药品名称</label>
-                    <input type="text" class="form-control" id="药品名称">
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text" id="药品名称Prepend"><i class="fas fa-capsules"></i></span>
+                      </div>
+                      <input type="text" class="form-control" id="药品名称" aria-describedby="药品名称Prepend">
+                    </div>
                   </div>
                   <div class="form-group col-lg-3">
                     <label for="剂量/次">剂量/次(mg/ml/片)</label>
@@ -2319,11 +2344,21 @@
                 <div class="row">
                  <div class="form-group col-lg-4">
                    <label for="发病到开始溶栓治疗(ONT)时间(分)">发病到开始溶栓治疗(ONT)时间(分)</label>
-                   <input type="number" class="form-control" id="发病到开始溶栓治疗(ONT)时间(分)">
+                   <div class="input-group">
+                     <div class="input-group-prepend">
+                       <span class="input-group-text" id="发病到开始溶栓治疗(ONT)时间(分)Prepend"><i class="fas fa-stopwatch"></i></span>
+                     </div>
+                     <input type="number" class="form-control" id="发病到开始溶栓治疗(ONT)时间(分)" aria-describedby="发病到开始溶栓治疗(ONT)时间(分)Prepend">
+                   </div>
                  </div>
                  <div class="form-group col-lg-4">
                    <label for="入院到开始溶栓治疗(DNT)时间(分)">入院到开始溶栓治疗(DNT)时间(分)</label>
-                   <input type="number" class="form-control" id="入院到开始溶栓治疗(DNT)时间(分)">
+                   <div class="input-group">
+                     <div class="input-group-prepend">
+                       <span class="input-group-text" id="入院到开始溶栓治疗(DNT)时间(分)Prepend"><i class="fas fa-stopwatch"></i></span>
+                     </div>
+                     <input type="number" class="form-control" id="入院到开始溶栓治疗(DNT)时间(分)" aria-describedby="入院到开始溶栓治疗(DNT)时间(分)Prepend">
+                   </div>
                  </div>
                 </div>
                 <div class="row">
@@ -2431,11 +2466,21 @@
                   </div>
                   <div class="form-group col-lg-2">
                     <label for="发病到穿刺时间(分)">发病到穿刺时间(分)</label>
-                    <input type="number" class="form-control" id="发病到穿刺时间(分)">
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text" id="发病到穿刺时间(分)Prepend"><i class="fas fa-stopwatch"></i></span>
+                      </div>
+                      <input type="number" class="form-control" id="发病到穿刺时间(分)" aria-describedby="发病到穿刺时间(分)Prepend">
+                    </div>
                   </div>
                   <div class="form-group col-lg-2">
                     <label for="入院到穿刺时间(分)">入院到穿刺时间(分)</label>
-                    <input type="number" class="form-control" id="入院到穿刺时间(分)">
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text" id="入院到穿刺时间(分)Prepend"><i class="fas fa-stopwatch"></i></span>
+                      </div>
+                      <input type="number" class="form-control" id="入院到穿刺时间(分)" aria-describedby="入院到穿刺时间(分)Prepend">
+                    </div>
                   </div>
                 </div>
                 <div class="row">
@@ -2459,11 +2504,21 @@
                   </div>
                   <div class="form-group col-lg-4">
                     <label for="股动脉穿刺开始时间至到院时间(DPT)(分)">股动脉穿刺开始时间至到院时间(DPT)(分)</label>
-                    <input type="number" class="form-control" id="股动脉穿刺开始时间至到院时间(DPT)(分)">
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text" id="股动脉穿刺开始时间至到院时间(DPT)(分)Prepend"><i class="fas fa-stopwatch"></i></span>
+                      </div>
+                      <input type="number" class="form-control" id="股动脉穿刺开始时间至到院时间(DPT)(分)" aria-describedby="股动脉穿刺开始时间至到院时间(DPT)(分)Prepend">
+                    </div>
                   </div>
                   <div class="form-group col-lg-4">
                     <label for="股动脉再通时间至到院时间(DRT)(分)">股动脉再通时间至到院时间(DRT)(分)</label>
-                    <input type="number" class="form-control" id="股动脉再通时间至到院时间(DRT)(分)">
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text" id="股动脉再通时间至到院时间(DRT)(分)Prepend"><i class="fas fa-stopwatch"></i></span>
+                      </div>
+                      <input type="number" class="form-control" id="股动脉再通时间至到院时间(DRT)(分)" aria-describedby="股动脉再通时间至到院时间(DRT)(分)Prepend">
+                    </div>
                   </div>
                 </div>
                 <div class="row">
@@ -2562,7 +2617,12 @@
                   </div>
                   <div class="form-group col-lg-2">
                     <label for="机械取栓耗时(分)">机械取栓耗时(分)</label>
-                    <input type="number" class="form-control" id="机械取栓耗时(分)">
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text" id="机械取栓耗时(分)Prepend"><i class="fas fa-stopwatch"></i></span>
+                      </div>
+                      <input type="number" class="form-control" id="机械取栓耗时(分)" aria-describedby="机械取栓耗时(分)Prepend">
+                    </div>
                   </div>
                 </div>
                 <p>如果选择“吸栓”</p>
@@ -2822,11 +2882,21 @@
                     </div>
                     <div class="form-group col-lg-3">
                       <label for="入院到首次血管再通时间(分)">入院到首次血管再通时间(分)</label>
-                      <input type="number" class="form-control" id="入院到首次血管再通时间(分)">
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text" id="入院到首次血管再通时间(分)Prepend"><i class="fas fa-stopwatch"></i></span>
+                        </div>
+                        <input type="number" class="form-control" id="入院到首次血管再通时间(分)" aria-describedby="入院到首次血管再通时间(分)Prepend">
+                      </div>
                     </div>
                     <div class="form-group col-lg-3">
                       <label for="介入手术耗时(分钟)">介入手术耗时(分钟)</label>
-                      <input type="number" class="form-control" id="介入手术耗时(分钟)">
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text" id="介入手术耗时(分钟)Prepend"><i class="fas fa-stopwatch"></i></span>
+                        </div>
+                        <input type="number" class="form-control" id="介入手术耗时(分钟)" aria-describedby="介入手术耗时(分钟)Prepend">
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -2982,7 +3052,12 @@
               <div class="row">
                 <div class="form-group col-lg-4">
                   <label for="药品名称">药品名称</label>
-                  <input type="text" class="form-control" id="药品名称">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="药品名称Prepend"><i class="fas fa-capsules"></i></span>
+                    </div>
+                    <input type="text" class="form-control" id="药品名称" aria-describedby="药品名称Prepend">
+                  </div>
                 </div>
                 <div class="form-group col-lg-2">
                   <label for="目前是否服药">目前是否服药</label>
@@ -3153,7 +3228,12 @@
               <div class="row">
                 <div class="form-group col-lg-4">
                   <label for="药品名称">药品名称</label>
-                  <input type="text" class="form-control" id="药品名称">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="药品名称Prepend"><i class="fas fa-capsules"></i></span>
+                    </div>
+                    <input type="text" class="form-control" id="药品名称" aria-describedby="药品名称Prepend">
+                  </div>
                 </div>
                 <div class="form-group col-lg-2">
                   <label for="目前是否服药">目前是否服药</label>

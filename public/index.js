@@ -10,6 +10,9 @@ $(() => {
         $("> h5", div3).addClass("text-success");
         $("> div", div3).each((idx, div4) => {
           $("> h6", div4).addClass("text-danger");
+          $("> div", div4).each((idx, div5) => {
+            $("> h6", div5).addClass("text-warning");
+          });
         });
       });
     });

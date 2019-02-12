@@ -17,22 +17,22 @@ $(() => {
       });
     });
   });
-/*  $('.selectpicker').selectpicker({
+/*$('.selectpicker').selectpicker({
     iconBase: 'fontawesome',
   })
   $("#saveForm select").each((idx, select) => {
     select.title = ["单选", "多选"][~~select.multiple];
   });
-  $("#saveForm select").selectpicker('refresh'); // Or use 'render'. Don't know the difference between 'render' and 'refresh'. https://developer.snapappointments.com/bootstrap-select/methods */
+  $("#saveForm select").selectpicker('refresh'); // Or use 'render'. Don't know the difference between 'render' and 'refresh'. https://developer.snapappointments.com/bootstrap-select/methods
   $('.date input').datepicker({ // https://eternicode.github.io/bootstrap-datepicker/
     language: "zh-CN",
     autoclose: true,
     todayHighlight: true,
     daysOfWeekHighlighted: "0,6",
   });
-//  $('#住院日期').datetimepicker({ // https://eonasdan.github.io/bootstrap-datetimepicker/
-//    locale: 'zh-CN',
-//  });
+  $('#住院日期').datetimepicker({ // https://eonasdan.github.io/bootstrap-datetimepicker/
+    locale: 'zh-CN',
+  });*/
 
   const saveForm = $('#saveForm');
   const traverseForm = (form, cb) => {

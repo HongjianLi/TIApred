@@ -1,14 +1,15 @@
 {
-  "name": "tiapred",
+  "name": "predTIA",
   "version": "1.0.0",
   "description": "Study of Circulating miRNAs in Prediction of Stroke Risk after Transient Ischemic Attack",
   "main": "web.js",
   "scripts": {
+    "start": "forever start -a -l ~/predTIA/web.log web.js",
     "test": "node web.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/HongjianLi/TIApred.git"
+    "url": "git+https://github.com/HongjianLi/predTIA.git"
   },
   "keywords": [
     "miRNA",
@@ -20,9 +21,9 @@
   "author": "Hongjian Li",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/HongjianLi/TIApred/issues"
+    "url": "https://github.com/HongjianLi/predTIA/issues"
   },
-  "homepage": "https://github.com/HongjianLi/TIApred#readme",
+  "homepage": "https://github.com/HongjianLi/predTIA#readme",
   "dependencies": {
     "express": "^4.16.4",
     "mongodb": "^3.1.10"

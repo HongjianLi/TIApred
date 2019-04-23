@@ -2,10 +2,10 @@ $(() => {
   "use strict";
 
   // Apply colors to form headers.
-  $("form > div").each((idx, div1) => {
-    $("> h3", div1).addClass("text-primary");
+  $("#saveForm").each((idx, div1) => {
+    $("> h3", div1).addClass("text-info");
     $("> div", div1).each((idx, div2) => {
-      $("> h4", div2).addClass("text-info");
+      $("> h4", div2).addClass("text-primary");
       $("> div", div2).each((idx, div3) => {
         $("> h5", div3).addClass("text-success");
         $("> div", div3).each((idx, div4) => {

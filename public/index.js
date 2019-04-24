@@ -35,6 +35,26 @@ $(() => {
   });*/
 
   const saveForm = $('#saveForm');
+  $(":input", saveForm).on("changed.bs.select", (event, clickedIndex, isSelected, previousValue) => {
+    const input = event.target;
+    const currentValue = $(input).val();
+    if (!previousValue.length && currentValue.length) { // Previously without a value, currently with a value.
+      for (var element = input.parentElement; !(element.previousElementSibling && element.previousElementSibling.nodeName === "H4"); element = element.parentElement);
+      // Check if all inputs are populated. If so, show the completed sign.
+      let populated = true;
+      $(":input", element).each((idx, input) => {
+        if (input.nodeName === "BUTTON") return;
+        console.assert(input.nodeName === "INPUT" || input.nodeName === "SELECT");
+        if (!$(input).val().length) populated = false;
+      });
+      if (populated) {
+        $(element.previousElementSibling.children[1]).removeClass("invisible");
+      }
+    } else if (previousValue.length && !currentValue.length) { // Previously with a value, currently without a value.
+      for (var element = input.parentElement; !(element.previousElementSibling && element.previousElementSibling.nodeName === "H4"); element = element.parentElement);
+      $(element.previousElementSibling.children[1]).addClass("invisible");
+    }
+  });
   const traverseForm = (form, cb) => {
     $(":input", form).each((idx, input) => {
       if (input.nodeName === "BUTTON") return;
@@ -72,7 +92,7 @@ $(() => {
     });
   };
   refreshRecords();
-  $('#现有记录').on('changed.bs.select', function (event, clickedIndex, isSelected, previousValue) { // Not using lambda here to preserve this binding
+  $('#现有记录').on('changed.bs.select', function (event, clickedIndex, isSelected, previousValue) { // Not using lambda here to preserve this binding. Alternatively, use event.target
     $.ajax({
       type: "GET",
       url: "record",

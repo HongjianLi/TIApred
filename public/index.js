@@ -35,16 +35,19 @@ $(() => {
   });*/
 
   const saveForm = $('#saveForm');
-  $(":input", saveForm).on("changed.bs.select", (event, clickedIndex, isSelected, previousValue) => {
+  $(":input", saveForm).filter((idx, input) => {
+    return input.nodeName === "INPUT" || input.nodeName === "SELECT";
+  }).on("change", (event) => {
     const input = event.target;
     const currentValue = $(input).val();
+    const previousValue = $(input).data('val') || "";
     if (!previousValue.length && currentValue.length) { // Previously without a value, currently with a value.
       for (var element = input.parentElement; !(element.previousElementSibling && element.previousElementSibling.nodeName === "H4"); element = element.parentElement);
       // Check if all inputs are populated. If so, show the completed sign.
       let populated = true;
-      $(":input", element).each((idx, input) => {
-        if (input.nodeName === "BUTTON") return;
-        console.assert(input.nodeName === "INPUT" || input.nodeName === "SELECT");
+      $(":input", element).filter((idx, input) => {
+        return input.nodeName === "INPUT" || input.nodeName === "SELECT";
+      }).each((idx, input) => {
         if (!$(input).val().length) populated = false;
       });
       if (populated) {
@@ -54,6 +57,7 @@ $(() => {
       for (var element = input.parentElement; !(element.previousElementSibling && element.previousElementSibling.nodeName === "H4"); element = element.parentElement);
       $(element.previousElementSibling.children[1]).addClass("invisible");
     }
+    $(input).data('val', $(input).val()); // Save the current value to the data-val attribute as the next previousValue.
   });
   const traverseForm = (form, cb) => {
     $(":input", form).each((idx, input) => {
